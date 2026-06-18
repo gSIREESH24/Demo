@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>RupeeVyze – Blogs | Wisdom in Every Rupee</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS (Animate on Scroll) for smooth animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #002147;
+      overflow-x: hidden;
+    }
+
+    /* ========== COLOR THEME VARIABLES ========== */
+    :root {
+      --navy: #002147;
+      --teal: #006677;
+      --slate: #4A5568;
+      --white: #FFFFFF;
+      --light-bg: #F8FAFC;
+      --teal-light: rgba(0, 102, 119, 0.12);
+      --gradient: linear-gradient(135deg, #002147 0%, #006677 100%);
+    }
+
+    /* ========== BASE STYLES ========== */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .blogs-page {
+      padding-top: 40px;
+      background: #002147;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero-section {
+      text-align: center;
+      margin-bottom: 48px;
+      padding: 40px 0 48px;
+      background: #021B45;
+      border-radius: 0 0 48px 48px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--teal-light);
+      color: #00A389;
+      border: 1px solid #00A389;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 40px;
+      margin-bottom: 24px;
+    }
+    .hero-section h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(120deg,#00A389 80%, var(--teal) 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-section p {
+      color: var(--white);
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* ========== SEARCH & FILTER BAR ========== */
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 32px 0 48px;
+    }
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+    }
+    .search-wrapper i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00A389;
+      font-size: 1rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 1px solid #E2EDF0;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      background: var(--white);
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: #00A389;
+      box-shadow: 0 0 0 3px rgba(0,102,119,0.2);
+    }
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      background: var(--light-bg);
+      border: none;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--slate);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #00A389;
+      color: white;
+    }
+
+    /* ========== BLOG GRID ========== */
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+      margin: 32px 0 64px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,102,119,0.08);
+      cursor: pointer;
+    }
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px -12px rgba(0,33,71,0.2);
+      border-color: rgba(0,102,119,0.2);
+    }
+    .blog-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover .blog-image {
+      transform: scale(1.03);
+    }
+    .blog-content {
+      padding: 24px 24px 28px;
+    }
+    .blog-category {
+      display: inline-block;
+      background: var(--teal-light);
+      color: #00A389;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .blog-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .blog-excerpt {
+      color: var(--slate);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #EFF3F8;
+      padding-top: 16px;
+    }
+    .blog-date {
+      font-size: 0.75rem;
+      color: var(--slate);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .read-more {
+      color: #00A389;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .read-more:hover {
+      gap: 10px;
+      color: var(--navy);
+    }
+
+    /* ========== NEWSLETTER SECTION ========== */
+    .newsletter-section {
+      background: var(--gradient);
+      border-radius: 48px;
+      padding: 56px 40px;
+      text-align: center;
+      margin: 40px 0 60px;
+    }
+    
+    .newsletter-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .newsletter-section p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 28px;
+    }
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      min-width: 220px;
+    }
+    .newsletter-btn {
+      background: var(--teal);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .newsletter-btn:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    /* ========== FOOTER ========== */
+    .rv-footer {
+      border-top: 1px solid rgba(0,102,119,0.15);
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--white);
+      font-size: 0.85rem;
+      background: #00A389;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .hero-section h1 { font-size: 2.2rem; }
+      .blogs-grid { grid-template-columns: 1fr; }
+      .newsletter-section { padding: 40px 24px; }
+      .newsletter-section h2 { font-size: 1.4rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .hero-section { padding: 20px 0 30px; }
+      .category-filters { gap: 8px; }
+      .filter-btn { padding: 6px 16px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="blogs-page">
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero-section" data-aos="fade-up" data-aos-duration="800">
+      <span class="hero-badge"><i class="fas fa-blog"></i> Wisdom In Every Word</span>
+      <h1>Insights & Stories<br>for Your Financial Journey</h1>
+      <p>Expert advice, practical tips, and market insights to help you make smarter financial decisions.</p>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="search-bar" data-aos="fade-up" data-aos-delay="100">
+      <div class="search-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-input" placeholder="Search articles..." id="searchInput">
+      </div>
+    </div>
+    <div class="category-filters" data-aos="fade-up" data-aos-delay="150">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="investing">Investing</button>
+      <button class="filter-btn" data-category="wealth">Wealth Management</button>
+      <button class="filter-btn" data-category="tax">Tax Planning</button>
+      <button class="filter-btn" data-category="beginners">Beginners</button>
+    </div>
+
+    <!-- Blogs Grid -->
+    <div class="blogs-grid" id="blogsGrid">
+      <!-- Blog cards will be populated by JavaScript -->
+    </div>
+
+    <!-- Newsletter Section -->
+     <div class="newsletter-bg">
+    <div class="newsletter-section" data-aos="fade-up" data-aos-delay="200">
+      <h2>📬 Stay financially wise</h2>
+      <p>Get the best financial tips and market updates straight to your inbox.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+        <button type="submit" class="newsletter-btn"><i class="fas fa-envelope"></i> Subscribe</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+  <footer class="rv-footer">
+    <p>© 2025 RupeeVyze – Wisdom in Every Rupee™ | Empowering financial freedom through knowledge</p>
+  </footer>
+</main>
+
+<!-- AOS for scroll animations -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 60 });
+
+  // Blog data
+  const blogs = [
+    {
+      id: 1,
+      title: "10 Investing Basics Every Beginner Should Know",
+      excerpt: "Start your investment journey with these fundamental principles that every successful investor follows.",
+      category: "beginners",
+      date: "June 10, 2025",
+      image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80",
+      readTime: "6 min read"
+    },
+    {
+      id: 2,
+      title: "How to Build a Diversified Investment Portfolio",
+      excerpt: "Learn the art of diversification and why it's crucial for long-term wealth creation.",
+      category: "investing",
+      date: "June 5, 2025",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80",
+      readTime: "8 min read"
+    },
+    {
+      id: 3,
+      title: "Tax Saving Strategies for Salaried Employees",
+      excerpt: "Maximize your savings with these smart tax planning tips under Section 80C and more.",
+      category: "tax",
+      date: "May 28, 2025",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80",
+      readTime: "5 min read"
+    },
+    {
+      id: 4,
+      title: "Wealth Management: A Complete Guide for Millennials",
+      excerpt: "From budgeting to investing, everything you need to know about managing your wealth in your 20s and 30s.",
+      category: "wealth",
+      date: "May 20, 2025",
+      image: "https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80",
+      readTime: "10 min read"
+    },
+    {
+      id: 5,
+      title: "Understanding Mutual Funds: SIP vs Lump Sum",
+      excerpt: "Which investment mode works better for your financial goals? A detailed comparison.",
+      category: "investing",
+      date: "May 15, 2025",
+      image: "https://images.pexels.com/photos/210600/pexels-photo-210600.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop",
+      readTime: "7 min read"
+    },
+    {
+      id: 6,
+      title: "Retirement Planning: Start Early, Retire Rich",
+      excerpt: "Simple steps to build a retirement corpus that ensures financial independence.",
+      category: "wealth",
+      date: "May 8, 2025",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80",
+      readTime: "9 min read"
+    }
+  ];
+
+  function renderBlogs(filterCategory = "all", searchTerm = "") {
+    const grid = document.getElementById("blogsGrid");
+    if (!grid) return;
+
+    let filtered = blogs;
+    if (filterCategory !== "all") {
+      filtered = filtered.filter(blog => blog.category === filterCategory);
+    }
+    if (searchTerm.trim() !== "") {
+      filtered = filtered.filter(blog => 
+        blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px; color:var(--slate);">
+        <i class="fas fa-search" style="font-size:3rem; margin-bottom:16px; display:block;"></i>
+        <h3>No articles found</h3>
+        <p>Try a different search term or category.</p>
+      </div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(blog => `
+      <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+        <img class="blog-image" src="${blog.image}" alt="${blog.title}" loading="lazy">
+        <div class="blog-content">
+          <span class="blog-category">${blog.category.charAt(0).toUpperCase() + blog.category.slice(1)}</span>
+          <h3 class="blog-title">${blog.title}</h3>
+          <p class="blog-excerpt">${blog.excerpt}</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> ${blog.date}</span>
+            <a href="#" class="read-more" onclick="return false;">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // Category filter + search
+  let currentCategory = "all";
+  let currentSearch = "";
+
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const searchInput = document.getElementById("searchInput");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCategory = btn.getAttribute("data-category");
+      renderBlogs(currentCategory, currentSearch);
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      currentSearch = e.target.value;
+      renderBlogs(currentCategory, currentSearch);
+    });
+  }
+
+  // Initial render
+  renderBlogs("all", "");
+</script>
+</body>
+</html>
