@@ -72,6 +72,12 @@
             overflow-x: hidden;
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-main);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
         body {
             background-color: var(--bg-primary);
             line-height: 1.6;
@@ -423,15 +429,21 @@
         }
 
         .hero-title {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 800;
             letter-spacing: -1.5px;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary) 30%, #a5b4fc 100%);
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeInUp 0.8s ease forwards;
+            background-clip: text;
         }
 
         .breadcrumbs {
@@ -473,23 +485,34 @@
         }
 
         .about-label {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 8px; 
-            text-shadow: 0 2px 4px rgba(28, 50, 255, 0.05);
             display: inline-block;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            background: rgba(0, 196, 151, 0.08);
+            border: 1px solid rgba(0, 196, 151, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
         }
 
-        .about-heading {
-            font-size: 38px; 
+        .section-heading {
+            font-size: 40px;
             font-weight: 800;
             color: var(--text-light-title);
-            line-height: 1.15;
-            margin-bottom: 24px; 
+            line-height: 1.2;
+            margin-bottom: 50px;
             letter-spacing: -1px;
+            text-align: center;
+        }
+
+        .section-heading span {
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* --- CALCULATORS SECTION (LIGHT SHADY THEME) --- */
@@ -1195,7 +1218,7 @@
     <header class="header" id="mainHeader">
         <div class="container nav-container">
             <!-- Brand Logo -->
-            <a href="index.html" class="logo-link">
+            <a href="homepage.html" class="logo-link">
                 <div class="logo-wrapper">
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -1227,7 +1250,7 @@
             <!-- Desktop Menu -->
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="homepage.html" class="nav-link">Home</a>
                 </div>
                 <div class="nav-item">
                     <a href="aboutus.html" class="nav-link">About Us</a>
@@ -1241,6 +1264,8 @@
                         <a href="mutual-funds.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Funds</a>
                         <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
                         <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
+                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
+                        <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
                 <div class="nav-item">
@@ -1252,7 +1277,7 @@
                 <div class="nav-item">
                     <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="signup.html" class="nav-cta-btn">Start Now</a>
+                <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
             <!-- Mobile Hamburger Toggle -->
@@ -1270,9 +1295,9 @@
         
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">Calculators</h1>
+                <h1 class="hero-title">Financial <span>Calculators</span></h1>
                 <div class="breadcrumbs">
-                    <a href="index.html" class="breadcrumb-link">Home</a>
+                    <a href="homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
                     <span class="breadcrumb-current">Calculators</span>
                 </div>
@@ -1283,6 +1308,7 @@
     <!-- --- MAIN CONTENT SECTION (LIGHT SHADY THEME) --- -->
     <section class="calculators-section">
         <div class="container">
+            <h2 class="section-heading">Our Financial <span>Calculators</span></h2>
             <div class="calculators-grid">
                 <!-- Card 1: EMI Calculator -->
                 <div class="calculator-card reveal">
@@ -1290,7 +1316,9 @@
                         <img src="calculator_graphic.png" class="calc-img" alt="EMI Calculator">
                     </div>
                     <h3 class="calc-title">EMI Calculators</h3>
-                    <button class="calc-btn" onclick="openCalculator('emi')">Calculate</button>
+                    <a href="emi-calculator.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                        <button class="calc-btn">Calculate</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1402,7 +1430,7 @@
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="homepage.html" class="footer-link">Home</a>
                         <a href="aboutus.html" class="footer-link">About Us</a>
                         <a href="contactus.html" class="footer-link">Contact Us</a>
                     </div>

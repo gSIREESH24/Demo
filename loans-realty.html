@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | RupeeVyze - Get In Touch</title>
+    <title>Loans & Realty Services | RupeeVyze - Wisdom In Every Rupee</title>
     
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Get in touch with RupeeVyze. Reach out to our financial advisory and wealth planning support team for smart, secure, and stress-free investment solutions.">
-    <meta name="keywords" content="Contact RupeeVyze, RupeeVyze support, RupeeVyze phone, RupeeVyze email, financial planning help">
+    <meta name="description" content="Integrated financing solutions and curated real estate investments aligned with your long-term wealth planning. Get professional loans and realty support with RupeeVyze.">
+    <meta name="keywords" content="loans, realty, real estate, home loan, mortgage, property investment, wealth creation, RupeeVyze">
     <meta name="author" content="RupeeVyze">
     
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -499,7 +499,7 @@
             margin-bottom: 12px;
         }
 
-        .about-heading {
+        .section-heading {
             font-size: 48px; 
             font-weight: 800;
             color: var(--text-light-title);
@@ -508,15 +508,15 @@
             letter-spacing: -1px;
         }
 
-        .about-heading span {
+        .section-heading span {
             background: linear-gradient(135deg, var(--bg-tertiary), var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* --- CONTACT SECTION (LIGHT SHADY THEME) --- */
-        .contact-section {
+        /* --- LOANS & REALTY SECTION (LIGHT THEME) --- */
+        .loans-section {
             padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
             color: var(--text-light-body);
@@ -524,53 +524,277 @@
             z-index: 10;
         }
 
-        .contact-section .container {
-            max-width: 1500px;
-        }
-
-        .contact-grid {
+        .loans-grid {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 50px;
-            align-items: flex-start;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .contact-info {
+        .loans-text-content {
             display: flex;
             flex-direction: column;
         }
 
-        .contact-subtext {
-            font-size: 18px;
-            color: var(--text-light-body);
+        .loans-subheading {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-light-title);
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .loans-p {
+            font-size: 15.5px;
             line-height: 1.75;
-            margin-bottom: 48px;
-            max-width: 700px;
+            color: var(--text-light-body);
+            margin-bottom: 20px;
         }
 
-        .contact-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+        .loans-p:last-of-type {
+            margin-bottom: 8px;
         }
 
-        /* --- PREMIUM CARD DESIGN WITH BLUE SHADING AT THE ENDS --- */
-        .contact-info-card {
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            border-radius: var(--border-radius-md);
-            padding: 24px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
+        .apply-btn {
+            align-self: flex-start;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0d1eab 100%);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(28, 50, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: inline-block;
+            transition: var(--transition-smooth);
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(28, 50, 255, 0.4);
+            background: linear-gradient(135deg, #384eff 0%, #1c32ff 100%);
+        }
+
+        /* Right Column: Image display styled beautifully */
+        .loans-image-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            height: 400px;
+        }
+
+        .loans-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: var(--transition-smooth);
         }
 
-        .contact-info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-            border-color: rgba(15, 23, 42, 0.15);
+        .loans-image-wrapper:hover .loans-img {
+            transform: scale(1.03);
+        }
+
+        /* --- OFFERINGS SECTION --- */
+        .offerings-section {
+            padding: 80px 0 100px;
+            background-color: var(--bg-pure-white);
+            position: relative;
+            z-index: 10;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .offering-card {
+            background: linear-gradient(135deg, rgba(28, 50, 255, 0.02) 0%, rgba(28, 50, 255, 0.06) 100%);
+            border: 1px solid rgba(28, 50, 255, 0.12);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(28, 50, 255, 0.08);
+            border-color: rgba(28, 50, 255, 0.25);
+        }
+
+        .offering-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0d1eab 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(28, 50, 255, 0.3);
+        }
+
+        .offering-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-light-title);
+        }
+
+        .offering-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .offering-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15.5px;
+            color: var(--text-light-body);
+            font-weight: 500;
+        }
+
+        .offering-bullet {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent-blue);
+            flex-shrink: 0;
+            box-shadow: 0 0 6px var(--accent-blue);
+        }
+
+        /* --- FAQ SECTION --- */
+        .faq-section {
+            padding: 80px 0 100px;
+            background-color: var(--bg-light-shady);
+            position: relative;
+            z-index: 10;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-pure-white);
+            border: 1.5px solid rgba(15, 23, 42, 0.08);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(28, 50, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.02);
+        }
+
+        .faq-item.active {
+            border-color: var(--accent-green);
+            box-shadow: 0 8px 25px rgba(5, 10, 30, 0.04);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 24px;
+            background: var(--bg-pure-white);
+            transition: var(--transition-fast);
+            user-select: none;
+        }
+
+        .faq-item.active .faq-question {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+        }
+
+        .faq-q-text {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-light-title);
+            line-height: 1.4;
+            transition: var(--transition-fast);
+        }
+
+        .faq-item.active .faq-q-text {
+            color: #ffffff;
+        }
+
+        .faq-icon {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.05);
+            color: var(--text-light-title);
+            transition: var(--transition-smooth);
+            font-size: 11px;
+        }
+
+        .faq-item.active .faq-icon {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            transform: rotate(180deg);
+        }
+
+        .faq-answer-wrap {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-answer {
+            font-size: 14.5px;
+            color: var(--text-light-body);
+            line-height: 1.65;
+            padding: 16px 24px 20px;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        /* Responsive design rules */
+        @media (max-width: 992px) {
+            .loans-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .loans-image-wrapper {
+                height: 350px;
+                order: -1; /* Image first on mobile/tablet */
+            }
+            .offerings-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .loans-image-wrapper {
+                height: 250px;
+            }
         }
 
         .contact-card-icon {
@@ -998,7 +1222,7 @@
                 gap: 50px;
             }
 
-            .about-heading {
+            .section-heading {
                 font-size: 36px;
                 margin-bottom: 20px;
             }
@@ -1095,7 +1319,7 @@
                     <a href="aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="#" class="nav-link" id="servicesTrigger">
+                    <a href="#" class="nav-link active" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -1103,7 +1327,7 @@
                         <a href="mutual-funds.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Funds</a>
                         <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
                         <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
-                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
+                        <a href="loans-realty.html" class="dropdown-link active"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
                         <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
@@ -1114,7 +1338,7 @@
                     <a href="blogs.html" class="nav-link">Blogs</a>
                 </div>
                 <div class="nav-item">
-                    <a href="contactus.html" class="nav-link active">Contact Us</a>
+                    <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
                 <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
@@ -1134,93 +1358,177 @@
         
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">Contact <span>Us</span></h1>
+                <h1 class="hero-title">Loans & Realty <span>Services</span></h1>
                 <div class="breadcrumbs">
                     <a href="homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="breadcrumb-current">Contact Us</span>
+                    <span class="breadcrumb-current">Loans & Realty</span>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- --- CONTACT MAIN SECTION (LIGHT SHADY THEME) --- -->
-    <section class="contact-section">
+    <!-- --- LOANS & REALTY SERVICES MAIN SECTION --- -->
+    <section class="loans-section">
         <div class="container">
-            <div class="contact-grid">
+            <div class="loans-grid">
                 
-                <!-- Left Side: Contact Information & Cards -->
-                <div class="contact-info reveal">
-                    <span class="about-label">Have Any Question ?</span>
-                    <h2 class="about-heading">Get In <span>Touch</span></h2>
-                    <p class="contact-subtext">
-                        Get in Touch with RupeeVyze &mdash; Your Trusted Partner for Smart, Secure, and Stress-Free Financial Planning and Wealth Growth
+                <!-- Left Side: Text Information -->
+                <div class="loans-text-content reveal">
+                    <span class="about-label">Overview</span>
+                    <h2 class="section-heading" style="text-align: left; margin-bottom: 20px;">Know More About <span>Loans & Realty</span></h2>
+                    
+                    <h3 class="loans-subheading">Financing Solutions And Property Investment Support</h3>
+                    
+                    <p class="loans-p">
+                        RupeeVyze provides integrated support for borrowing needs and real estate investments to help you make informed decisions.
+                    </p>
+                    <p class="loans-p">
+                        We assist in identifying suitable loan products and advising on property investments aligned with long-term wealth planning.
                     </p>
                     
-                    <div class="contact-cards-grid">
-                        <!-- Card 1: Phone -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Our Number</span>
-                                <span class="contact-card-value">+91 9686899698</span>
-                            </div>
-                        </div>
+                    <a href="contactus.html" class="apply-btn">Apply Now</a>
+                </div>
 
-                        <!-- Card 2: Email -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Our Email</span>
-                                <span class="contact-card-value">Support@Rupeevyze.Com</span>
-                            </div>
-                        </div>
+                <!-- Right Side: Service Representative Image -->
+                <div class="loans-image-wrapper reveal" style="transition-delay: 0.2s;">
+                    <img src="loans_realty_service.png" class="loans-img" alt="Loans & Realty Services">
+                </div>
 
-                        <!-- Card 3: Location -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Location</span>
-                                <span class="contact-card-value">Karnataka – 560068</span>
-                            </div>
-                        </div>
+            </div>
+        </div>
+    </section>
 
-                        <!-- Card 4: Whatsapp -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Whatsapp Us</span>
-                                <span class="contact-card-value">+91 9686899698</span>
-                            </div>
-                        </div>
+    <!-- --- OUR OFFERINGS SECTION --- -->
+    <section class="offerings-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;" class="reveal">
+                <span class="about-label">What We Offer</span>
+                <h2 class="section-heading">Our <span>Offerings</span></h2>
+            </div>
+
+            <div class="offerings-grid">
+                <!-- Offering 1: Loan Services -->
+                <div class="offering-card reveal">
+                    <div class="offering-badge">01</div>
+                    <h3 class="offering-title">Loan Services</h3>
+                    <ul class="offering-list">
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Home Loans
+                        </li>
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Personal Loans
+                        </li>
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Business Loans
+                        </li>
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Mortgage & Loan Against Property
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Offering 2: Real Estate Solutions -->
+                <div class="offering-card reveal" style="transition-delay: 0.1s;">
+                    <div class="offering-badge">02</div>
+                    <h3 class="offering-title">Real Estate Solutions</h3>
+                    <ul class="offering-list">
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Residential Plots, Villas & Flats
+                        </li>
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Real Estate Investment Trusts (REITs)
+                        </li>
+                        <li class="offering-item">
+                            <span class="offering-bullet"></span>
+                            Infrastructure Investment Trusts (InvITs)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FAQ SECTION --- -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;" class="reveal">
+                <span class="about-label">General Questions</span>
+                <h2 class="section-heading">Frequently Asked <span>Questions</span></h2>
+            </div>
+
+            <div class="faq-list reveal" style="transition-delay: 0.1s;">
+                <!-- Item 1 -->
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span class="faq-q-text">What Services Does RupeeVyze Offer?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap" style="max-height: 200px;">
+                        <p class="faq-answer">RupeeVyze provides a complete financial ecosystem including mutual funds, equity and commodity broking, PMS, AIFs, bonds, fixed deposits, insurance, loans, and real estate solutions — all under one roof.</p>
                     </div>
                 </div>
 
-                <!-- Right Side: Contact Query Form -->
-                <div class="contact-form reveal" style="transition-delay: 0.1s;">
-                    <div class="contact-form-card">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="formName" class="form-label">Name</label>
-                                <input type="text" id="formName" class="form-input" placeholder="Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formPhone" class="form-label">Phone no</label>
-                                <input type="tel" id="formPhone" class="form-input" placeholder="Phone no" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formEmail" class="form-label">Email</label>
-                                <input type="email" id="formEmail" class="form-input" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formMessage" class="form-label">Message</label>
-                                <textarea id="formMessage" class="form-input" placeholder="Message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send</button>
-                        </form>
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Who Can Invest Or Use RupeeVyze Services?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Any Indian resident aged 18 and above can invest through RupeeVyze. We serve salaried professionals, self-employed individuals, NRIs, and corporates looking to grow and manage their wealth smartly.</p>
                     </div>
                 </div>
 
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Is There A Minimum Investment Amount?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">You can start your investment journey with as little as ₹500 per month through our SIP plans. There is no upper limit, and our advisors will help you build a portfolio that fits your goals.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">How Does RupeeVyze Recommend Financial Products?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">We use a data-driven approach combined with a deep profiling of your financial goals, risk appetite, and investment horizon. Our SEBI-registered advisors then craft a personalized strategy tailored just for you.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Is My Money And Data Safe With RupeeVyze?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Absolutely. RupeeVyze is SEBI-registered and follows the highest compliance standards. Your investments are held with SEBI-regulated custodians and your personal data is encrypted end-to-end.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Can I Withdraw My Investments Anytime?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Yes. Most mutual fund investments can be redeemed within 1–3 business days. Fixed deposits and lock-in products have specific tenure terms, which are clearly communicated before investing.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1363,6 +1671,37 @@
             revealObserver.observe(element);
         });
 
+        /* --- FAQ ACCORDION LOGIC --- */
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionRow = item.querySelector('.faq-question');
+            const answerWrap = item.querySelector('.faq-answer-wrap');
+            const icon = item.querySelector('.faq-icon i');
+
+            questionRow.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other FAQs
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer-wrap').style.maxHeight = '0';
+                    otherItem.querySelector('.faq-icon i').className = 'fa-solid fa-plus';
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    // Dynamically set max-height to let CSS transition run smoothly
+                    answerWrap.style.maxHeight = answerWrap.scrollHeight + 'px';
+                    icon.className = 'fa-solid fa-minus';
+                } else {
+                    item.classList.remove('active');
+                    answerWrap.style.maxHeight = '0';
+                    icon.className = 'fa-solid fa-plus';
+                }
+            });
+        });
+
         // Page load initial animations
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
@@ -1372,23 +1711,6 @@
                     el.style.opacity = '1';
                 });
             }, 100);
-        });
-
-        // Form Submission Simulation
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('formName').value.trim();
-            const phone = document.getElementById('formPhone').value.trim();
-            const email = document.getElementById('formEmail').value.trim();
-            const message = document.getElementById('formMessage').value.trim();
-            
-            if (name && phone && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent successfully. We will get in touch with you shortly.`);
-                contactForm.reset();
-            } else {
-                alert('Please fill out all fields before submitting.');
-            }
         });
     </script>
 </body>

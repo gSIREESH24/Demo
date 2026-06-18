@@ -72,6 +72,12 @@
             overflow-x: hidden;
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-main);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
         body {
             background-color: var(--bg-primary);
             line-height: 1.6;
@@ -434,15 +440,21 @@
         }
 
         .hero-title {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 800;
             letter-spacing: -1.5px;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary) 30%, #a5b4fc 100%);
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeInUp 0.8s ease forwards;
+            background-clip: text;
         }
 
         /* Custom Breadcrumbs styled modernly */
@@ -609,13 +621,18 @@
 
         /* Corrected label "About Us" styled in bright premium brand blue */
         .about-label {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1c32ff;
-            text-transform: capitalize;
-            letter-spacing: 0.8px;
-            margin-bottom: 8px; 
-            text-shadow: 0 2px 4px rgba(28, 50, 255, 0.05);
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            background: rgba(0, 196, 151, 0.08);
+            border: 1px solid rgba(0, 196, 151, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
         }
 
         /* Heading styled in slate-900 (dark charcoal) */
@@ -626,6 +643,13 @@
             line-height: 1.15;
             margin-bottom: 24px; 
             letter-spacing: -1px;
+        }
+
+        .about-heading span {
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* --- INTERACTIVE STORY TIMELINE --- */
@@ -824,9 +848,11 @@
             letter-spacing: -0.5px;
         }
 
-        .partnership-title .highlight-yellow {
-            color: #facc15; 
-            text-shadow: 0 0 15px rgba(250, 204, 21, 0.25);
+        .partnership-title span {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .partnership-sub {
@@ -1546,7 +1572,7 @@
     <header class="header" id="mainHeader">
         <div class="container nav-container">
             <!-- Brand Logo -->
-            <a href="index.html" class="logo-link">
+            <a href="homepage.html" class="logo-link">
                 <div class="logo-wrapper">
                     <!-- High-quality Custom SVG logo matching the brand -->
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -1582,7 +1608,7 @@
             <!-- Desktop Menu -->
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="homepage.html" class="nav-link">Home</a>
                 </div>
                 <div class="nav-item">
                     <a href="aboutus.html" class="nav-link active">About Us</a>
@@ -1597,6 +1623,8 @@
                         <a href="mutual-funds.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Funds</a>
                         <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
                         <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
+                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
+                        <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
                 <div class="nav-item">
@@ -1608,7 +1636,7 @@
                 <div class="nav-item">
                     <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="signup.html" class="nav-cta-btn">Start Now</a>
+                <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
             <!-- Mobile Hamburger Toggle -->
@@ -1627,9 +1655,9 @@
         <!-- --- HERO BANNER (SUPER COOL GLASS CARD DESIGN, CURVED AT THE ENDS) --- -->
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">About Us</h1>
+                <h1 class="hero-title">About <span>Us</span></h1>
                 <div class="breadcrumbs">
-                    <a href="index.html" class="breadcrumb-link">Home</a>
+                    <a href="homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
                     <span class="breadcrumb-current">About Us</span>
                 </div>
@@ -1672,7 +1700,7 @@
                     <!-- Section Identifier -->
                     <span class="about-label">About Us</span>
                     
-                    <h2 class="about-heading">Meet RupeeVyze – Wisdom In Every Rupee&trade;</h2>
+                    <h2 class="about-heading">Meet RupeeVyze – <span>Wisdom In Every Rupee™</span></h2>
                     
                     <!-- Vertical Interactive Timeline -->
                     <div class="about-timeline">
@@ -1749,7 +1777,7 @@
         </svg>
 
         <div class="partnership-content">
-            <h2 class="partnership-title">A Partnership For Business <span class="highlight-yellow">Triumphs</span></h2>
+            <h2 class="partnership-title">A Partnership For Business <span>Triumphs</span></h2>
             <p class="partnership-sub">Your Vision, Our Support</p>
         </div>
     </section>
@@ -1843,7 +1871,7 @@
         <div class="container">
             <div class="section-header reveal" style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
                 <span class="about-label" style="display: inline-block; margin-bottom: 6px;">Our Leadership</span>
-                <h2 class="about-heading" style="font-size: 36px; margin-bottom: 0;">The Minds Guiding RupeeVyze</h2>
+                <h2 class="about-heading" style="font-size: 36px; margin-bottom: 0;">The Minds Guiding <span>RupeeVyze</span></h2>
             </div>
             
             <div class="team-grid">
@@ -1914,7 +1942,7 @@
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="homepage.html" class="footer-link">Home</a>
                         <a href="aboutus.html" class="footer-link">About Us</a>
                         <a href="contactus.html" class="footer-link">Contact Us</a>
                     </div>

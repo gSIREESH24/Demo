@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | RupeeVyze - Get In Touch</title>
+    <title>Insurance Advisory Services | RupeeVyze - Wisdom In Every Rupee</title>
     
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Get in touch with RupeeVyze. Reach out to our financial advisory and wealth planning support team for smart, secure, and stress-free investment solutions.">
-    <meta name="keywords" content="Contact RupeeVyze, RupeeVyze support, RupeeVyze phone, RupeeVyze email, financial planning help">
+    <meta name="description" content="Comprehensive protection plans covering life, property, travel, and businesses. Get professional, unbiased insurance advisory to secure your financial future.">
+    <meta name="keywords" content="insurance, life insurance, health insurance, business insurance, risk protection, RupeeVyze">
     <meta name="author" content="RupeeVyze">
     
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -279,7 +279,7 @@
             border: 1px solid var(--glass-border);
             border-radius: var(--border-radius-md);
             padding: 12px;
-            width: 220px;
+            width: 230px;
             opacity: 0;
             visibility: hidden;
             transition: var(--transition-smooth);
@@ -392,7 +392,7 @@
             pointer-events: none;
         }
 
-        /* --- HERO BANNER (GLASS CARD DESIGN, CURVED AT THE ENDS) --- */
+        /* --- HERO BANNER (GLASS CARD DESIGN) --- */
         .hero-banner {
             padding: 150px 0 90px;
             position: relative;
@@ -499,7 +499,7 @@
             margin-bottom: 12px;
         }
 
-        .about-heading {
+        .section-heading {
             font-size: 48px; 
             font-weight: 800;
             color: var(--text-light-title);
@@ -508,15 +508,15 @@
             letter-spacing: -1px;
         }
 
-        .about-heading span {
+        .section-heading span {
             background: linear-gradient(135deg, var(--bg-tertiary), var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* --- CONTACT SECTION (LIGHT SHADY THEME) --- */
-        .contact-section {
+        /* --- INSURANCE MAIN SECTION (LIGHT SHADY THEME) --- */
+        .insurance-section {
             padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
             color: var(--text-light-body);
@@ -524,170 +524,318 @@
             z-index: 10;
         }
 
-        .contact-section .container {
-            max-width: 1500px;
-        }
-
-        .contact-grid {
+        .insurance-grid {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 50px;
-            align-items: flex-start;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .contact-info {
+        .insurance-text-content {
             display: flex;
             flex-direction: column;
         }
 
-        .contact-subtext {
-            font-size: 18px;
-            color: var(--text-light-body);
-            line-height: 1.75;
-            margin-bottom: 48px;
-            max-width: 700px;
-        }
-
-        .contact-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        /* --- PREMIUM CARD DESIGN WITH BLUE SHADING AT THE ENDS --- */
-        .contact-info-card {
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            border-radius: var(--border-radius-md);
-            padding: 24px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
-            transition: var(--transition-smooth);
-        }
-
-        .contact-info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-            border-color: rgba(15, 23, 42, 0.15);
-        }
-
-        .contact-card-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .insurance-subheading {
             font-size: 20px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(28, 50, 255, 0.2);
-            transition: var(--transition-smooth);
-        }
-
-        .contact-info-card:hover .contact-card-icon {
-            transform: scale(1.08);
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0d1eab 100%);
-            box-shadow: 0 6px 15px rgba(28, 50, 255, 0.35);
-        }
-
-        .contact-card-content {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .contact-card-label {
-            font-size: 13px;
-            color: var(--text-light-muted);
-            font-weight: 600;
-        }
-
-        .contact-card-value {
-            font-size: 15.5px;
-            font-weight: 800;
-            color: var(--text-light-title);
-            word-break: break-all;
-        }
-
-        /* --- CONTACT FORM --- */
-        .contact-form-card {
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            border-radius: var(--border-radius-lg);
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.03);
-            transition: var(--transition-smooth);
-        }
-
-        .contact-form-card:hover {
-            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
-            border-color: rgba(15, 23, 42, 0.15);
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 22px;
-        }
-
-        .form-group:last-of-type {
-            margin-bottom: 28px;
-        }
-
-        .form-label {
-            font-size: 14px;
             font-weight: 700;
             color: var(--text-light-title);
+            margin-bottom: 24px;
+            line-height: 1.3;
         }
 
-        .form-input {
-            width: 100%;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--border-radius-sm);
-            padding: 12px 16px;
-            font-family: var(--font-main);
-            font-size: 14.5px;
-            color: var(--text-light-title);
-            outline: none;
-            transition: var(--transition-fast);
+        .insurance-p {
+            font-size: 15.5px;
+            line-height: 1.75;
+            color: var(--text-light-body);
+            margin-bottom: 20px;
         }
 
-        .form-input:focus {
-            border-color: var(--accent-blue);
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(28, 50, 255, 0.08);
+        .insurance-p:last-of-type {
+            margin-bottom: 8px;
         }
 
-        textarea.form-input {
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
+        .start-btn {
+            align-self: flex-start;
             background: linear-gradient(135deg, var(--accent-blue) 0%, #0d1eab 100%);
             color: #ffffff;
             font-size: 15px;
             font-weight: 700;
-            padding: 13px 30px;
+            padding: 14px 36px;
             border-radius: 50px;
-            border: none;
-            cursor: pointer;
             box-shadow: 0 4px 15px rgba(28, 50, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: inline-block;
             transition: var(--transition-smooth);
+            margin-top: 24px;
             text-align: center;
         }
 
-        .submit-btn:hover {
+        .start-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(28, 50, 255, 0.45);
-            background: linear-gradient(135deg, #3b50ff 0%, var(--accent-blue) 100%);
+            box-shadow: 0 8px 25px rgba(28, 50, 255, 0.4);
+            background: linear-gradient(135deg, #384eff 0%, #1c32ff 100%);
+        }
+
+        /* Right Column: Image display styled beautifully */
+        .insurance-image-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            height: 400px;
+        }
+
+        .insurance-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .insurance-image-wrapper:hover .insurance-img {
+            transform: scale(1.03);
+        }
+
+        /* --- OFFERINGS SECTION (LIGHT PURE WHITE THEME) --- */
+        .offerings-section {
+            padding: 90px 0 110px;
+            background-color: var(--bg-pure-white);
+            position: relative;
+            z-index: 10;
+        }
+
+        .offerings-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .offerings-info-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: sticky;
+            top: 120px;
+        }
+
+        .offerings-highlight-card {
+            background: linear-gradient(135deg, rgba(0, 196, 151, 0.02) 0%, rgba(28, 50, 255, 0.03) 100%);
+            border-radius: var(--border-radius-md);
+            padding: 28px;
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+            border: 1px solid rgba(0, 196, 151, 0.1);
+            border-left: 5px solid var(--accent-green);
+            width: 100%;
+        }
+
+        .offerings-highlight-card .highlight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(0, 196, 151, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .offerings-highlight-card .highlight-text p {
+            color: var(--text-light-body);
+            font-size: 15.5px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .offering-rows-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .offering-row {
+            background: var(--bg-pure-white);
+            border: 1.5px solid rgba(15, 23, 42, 0.06);
+            border-radius: var(--border-radius-md);
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+        }
+
+        .offering-row:hover {
+            transform: translateX(10px);
+            border-color: rgba(0, 196, 151, 0.25);
+            box-shadow: 0 12px 30px rgba(0, 196, 151, 0.06);
+            background: linear-gradient(90deg, rgba(0, 196, 151, 0.01) 0%, rgba(28, 50, 255, 0.01) 100%);
+        }
+
+        .offering-row-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--accent-blue);
+            background: rgba(28, 50, 255, 0.06);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .offering-row:hover .offering-row-icon {
+            background: var(--accent-green);
+            color: var(--text-primary);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px var(--accent-green-glow);
+        }
+
+        .offering-row-content {
+            flex-grow: 1;
+        }
+
+        .offering-row-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-light-title);
+            margin-bottom: 6px;
+            transition: var(--transition-fast);
+        }
+
+        .offering-row:hover .offering-row-title {
+            color: var(--accent-green-dark);
+        }
+
+        .offering-row-desc {
+            font-size: 14.5px;
+            color: var(--text-light-body);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .offering-row-arrow {
+            font-size: 18px;
+            color: var(--text-light-muted);
+            transition: var(--transition-smooth);
+            opacity: 0.5;
+        }
+
+        .offering-row:hover .offering-row-arrow {
+            color: var(--accent-green);
+            transform: translateX(5px);
+            opacity: 1;
+        }
+
+        /* --- FAQ SECTION (LIGHT SHADY THEME) --- */
+        .faq-section {
+            padding: 80px 0 100px;
+            background-color: var(--bg-light-shady);
+            position: relative;
+            z-index: 10;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-pure-white);
+            border: 1.5px solid rgba(15, 23, 42, 0.08);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(28, 50, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.02);
+        }
+
+        .faq-item.active {
+            border-color: var(--accent-green);
+            box-shadow: 0 8px 25px rgba(5, 10, 30, 0.04);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 24px;
+            background: var(--bg-pure-white);
+            transition: var(--transition-fast);
+            user-select: none;
+        }
+
+        .faq-item.active .faq-question {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+        }
+
+        .faq-q-text {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-light-title);
+            line-height: 1.4;
+            transition: var(--transition-fast);
+        }
+
+        .faq-item.active .faq-q-text {
+            color: #ffffff;
+        }
+
+        .faq-icon {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.05);
+            color: var(--text-light-title);
+            transition: var(--transition-smooth);
+            font-size: 11px;
+        }
+
+        .faq-item.active .faq-icon {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            transform: rotate(180deg);
+        }
+
+        .faq-answer-wrap {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-answer {
+            font-size: 14.5px;
+            color: var(--text-light-body);
+            line-height: 1.65;
+            padding: 16px 24px 20px;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
         }
 
         /* --- FOOTER SECTION (STAYS PREMIUM DARK THEME) --- */
@@ -918,9 +1066,21 @@
         }
 
         /* --- RESPONSIVE MEDIA QUERIES --- */
-        @media (max-width: 1024px) {
-            .contact-grid {
+        @media (max-width: 992px) {
+            .insurance-grid {
+                grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            .insurance-image-wrapper {
+                height: 350px;
+                order: -1; /* Image first on mobile/tablet */
+            }
+            .offerings-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .offerings-info-box {
+                position: static;
             }
         }
 
@@ -993,23 +1153,9 @@
                 font-size: 38px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .about-heading {
+            .section-heading {
                 font-size: 36px;
                 margin-bottom: 20px;
-            }
-
-            .contact-subtext {
-                font-size: 16px;
-                margin-bottom: 36px;
-            }
-
-            .contact-form-card {
-                padding: 30px 24px;
             }
 
             .footer-grid {
@@ -1037,13 +1183,12 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
+            .insurance-image-wrapper {
+                height: 250px;
+            }
             .hero-title {
                 font-size: 32px;
-            }
-
-            .contact-cards-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1095,7 +1240,7 @@
                     <a href="aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="#" class="nav-link" id="servicesTrigger">
+                    <a href="#" class="nav-link active" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -1104,7 +1249,7 @@
                         <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
                         <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
                         <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
-                        <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
+                        <a href="insurance.html" class="dropdown-link active"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
                 <div class="nav-item">
@@ -1114,7 +1259,7 @@
                     <a href="blogs.html" class="nav-link">Blogs</a>
                 </div>
                 <div class="nav-item">
-                    <a href="contactus.html" class="nav-link active">Contact Us</a>
+                    <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
                 <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
@@ -1134,93 +1279,206 @@
         
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">Contact <span>Us</span></h1>
+                <h1 class="hero-title">Insurance Advisory <span>Services</span></h1>
                 <div class="breadcrumbs">
                     <a href="homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="breadcrumb-current">Contact Us</span>
+                    <span class="breadcrumb-current">Insurance Solutions</span>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- --- CONTACT MAIN SECTION (LIGHT SHADY THEME) --- -->
-    <section class="contact-section">
+    <!-- --- INSURANCE SERVICES MAIN SECTION --- -->
+    <section class="insurance-section">
         <div class="container">
-            <div class="contact-grid">
+            <div class="insurance-grid">
                 
-                <!-- Left Side: Contact Information & Cards -->
-                <div class="contact-info reveal">
-                    <span class="about-label">Have Any Question ?</span>
-                    <h2 class="about-heading">Get In <span>Touch</span></h2>
-                    <p class="contact-subtext">
-                        Get in Touch with RupeeVyze &mdash; Your Trusted Partner for Smart, Secure, and Stress-Free Financial Planning and Wealth Growth
+                <!-- Left Side: Text Information -->
+                <div class="insurance-text-content reveal">
+                    <span class="about-label">Overview</span>
+                    <h2 class="section-heading" style="text-align: left; margin-bottom: 20px;">Know More About <span>Insurance</span></h2>
+                    
+                    <h3 class="insurance-subheading">Comprehensive Risk Protection For You And Your Assets</h3>
+                    
+                    <p class="insurance-p">
+                        Insurance is the foundation of every financial plan. RupeeVyze provides unbiased insurance advisory to ensure you are adequately protected without overspending.
+                    </p>
+                    <p class="insurance-p">
+                        We focus on <strong>need-based coverage and long-term protection</strong>, not product pushing.
                     </p>
                     
-                    <div class="contact-cards-grid">
-                        <!-- Card 1: Phone -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Our Number</span>
-                                <span class="contact-card-value">+91 9686899698</span>
-                            </div>
-                        </div>
+                    <a href="contactus.html" class="start-btn">Start Now</a>
+                </div>
 
-                        <!-- Card 2: Email -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Our Email</span>
-                                <span class="contact-card-value">Support@Rupeevyze.Com</span>
-                            </div>
-                        </div>
+                <!-- Right Side: Service Representative Image -->
+                <div class="insurance-image-wrapper reveal" style="transition-delay: 0.2s;">
+                    <img src="insurance_advisory.png" class="insurance-img" alt="Insurance Advisory Services">
+                </div>
 
-                        <!-- Card 3: Location -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Location</span>
-                                <span class="contact-card-value">Karnataka – 560068</span>
-                            </div>
-                        </div>
+            </div>
+        </div>
+    </section>
 
-                        <!-- Card 4: Whatsapp -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Whatsapp Us</span>
-                                <span class="contact-card-value">+91 9686899698</span>
-                            </div>
+    <!-- --- OUR OFFERINGS SECTION --- -->
+    <section class="offerings-section">
+        <div class="container">
+            <div class="offerings-container">
+                <!-- Left Side: Content & Footer Highlight -->
+                <div class="offerings-info-box reveal">
+                    <span class="about-label">What We Offer :</span>
+                    <h2 class="section-heading" style="text-align: left; margin-bottom: 24px;">Insurance Solutions <span>Offered</span></h2>
+                    
+                    <div class="offerings-highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <p>We assist with policy selection, renewal guidance, and claim support.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Side: Contact Query Form -->
-                <div class="contact-form reveal" style="transition-delay: 0.1s;">
-                    <div class="contact-form-card">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="formName" class="form-label">Name</label>
-                                <input type="text" id="formName" class="form-input" placeholder="Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formPhone" class="form-label">Phone no</label>
-                                <input type="tel" id="formPhone" class="form-input" placeholder="Phone no" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formEmail" class="form-label">Email</label>
-                                <input type="email" id="formEmail" class="form-input" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formMessage" class="form-label">Message</label>
-                                <textarea id="formMessage" class="form-input" placeholder="Message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send</button>
-                        </form>
+                <!-- Right Side: 5 Big Stacked Rows -->
+                <div class="offering-rows-list reveal" style="transition-delay: 0.1s;">
+                    <!-- Row 1: Life Insurance -->
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Life Insurance</h3>
+                            <p class="offering-row-desc">Secure your family's financial future with term plans, endowment policies, and wealth-building solutions.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    <!-- Row 2: General Insurance -->
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">General Insurance</h3>
+                            <p class="offering-row-desc">All-inclusive health plans, critical illness cover, and standard protection packages tailored for you.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    <!-- Row 3: Property Insurance -->
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Property Insurance</h3>
+                            <p class="offering-row-desc">Guard your home, physical assets, and properties against environmental damages or structural issues.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    <!-- Row 4: Travel Insurance -->
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Travel Insurance</h3>
+                            <p class="offering-row-desc">Global and domestic travel insurance plans covering medical emergencies, trip cancellations, and baggage losses.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    <!-- Row 5: Vehicle & Commercial Insurance -->
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Vehicle & Commercial Insurance</h3>
+                            <p class="offering-row-desc">End-to-end motor policies for personal cars/bikes and liability solutions to protect commercial operations.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FAQ SECTION --- -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;" class="reveal">
+                <span class="about-label">General Questions</span>
+                <h2 class="section-heading">Frequently Asked <span>Questions</span></h2>
+            </div>
+
+            <div class="faq-list reveal" style="transition-delay: 0.1s;">
+                <!-- Item 1 -->
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span class="faq-q-text">What Services Does RupeeVyze Offer?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap" style="max-height: 200px;">
+                        <p class="faq-answer">RupeeVyze provides a complete financial ecosystem including mutual funds, equity and commodity broking, PMS, AIFs, bonds, fixed deposits, insurance, loans, and real estate solutions — all under one roof.</p>
                     </div>
                 </div>
 
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Who Can Invest Or Use RupeeVyze Services?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Any Indian resident aged 18 and above can invest through RupeeVyze. We serve salaried professionals, self-employed individuals, NRIs, and corporates looking to grow and manage their wealth smartly.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Is There A Minimum Investment Amount?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">You can start your investment journey with as little as ₹500 per month through our SIP plans. There is no upper limit, and our advisors will help you build a portfolio that fits your goals.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">How Does RupeeVyze Recommend Financial Products?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">We use a data-driven approach combined with a deep profiling of your financial goals, risk appetite, and investment horizon. Our SEBI-registered advisors then craft a personalized strategy tailored just for you.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Is My Money And Data Safe With RupeeVyze?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Absolutely. RupeeVyze is SEBI-registered and follows the highest compliance standards. Your investments are held with SEBI-regulated custodians and your personal data is encrypted end-to-end.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Can I Withdraw My Investments Anytime?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Yes. Most mutual fund investments can be redeemed within 1–3 business days. Fixed deposits and lock-in products have specific tenure terms, which are clearly communicated before investing.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1363,6 +1621,37 @@
             revealObserver.observe(element);
         });
 
+        /* --- FAQ ACCORDION LOGIC --- */
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionRow = item.querySelector('.faq-question');
+            const answerWrap = item.querySelector('.faq-answer-wrap');
+            const icon = item.querySelector('.faq-icon i');
+
+            questionRow.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other FAQs
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer-wrap').style.maxHeight = '0';
+                    otherItem.querySelector('.faq-icon i').className = 'fa-solid fa-plus';
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    // Dynamically set max-height to let CSS transition run smoothly
+                    answerWrap.style.maxHeight = answerWrap.scrollHeight + 'px';
+                    icon.className = 'fa-solid fa-minus';
+                } else {
+                    item.classList.remove('active');
+                    answerWrap.style.maxHeight = '0';
+                    icon.className = 'fa-solid fa-plus';
+                }
+            });
+        });
+
         // Page load initial animations
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
@@ -1372,23 +1661,6 @@
                     el.style.opacity = '1';
                 });
             }, 100);
-        });
-
-        // Form Submission Simulation
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('formName').value.trim();
-            const phone = document.getElementById('formPhone').value.trim();
-            const email = document.getElementById('formEmail').value.trim();
-            const message = document.getElementById('formMessage').value.trim();
-            
-            if (name && phone && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent successfully. We will get in touch with you shortly.`);
-                contactForm.reset();
-            } else {
-                alert('Please fill out all fields before submitting.');
-            }
         });
     </script>
 </body>
