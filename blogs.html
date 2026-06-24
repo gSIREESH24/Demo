@@ -955,6 +955,61 @@
                 font-size: 32px;
             }
         }
+
+        /* --- CURSOR-TRACKING GLOW BORDER --- */
+        .glow-border {
+            position: absolute;
+            top: -1.5px;
+            left: -1.5px;
+            right: -1.5px;
+            bottom: -1.5px;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: radial-gradient(
+                circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+                rgba(0, 196, 151, 0.8) 0%,   /* Accent Green */
+                rgba(28, 50, 255, 0.8) 50%,   /* Accent Blue */
+                transparent 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 5;
+        }
+
+        /* Activate glow on hover */
+        .service-card:hover .glow-border,
+        .about-value-card:hover .glow-border,
+        .review-card:hover .glow-border,
+        .calculator-card:hover .glow-border,
+        .leader-card:hover .glow-border,
+        .timeline-card:hover .glow-border,
+        .contact-info-card:hover .glow-border,
+        .contact-form-card:hover .glow-border,
+        .offerings-highlight-card:hover .glow-border,
+        .offering-card:hover .glow-border,
+        .blog-card:hover .glow-border {
+            opacity: 1;
+        }
+
+        /* Override hover border-colors to let the glow border shine */
+        .about-value-card:hover,
+        .review-card:hover,
+        .service-card:hover,
+        .calculator-card:hover,
+        .leader-card:hover,
+        .timeline-card:hover,
+        .contact-info-card:hover,
+        .contact-form-card:hover,
+        .offerings-highlight-card:hover,
+        .offering-card:hover,
+        .blog-card:hover {
+            border-color: transparent !important;
+        }
     </style>
 </head>
 <body>
@@ -1230,6 +1285,47 @@
                     el.style.opacity = '1';
                 });
             }, 100);
+        });
+
+        // Dynamic cursor-tracking glow border initializer
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardSelectors = [
+                '.service-card',
+                '.about-value-card',
+                '.review-card',
+                '.calculator-card',
+                '.leader-card',
+                '.timeline-card',
+                '.contact-info-card',
+                '.contact-form-card',
+                '.offerings-highlight-card',
+                '.offering-card',
+                '.blog-card'
+            ].join(', ');
+
+            const cards = document.querySelectorAll(cardSelectors);
+            
+            cards.forEach(card => {
+                const style = window.getComputedStyle(card);
+                if (style.position === 'static') {
+                    card.style.position = 'relative';
+                }
+                
+                if (!card.querySelector('.glow-border')) {
+                    const glowBorder = document.createElement('div');
+                    glowBorder.className = 'glow-border';
+                    card.appendChild(glowBorder);
+                }
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
         });
     </script>
 </body>
