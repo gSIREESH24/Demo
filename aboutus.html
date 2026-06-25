@@ -5,45 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | RupeeVyze - Wisdom In Every Rupee</title>
     
-    <!-- Meta tags for SEO -->
+    
     <meta name="description" content="Learn about RupeeVyze, our mission, vision, and core values. Discover how we bring wisdom to every rupee with our tailored wealth management and financial advisory solutions.">
     <meta name="keywords" content="RupeeVyze, About RupeeVyze, Financial Planning, Wealth Advisory, Invest wisely, Mutual Funds, Calculators">
     <meta name="author" content="RupeeVyze">
     
-    <!-- Google Fonts: Plus Jakarta Sans for a clean, modern geometric feel -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for high-quality icons -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        
         :root {
-            --bg-primary: #050a1e;       /* Deep space dark blue background for header and footer */
-            --bg-secondary: #0b1131;     /* Slightly lighter dark blue for cards and elements */
-            --bg-tertiary: #111a47;      /* Distinct deep blue for highlights */
+            --bg-primary: #050a1e;       
+            --bg-secondary: #0b1131;     
+            --bg-tertiary: #111a47;      
             
-            /* Shady White background for the About section */
-            --bg-light-shady: #f8fafc;   /* Slate 50 - clean, professional off-white */
-            --bg-pure-white: #ffffff;    /* Pure White for the second content section */
             
-            --accent-green: #00c497;     /* Vibrant teal-green from the logo */
+            --bg-light-shady: #f8fafc;   
+            --bg-pure-white: #ffffff;    
+            
+            --accent-green: #00c497;     
             --accent-green-dark: #009975;
             --accent-green-glow: rgba(0, 196, 151, 0.3);
             
-            --accent-blue: #1c32ff;      /* Vibrant blue from logo background / button */
+            --accent-blue: #1c32ff;      
             --accent-blue-glow: rgba(28, 50, 255, 0.4);
             
-            --text-primary: #ffffff;     /* Pure white for dark sections */
-            --text-secondary: #94a3b8;   /* Cool slate grey for dark body copy */
-            --text-muted: #64748b;       /* Darker slate grey for subtexts */
+            --text-primary: #ffffff;     
+            --text-secondary: #94a3b8;   
+            --text-muted: #64748b;       
             
-            /* High-contrast text colors for the light About Us section */
-            --text-light-title: #0f172a; /* Slate 900 - rich charcoal/black */
-            --text-light-body: #334155;  /* Slate 700 - readable dark slate */
-            --text-light-muted: #64748b; /* Slate 500 */
+            
+            --text-light-title: #0f172a; 
+            --text-light-body: #334155;  
+            --text-light-muted: #64748b; 
             
             --glass-bg: rgba(11, 17, 49, 0.65);
             --glass-border: rgba(255, 255, 255, 0.07);
@@ -65,7 +65,7 @@
             --tracking-heading: -0.025em;
         }
 
-        /* --- GLOBAL RESETS & STYLES --- */
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -98,7 +98,7 @@
             position: relative;
         }
 
-        /* Ambient Background Glows */
+        
         .ambient-glow-1 {
             position: absolute;
             top: -100px;
@@ -117,7 +117,7 @@
             transition: var(--transition-fast);
         }
 
-        /* --- SCROLLBAR --- */
+        
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -133,7 +133,7 @@
             background: var(--accent-green);
         }
 
-        /* --- CONTAINER --- */
+        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -143,7 +143,7 @@
             z-index: 10;
         }
 
-        /* --- STICKY GLASS NAVIGATION --- */
+        
         .header {
             position: fixed;
             top: 0;
@@ -171,7 +171,7 @@
             justify-content: space-between;
         }
 
-        /* Brand / Logo Styling */
+        
         .logo-link {
             display: flex;
             align-items: center;
@@ -219,7 +219,7 @@
             margin-top: 1px;
         }
 
-        /* Desktop Navigation Menu */
+        
         .nav-menu {
             display: flex;
             align-items: center;
@@ -245,7 +245,7 @@
             color: var(--text-primary);
         }
 
-        /* Active Navigation Link */
+        
         .nav-link.active {
             color: var(--text-primary);
             font-weight: 600;
@@ -263,7 +263,7 @@
             box-shadow: 0 0 8px var(--accent-green);
         }
 
-        /* Hover indicator for non-active links */
+        
         .nav-link:not(.active)::after {
             content: '';
             position: absolute;
@@ -280,7 +280,7 @@
             width: 100%;
         }
 
-        /* Dropdown Services Menu */
+        
         .dropdown {
             position: relative;
         }
@@ -334,7 +334,7 @@
             color: var(--accent-green);
         }
 
-        /* Navigation Button */
+        
         .nav-cta-btn {
             background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%);
             color: var(--bg-primary);
@@ -355,7 +355,7 @@
             background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
         }
 
-        /* Mobile Hamburger Toggle */
+        
         .mobile-toggle {
             display: none;
             background: none;
@@ -387,7 +387,7 @@
             transform: rotate(-45deg) translate(5px, -7px);
         }
 
-        /* --- HERO WRAPPER (Solid complete deep blue background) --- */
+        
         .hero-wrapper {
             position: relative;
             background-color: var(--bg-primary);
@@ -395,7 +395,7 @@
             z-index: 1;
         }
 
-        /* Ambient glow spots strictly behind the glass card for a super cool effect */
+        
         .hero-banner-glow {
             position: absolute;
             top: 50%;
@@ -409,30 +409,30 @@
             pointer-events: none;
         }
 
-        /* --- HERO BANNER (SUPER COOL GLASS CARD DESIGN, CURVED AT THE ENDS) --- */
+        
         .hero-banner {
             padding: 150px 0 90px;
             position: relative;
             z-index: 2;
             
-            /* Glassmorphism styling */
+            
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: none; /* Merges seamlessly with the transparent navbar area */
+            border-top: none; 
             
-            /* Curved bottom ends to pay homage to the curved original mockup, but styled in glass */
+            
             border-bottom-left-radius: 60px;
             border-bottom-right-radius: 60px;
             
-            /* Inset margin to create a distinct floating glass panel card */
+            
             margin: 0 32px;
             box-shadow: 0 30px 60px -15px rgba(5, 10, 30, 0.35);
             overflow: hidden;
         }
 
-        /* Subtle dots grid on the glass panel */
+        
         .hero-banner::before {
             content: '';
             position: absolute;
@@ -470,7 +470,7 @@
             background-clip: text;
         }
 
-        /* Custom Breadcrumbs styled modernly */
+        
         .breadcrumbs {
             display: flex;
             align-items: center;
@@ -509,7 +509,7 @@
             text-shadow: 0 0 10px rgba(0, 196, 151, 0.3);
         }
 
-        /* --- MEET RUPEEVYZE CONTENT SECTION (SHADY WHITE THEME - COMPACT SPACING) --- */
+        
         .about-section {
             padding: 60px 0 80px; 
             position: relative;
@@ -525,7 +525,7 @@
             align-items: center;
         }
 
-        /* Left Column: Overlapping Images Layout (Centered vertically relative to the timeline) */
+        
         .about-image-group {
             position: relative;
             width: 100%;
@@ -534,7 +534,7 @@
             align-items: center;
         }
 
-        /* Background grid box (Dark slate lines on light bg) */
+        
         .image-grid-bg {
             position: absolute;
             top: 20px;
@@ -549,7 +549,7 @@
             pointer-events: none;
         }
 
-        /* Wavy blue decorator path */
+        
         .wavy-shape {
             position: absolute;
             bottom: 40px;
@@ -560,7 +560,7 @@
             opacity: 0.95;
         }
 
-        /* Main Image (smiling couple) with box shadow */
+        
         .about-img-main {
             width: 78%;
             height: 380px; 
@@ -573,7 +573,7 @@
             border: 1px solid rgba(15, 23, 42, 0.05);
         }
 
-        /* Overlapping Circle Image (handshake) - Border matches shady white background */
+        
         .about-img-circle {
             position: absolute;
             top: 0px; 
@@ -587,7 +587,7 @@
             z-index: 4;
         }
 
-        /* Experience Blue Badge overlap */
+        
         .about-experience-badge {
             position: absolute;
             bottom: 20px; 
@@ -626,13 +626,13 @@
             line-height: 1.3;
         }
 
-        /* Right Column: Text Content and Timeline Wrapper */
+        
         .about-text-content {
             display: flex;
             flex-direction: column;
         }
 
-        /* Corrected label "About Us" styled in bright premium brand blue */
+        
         .about-label {
             display: inline-block;
             align-self: flex-start;
@@ -648,7 +648,7 @@
             margin-bottom: 12px;
         }
 
-        /* Heading styled in slate-900 (dark charcoal) */
+        
         .about-heading {
             font-size: var(--heading-section);
             font-weight: 700;
@@ -665,7 +665,7 @@
             background-clip: text;
         }
 
-        /* --- INTERACTIVE STORY TIMELINE --- */
+        
         .about-timeline {
             position: relative;
             padding-left: 8px;
@@ -690,7 +690,7 @@
             position: relative;
         }
 
-        /* Glowing circle icon in the track */
+        
         .marker-icon {
             width: 42px; 
             height: 42px; 
@@ -706,7 +706,7 @@
             transition: var(--transition-smooth);
         }
 
-        /* Connecting vertical line */
+        
         .marker-line {
             width: 3px;
             background: #e2e8f0;
@@ -717,7 +717,7 @@
             transition: var(--transition-smooth);
         }
 
-        /* Hover active state for the timeline steps */
+        
         .timeline-step:hover .marker-icon {
             border-color: #1c32ff;
             background: #1c32ff;
@@ -730,7 +730,7 @@
             background: #1c32ff;
         }
 
-        /* Step Card layouts containing the text copy */
+        
         .timeline-card {
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.05);
@@ -753,7 +753,7 @@
             box-shadow: 0 -12px 24px -8px rgba(28, 50, 255, 0.2), 0 12px 24px -8px rgba(28, 50, 255, 0.2), 0 20px 40px rgba(15, 23, 42, 0.08);
         }
 
-        /* Step badge category indicators */
+        
         .step-badge {
             display: inline-block;
             font-size: 10.5px; 
@@ -767,7 +767,7 @@
             margin-bottom: 10px; 
         }
 
-        /* Inner Text typography settings inside timeline cards */
+        
         .about-tagline {
             font-size: 15px; 
             color: var(--text-light-muted);
@@ -810,7 +810,7 @@
             line-height: 1.7;
         }
 
-        /* --- PARTNERSHIP BANNER SECTION --- */
+        
         .partnership-banner {
             position: relative;
             padding: 100px 0;
@@ -937,7 +937,7 @@
             transform: rotate(-10deg); 
         }
 
-        /* --- ECOSYSTEM SECTION (PURE WHITE THEME - SWAPPED GRID) --- */
+        
         .ecosystem-section {
             padding: 70px 0 90px;
             background-color: var(--bg-pure-white);
@@ -949,7 +949,7 @@
 
         .ecosystem-grid {
             display: grid;
-            grid-template-columns: 0.95fr 1.05fr; /* Swapped: Left timeline, Right Image */
+            grid-template-columns: 0.95fr 1.05fr; 
             gap: 60px;
             align-items: center; 
         }
@@ -968,7 +968,7 @@
             border: 1px solid rgba(15, 23, 42, 0.04);
         }
 
-        /* Custom Bullet List for Philosophy Creed */
+        
         .philosophy-bullets {
             margin-top: 12px;
             display: flex;
@@ -992,7 +992,7 @@
             font-size: 16px;
         }
 
-        /* --- LEADERSHIP TEAM SECTION (SHADY WHITE THEME) --- */
+        
         .team-section {
             padding: 90px 0;
             background-color: var(--bg-light-shady);
@@ -1004,12 +1004,12 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns for 2 leader containers side-by-side */
+            grid-template-columns: 1fr 1fr; 
             gap: 40px;
             margin-top: 50px;
         }
 
-        /* Sleek card design for team container */
+        
         .leader-card {
             background: linear-gradient(to bottom, rgba(28, 50, 255, 0.03) 0%, var(--bg-pure-white) 10%, var(--bg-pure-white) 90%, rgba(28, 50, 255, 0.03) 100%);
             border: 1px solid rgba(15, 23, 42, 0.05);
@@ -1034,7 +1034,7 @@
 
 
 
-        /* Rounded photo slot */
+        
         .leader-photo-wrapper {
             width: 140px;
             height: 140px;
@@ -1064,7 +1064,7 @@
             margin-bottom: 6px;
         }
 
-        /* Role badge container */
+        
         .leader-role {
             font-size: 11.5px;
             font-weight: 700;
@@ -1078,7 +1078,7 @@
             display: inline-block;
         }
 
-        /* Quote / Sentence slot with stylized quotation overlays */
+        
         .leader-quote {
             font-size: 15px;
             font-style: italic;
@@ -1111,7 +1111,7 @@
 
 
 
-        /* --- FOOTER SECTION (STAYS PREMIUM DARK THEME) --- */
+        
         .footer {
             background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
             border-top: 1px solid var(--glass-border);
@@ -1138,11 +1138,32 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr;
+            gap: 40px;
             margin-bottom: 50px;
             position: relative;
             z-index: 2;
+        }
+
+        .footer-map-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            height: 180px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .footer-map-container {
+                margin: 0 auto;
+            }
         }
 
         .footer-brand {
@@ -1250,7 +1271,7 @@
             transform: translateX(4px);
         }
 
-        /* Contact Info Column styles */
+        
         .contact-info-block {
             display: flex;
             flex-direction: column;
@@ -1290,7 +1311,7 @@
             z-index: 2;
         }
 
-        /* --- WHATSAPP FLOATING BUTTON --- */
+        
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -1315,7 +1336,7 @@
             color: #ffffff;
         }
 
-        /* --- ANIMATIONS --- */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1339,7 +1360,7 @@
             }
         }
 
-        /* Scroll Reveal Utility Classes */
+        
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -1351,7 +1372,7 @@
             transform: translateY(0);
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
+        
         @media (max-width: 1024px) {
 
             
@@ -1493,7 +1514,7 @@
                 font-size: 11.5px;
             }
 
-            /* Partnership Banner mobile layout tweaks */
+            
             .partnership-title {
                 font-size: 28px;
             }
@@ -1571,7 +1592,7 @@
             }
         }
 
-        /* --- CURSOR-TRACKING GLOW BORDER --- */
+        
         .glow-border {
             position: absolute;
             top: -1.5px;
@@ -1582,8 +1603,8 @@
             padding: 1.5px;
             background: radial-gradient(
                 circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
-                rgba(0, 196, 151, 0.8) 0%,   /* Accent Green */
-                rgba(28, 50, 255, 0.8) 50%,   /* Accent Blue */
+                rgba(0, 196, 151, 0.8) 0%,   
+                rgba(28, 50, 255, 0.8) 50%,   
                 transparent 100%
             );
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -1596,7 +1617,7 @@
             z-index: 5;
         }
 
-        /* Activate glow on hover */
+        
         .service-card:hover .glow-border,
         .about-value-card:hover .glow-border,
         .review-card:hover .glow-border,
@@ -1610,7 +1631,7 @@
             opacity: 1;
         }
 
-        /* Override hover border-colors to let the glow border shine */
+        
         .about-value-card:hover,
         .review-card:hover,
         .service-card:hover,
@@ -1627,19 +1648,19 @@
 </head>
 <body>
 
-    <!-- Ambient Glowing Shapes in Background -->
+    
     <div class="ambient-glow-1"></div>
 
-    <!-- --- HEADER / NAVIGATION BAR --- -->
+    
     <header class="header" id="mainHeader">
         <div class="container nav-container">
-            <!-- Brand Logo -->
+            
             <a href="homepage.html" class="logo-link">
                 <div class="logo-wrapper">
-                    <!-- High-quality Custom SVG logo matching the brand -->
+                    
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <!-- Gradients for Arrow swoosh -->
+                            
                             <linearGradient id="arrow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
                                 <stop offset="0%" stop-color="#05a885" />
                                 <stop offset="100%" stop-color="#00c497" />
@@ -1649,7 +1670,7 @@
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
-                        <!-- Geometric White Rupee Symbol (Behind Swoosh) -->
+                        
                         <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                             <path d="M 44 32 H 76" />
                             <path d="M 44 45 H 68" />
@@ -1657,7 +1678,7 @@
                             <path d="M 54 32 V 58" />
                             <path d="M 52 58 L 74 88" />
                         </g>
-                        <!-- Green/Teal Swooshing Arrow (Spanning around the Rupee) -->
+                        
                         <path d="M 26 72 C 24 90, 46 106, 74 96 C 90 90, 100 74, 104 53 L 112 58 L 108 28 L 80 38 L 87 44 C 83 60, 75 72, 63 76 C 45 83, 32 74, 28 60 Z" fill="url(#arrow-grad)" filter="url(#arrow-glow)"/>
                     </svg>
                 </div>
@@ -1667,7 +1688,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
+            
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
                     <a href="homepage.html" class="nav-link">Home</a>
@@ -1675,7 +1696,7 @@
                 <div class="nav-item">
                     <a href="aboutus.html" class="nav-link active">About Us</a>
                 </div>
-                <!-- Dropdown Trigger -->
+                
                 <div class="nav-item dropdown" id="servicesDropdown">
                     <a href="#" class="nav-link" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
@@ -1701,7 +1722,7 @@
                 <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
-            <!-- Mobile Hamburger Toggle -->
+            
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -1710,11 +1731,11 @@
         </div>
     </header>
 
-    <!-- --- HERO WRAPPER (Solid complete deep blue background) --- -->
+    
     <div class="hero-wrapper">
         <div class="hero-banner-glow"></div>
         
-        <!-- --- HERO BANNER (SUPER COOL GLASS CARD DESIGN, CURVED AT THE ENDS) --- -->
+        
         <section class="hero-banner">
             <div class="container hero-content">
                 <h1 class="hero-title">About <span>Us</span></h1>
@@ -1727,28 +1748,28 @@
         </section>
     </div>
 
-    <!-- --- MAIN CONTENT SECTION: MEET RUPEEVYZE (LIGHT SHADY THEME) --- -->
+    
     <section class="about-section">
         <div class="container">
             <div class="about-grid">
                 
-                <!-- Left Column: Overlapping Images and Badge Layout (Aligned vertically to the middle) -->
+                
                 <div class="about-image-group reveal">
-                    <!-- Background Grid Dots -->
+                    
                     <div class="image-grid-bg"></div>
                     
-                    <!-- Blue Wavy Element -->
+                    
                     <svg class="wavy-shape" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10,75 Q30,25 55,65 T100,20" stroke="#1c32ff" stroke-width="12" stroke-linecap="round" fill="none"/>
                     </svg>
                     
-                    <!-- Circular Overlap Image (Handshake) -->
+                    
                     <div class="about-img-circle"></div>
                     
-                    <!-- Main Background Image (Couple smiling) -->
+                    
                     <div class="about-img-main"></div>
                     
-                    <!-- Experience Blue Badge -->
+                    
                     <div class="about-experience-badge">
                         <div class="badge-thumb-icon">
                             <i class="fa-solid fa-thumbs-up"></i>
@@ -1757,17 +1778,17 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Interactive Story Timeline Layout -->
+                
                 <div class="about-text-content reveal" style="transition-delay: 0.2s;">
-                    <!-- Section Identifier -->
+                    
                     <span class="about-label">About Us</span>
                     
                     <h2 class="about-heading">Meet RupeeVyze – <span>Wisdom In Every Rupee™</span></h2>
                     
-                    <!-- Vertical Interactive Timeline -->
+                    
                     <div class="about-timeline">
                         
-                        <!-- Step 1: The Origin -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-lightbulb"></i></div>
@@ -1789,7 +1810,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 2: Our Mission -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-bullseye"></i></div>
@@ -1803,7 +1824,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 3: Our Philosophy -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-shield-halved"></i></div>
@@ -1816,16 +1837,16 @@
                             </div>
                         </div>
 
-                    </div> <!-- End of Timeline -->
+                    </div> 
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- --- PARTNERSHIP BANNER SECTION --- -->
+    
     <section class="partnership-banner reveal">
-        <!-- Overlay decorations matching the layout -->
+        
         <div class="banner-dot-grid"></div>
         <div class="banner-chevrons">
             <i class="fa-solid fa-chevron-up"></i>
@@ -1844,16 +1865,16 @@
         </div>
     </section>
 
-    <!-- --- ECOSYSTEM SECTION: MEET RUPEEVYZE 2 (SWAPPED GRID, LIGHT PURE WHITE THEME) --- -->
+    
     <section class="ecosystem-section">
         <div class="container">
             <div class="ecosystem-grid">
                 
-                <!-- Left Column: Interactive Story Timeline Layout -->
+                
                 <div class="about-text-content reveal">
                     <div class="about-timeline">
                         
-                        <!-- Step 1: Ecosystem -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -1870,7 +1891,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 2: Our Offerings -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-chart-pie"></i></div>
@@ -1884,7 +1905,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 3: Our Creed -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-quote-left"></i></div>
@@ -1903,7 +1924,7 @@
                             </div>
                         </div>
 
-                        <!-- Step 4: The Horizon -->
+                        
                         <div class="timeline-step">
                             <div class="timeline-marker">
                                 <div class="marker-icon"><i class="fa-solid fa-compass"></i></div>
@@ -1919,7 +1940,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Single Photo Layout -->
+                
                 <div class="ecosystem-img-wrapper reveal" style="transition-delay: 0.2s;">
                     <div class="ecosystem-img"></div>
                 </div>
@@ -1928,7 +1949,7 @@
         </div>
     </section>
 
-    <!-- --- LEADERSHIP TEAM SECTION (LIGHT SHADY BACKGROUND) --- -->
+    
     <section class="team-section">
         <div class="container">
             <div class="section-header reveal" style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
@@ -1937,7 +1958,7 @@
             </div>
             
             <div class="team-grid">
-                <!-- Leader Card 1: Sandeep Vyas -->
+                
                 <div class="leader-card reveal">
                     <div class="leader-photo-wrapper">
                         <img src="founder_male.png" class="leader-photo" alt="Sandeep Vyas">
@@ -1949,7 +1970,7 @@
                     </p>
                 </div>
                 
-                <!-- Leader Card 2: Riya Sharma -->
+                
                 <div class="leader-card reveal" style="transition-delay: 0.2s;">
                     <div class="leader-photo-wrapper">
                         <img src="founder_female.png" class="leader-photo" alt="Riya Sharma">
@@ -1963,11 +1984,11 @@
             </div>
         </div>
     </section>
-    <!-- --- FOOTER --- -->
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: Brand Info -->
+                
                 <div class="footer-brand">
                     <div class="footer-logo-stacked">
                         <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width: 65px; height: 65px; margin-bottom: 12px; display: block;">
@@ -2000,7 +2021,7 @@
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
+                
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
@@ -2010,7 +2031,7 @@
                     </div>
                 </div>
 
-                <!-- Column 3: Contact Info -->
+                
                 <div>
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info-block">
@@ -2024,23 +2045,39 @@
                         </div>
                     </div>
                 </div>
+            
+                
+                <div>
+                    <h4 class="footer-title">Our Location</h4>
+                    <div class="footer-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.155823869274!2d77.6253465750734!3d12.897455887413695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148d5300f80b%3A0x80858e745672c72b!2sAKR%20Tech%20Park!5e0!3m2!1sen!2sin!4v1719289800000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
 
-            <!-- Bottom footer bar -->
+            
             <div class="footer-bottom">
                 <p>Copyright &copy; 2025 RupeeVyze . All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- --- WHATSAPP FLOATING BUTTON --- -->
+    
     <a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- --- JAVASCRIPT FOR DYNAMIC INTERACTIONS --- -->
+    
     <script>
-        // Sticky Header scroll styling
+        
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -2050,7 +2087,7 @@
             }
         });
 
-        // Mobile Burger Menu Toggle
+        
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -2062,7 +2099,7 @@
             }
         });
 
-        // Services Dropdown Toggle on Mobile
+        
         const servicesDropdown = document.getElementById('servicesDropdown');
         const servicesTrigger = document.getElementById('servicesTrigger');
 
@@ -2073,7 +2110,7 @@
             }
         });
 
-        // Close mobile menu on clicking any navigation link (except dropdown trigger)
+        
         const navLinks = document.querySelectorAll('.nav-link:not(#servicesTrigger)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -2082,7 +2119,7 @@
             });
         });
 
-        // IntersectionObserver for Premium Fade-in scroll animations
+        
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealCallback = (entries, observer) => {
@@ -2104,7 +2141,7 @@
             revealObserver.observe(element);
         });
 
-        // Trigger initial animations immediately on page load
+        
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
             
@@ -2116,7 +2153,7 @@
             }, 100);
         });
 
-        // Dynamic cursor-tracking glow border initializer
+        
         document.addEventListener('DOMContentLoaded', () => {
             const cardSelectors = [
                 '.service-card',

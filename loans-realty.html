@@ -5,45 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loans & Realty Services | RupeeVyze - Wisdom In Every Rupee</title>
     
-    <!-- Meta tags for SEO -->
+    
     <meta name="description" content="Integrated financing solutions and curated real estate investments aligned with your long-term wealth planning. Get professional loans and realty support with RupeeVyze.">
     <meta name="keywords" content="loans, realty, real estate, home loan, mortgage, property investment, wealth creation, RupeeVyze">
     <meta name="author" content="RupeeVyze">
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for icons -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        
         :root {
-            --bg-primary: #050a1e;       /* Deep space dark blue background for header and footer */
-            --bg-secondary: #0b1131;     /* Slightly lighter dark blue for cards and elements */
-            --bg-tertiary: #111a47;      /* Distinct deep blue for highlights */
+            --bg-primary: #050a1e;       
+            --bg-secondary: #0b1131;     
+            --bg-tertiary: #111a47;      
             
-            /* Shady White background for content sections */
-            --bg-light-shady: #f8fafc;   /* Slate 50 - clean, professional off-white */
-            --bg-pure-white: #ffffff;    /* Pure White */
             
-            --accent-green: #00c497;     /* Vibrant teal-green from the logo */
+            --bg-light-shady: #f8fafc;   
+            --bg-pure-white: #ffffff;    
+            
+            --accent-green: #00c497;     
             --accent-green-dark: #009975;
             --accent-green-glow: rgba(0, 196, 151, 0.3);
             
-            --accent-blue: #1c32ff;      /* Vibrant blue from logo background / button */
+            --accent-blue: #1c32ff;      
             --accent-blue-glow: rgba(28, 50, 255, 0.4);
             
-            --text-primary: #ffffff;     /* Pure white for dark sections */
-            --text-secondary: #94a3b8;   /* Cool slate grey for dark body copy */
-            --text-muted: #64748b;       /* Darker slate grey for subtexts */
+            --text-primary: #ffffff;     
+            --text-secondary: #94a3b8;   
+            --text-muted: #64748b;       
             
-            /* High-contrast text colors for light sections */
-            --text-light-title: #0f172a; /* Slate 900 - rich charcoal/black */
-            --text-light-body: #334155;  /* Slate 700 - readable dark slate */
-            --text-light-muted: #64748b; /* Slate 500 */
+            
+            --text-light-title: #0f172a; 
+            --text-light-body: #334155;  
+            --text-light-muted: #64748b; 
             
             --glass-bg: rgba(11, 17, 49, 0.65);
             --glass-border: rgba(255, 255, 255, 0.07);
@@ -65,7 +65,7 @@
             --tracking-heading: -0.025em;
         }
 
-        /* --- GLOBAL RESETS & STYLES --- */
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -98,7 +98,7 @@
             position: relative;
         }
 
-        /* Ambient Background Glows */
+        
         .ambient-glow-1 {
             position: absolute;
             top: -100px;
@@ -117,7 +117,7 @@
             transition: var(--transition-fast);
         }
 
-        /* --- SCROLLBAR --- */
+        
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -133,7 +133,7 @@
             background: var(--accent-green);
         }
 
-        /* --- CONTAINER --- */
+        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -143,7 +143,7 @@
             z-index: 10;
         }
 
-        /* --- STICKY GLASS NAVIGATION --- */
+        
         .header {
             position: fixed;
             top: 0;
@@ -218,7 +218,7 @@
             margin-top: 1px;
         }
 
-        /* Desktop Navigation Menu */
+        
         .nav-menu {
             display: flex;
             align-items: center;
@@ -261,7 +261,7 @@
             box-shadow: 0 0 8px var(--accent-green);
         }
 
-        /* Hover indicator for non-active links */
+        
         .nav-link:not(.active)::after {
             content: '';
             position: absolute;
@@ -278,7 +278,7 @@
             width: 100%;
         }
 
-        /* Dropdown Services Menu */
+        
         .dropdown {
             position: relative;
         }
@@ -352,7 +352,7 @@
             background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
         }
 
-        /* Mobile Hamburger Toggle */
+        
         .mobile-toggle {
             display: none;
             background: none;
@@ -384,7 +384,7 @@
             transform: rotate(-45deg) translate(5px, -7px);
         }
 
-        /* --- HERO WRAPPER --- */
+        
         .hero-wrapper {
             position: relative;
             background-color: var(--bg-primary);
@@ -405,7 +405,7 @@
             pointer-events: none;
         }
 
-        /* --- HERO BANNER (GLASS CARD DESIGN, CURVED AT THE ENDS) --- */
+        
         .hero-banner {
             padding: 150px 0 90px;
             position: relative;
@@ -528,7 +528,7 @@
             background-clip: text;
         }
 
-        /* --- LOANS & REALTY SECTION (LIGHT THEME) --- */
+        
         .loans-section {
             padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
@@ -591,7 +591,7 @@
             background: linear-gradient(135deg, #384eff 0%, #1c32ff 100%);
         }
 
-        /* Right Column: Image display styled beautifully */
+        
         .loans-image-wrapper {
             position: relative;
             width: 100%;
@@ -613,7 +613,7 @@
             transform: scale(1.03);
         }
 
-        /* --- OFFERINGS SECTION --- */
+        
         .offerings-section {
             padding: 80px 0 100px;
             background-color: var(--bg-pure-white);
@@ -692,7 +692,7 @@
             box-shadow: 0 0 6px var(--accent-blue);
         }
 
-        /* --- FAQ SECTION --- */
+        
         .faq-section {
             padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
@@ -788,7 +788,7 @@
             border-top: 1px solid rgba(15, 23, 42, 0.08);
         }
 
-        /* Responsive design rules */
+        
         @media (max-width: 992px) {
             .loans-grid {
                 grid-template-columns: 1fr;
@@ -796,7 +796,7 @@
             }
             .loans-image-wrapper {
                 height: 350px;
-                order: -1; /* Image first on mobile/tablet */
+                order: -1; 
             }
             .offerings-grid {
                 grid-template-columns: 1fr;
@@ -850,7 +850,7 @@
             word-break: break-all;
         }
 
-        /* --- CONTACT FORM --- */
+        
         .contact-form-card {
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.08);
@@ -927,7 +927,7 @@
             background: linear-gradient(135deg, #3b50ff 0%, var(--accent-blue) 100%);
         }
 
-        /* --- FOOTER SECTION (STAYS PREMIUM DARK THEME) --- */
+        
         .footer {
             background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
             border-top: 1px solid var(--glass-border);
@@ -954,11 +954,32 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr;
+            gap: 40px;
             margin-bottom: 50px;
             position: relative;
             z-index: 2;
+        }
+
+        .footer-map-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            height: 180px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .footer-map-container {
+                margin: 0 auto;
+            }
         }
 
         .footer-brand {
@@ -1066,7 +1087,7 @@
             transform: translateX(4px);
         }
 
-        /* Contact Info Column styles */
+        
         .contact-info-block {
             display: flex;
             flex-direction: column;
@@ -1106,7 +1127,7 @@
             z-index: 2;
         }
 
-        /* --- WHATSAPP FLOATING BUTTON --- */
+        
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -1131,7 +1152,7 @@
             color: #ffffff;
         }
 
-        /* --- ANIMATIONS & REVEALS --- */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1154,7 +1175,7 @@
             transform: translateY(0);
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
+        
         @media (max-width: 1024px) {
             .contact-grid {
                 gap: 40px;
@@ -1282,7 +1303,7 @@
             }
         }
 
-        /* --- CURSOR-TRACKING GLOW BORDER --- */
+        
         .glow-border {
             position: absolute;
             top: -1.5px;
@@ -1293,8 +1314,8 @@
             padding: 1.5px;
             background: radial-gradient(
                 circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
-                rgba(0, 196, 151, 0.8) 0%,   /* Accent Green */
-                rgba(28, 50, 255, 0.8) 50%,   /* Accent Blue */
+                rgba(0, 196, 151, 0.8) 0%,   
+                rgba(28, 50, 255, 0.8) 50%,   
                 transparent 100%
             );
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -1307,7 +1328,7 @@
             z-index: 5;
         }
 
-        /* Activate glow on hover */
+        
         .service-card:hover .glow-border,
         .about-value-card:hover .glow-border,
         .review-card:hover .glow-border,
@@ -1321,7 +1342,7 @@
             opacity: 1;
         }
 
-        /* Override hover border-colors to let the glow border shine */
+        
         .about-value-card:hover,
         .review-card:hover,
         .service-card:hover,
@@ -1338,13 +1359,13 @@
 </head>
 <body>
 
-    <!-- Ambient Glowing Shapes in Background -->
+    
     <div class="ambient-glow-1"></div>
 
-    <!-- --- HEADER / NAVIGATION BAR --- -->
+    
     <header class="header" id="mainHeader">
         <div class="container nav-container">
-            <!-- Brand Logo -->
+            
             <a href="homepage.html" class="logo-link">
                 <div class="logo-wrapper">
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -1374,7 +1395,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
+            
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
                     <a href="homepage.html" class="nav-link">Home</a>
@@ -1407,7 +1428,7 @@
                 <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
-            <!-- Mobile Hamburger Toggle -->
+            
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -1416,7 +1437,7 @@
         </div>
     </header>
 
-    <!-- --- HERO WRAPPER --- -->
+    
     <div class="hero-wrapper">
         <div class="hero-banner-glow"></div>
         
@@ -1432,12 +1453,12 @@
         </section>
     </div>
 
-    <!-- --- LOANS & REALTY SERVICES MAIN SECTION --- -->
+    
     <section class="loans-section">
         <div class="container">
             <div class="loans-grid">
                 
-                <!-- Left Side: Text Information -->
+                
                 <div class="loans-text-content reveal">
                     <span class="about-label">Overview</span>
                     <h2 class="section-heading" style="text-align: left; margin-bottom: 20px;">Know More About <span>Loans & Realty</span></h2>
@@ -1454,7 +1475,7 @@
                     <a href="contactus.html" class="apply-btn">Apply Now</a>
                 </div>
 
-                <!-- Right Side: Service Representative Image -->
+                
                 <div class="loans-image-wrapper reveal" style="transition-delay: 0.2s;">
                     <img src="loans_realty_service.png" class="loans-img" alt="Loans & Realty Services">
                 </div>
@@ -1463,7 +1484,7 @@
         </div>
     </section>
 
-    <!-- --- OUR OFFERINGS SECTION --- -->
+    
     <section class="offerings-section">
         <div class="container">
             <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;" class="reveal">
@@ -1472,7 +1493,7 @@
             </div>
 
             <div class="offerings-grid">
-                <!-- Offering 1: Loan Services -->
+                
                 <div class="offering-card reveal">
                     <div class="offering-badge">01</div>
                     <h3 class="offering-title">Loan Services</h3>
@@ -1496,7 +1517,7 @@
                     </ul>
                 </div>
 
-                <!-- Offering 2: Real Estate Solutions -->
+                
                 <div class="offering-card reveal" style="transition-delay: 0.1s;">
                     <div class="offering-badge">02</div>
                     <h3 class="offering-title">Real Estate Solutions</h3>
@@ -1519,7 +1540,7 @@
         </div>
     </section>
 
-    <!-- --- FAQ SECTION --- -->
+    
     <section class="faq-section" id="faq">
         <div class="container">
             <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;" class="reveal">
@@ -1528,7 +1549,7 @@
             </div>
 
             <div class="faq-list reveal" style="transition-delay: 0.1s;">
-                <!-- Item 1 -->
+                
                 <div class="faq-item active">
                     <div class="faq-question">
                         <span class="faq-q-text">What Services Does RupeeVyze Offer?</span>
@@ -1539,7 +1560,7 @@
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Who Can Invest Or Use RupeeVyze Services?</span>
@@ -1550,7 +1571,7 @@
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Is There A Minimum Investment Amount?</span>
@@ -1561,7 +1582,7 @@
                     </div>
                 </div>
 
-                <!-- Item 4 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">How Does RupeeVyze Recommend Financial Products?</span>
@@ -1572,7 +1593,7 @@
                     </div>
                 </div>
 
-                <!-- Item 5 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Is My Money And Data Safe With RupeeVyze?</span>
@@ -1583,7 +1604,7 @@
                     </div>
                 </div>
 
-                <!-- Item 6 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Can I Withdraw My Investments Anytime?</span>
@@ -1597,11 +1618,11 @@
         </div>
     </section>
 
-    <!-- --- FOOTER --- -->
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: Brand Info -->
+                
                 <div class="footer-brand">
                     <div class="footer-logo-stacked">
                         <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width: 65px; height: 65px; margin-bottom: 12px; display: block;">
@@ -1634,7 +1655,7 @@
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
+                
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
@@ -1644,7 +1665,7 @@
                     </div>
                 </div>
 
-                <!-- Column 3: Contact Info -->
+                
                 <div>
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info-block">
@@ -1658,23 +1679,39 @@
                         </div>
                     </div>
                 </div>
+            
+                
+                <div>
+                    <h4 class="footer-title">Our Location</h4>
+                    <div class="footer-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.155823869274!2d77.6253465750734!3d12.897455887413695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148d5300f80b%3A0x80858e745672c72b!2sAKR%20Tech%20Park!5e0!3m2!1sen!2sin!4v1719289800000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
 
-            <!-- Bottom footer bar -->
+            
             <div class="footer-bottom">
                 <p>Copyright &copy; 2025 RupeeVyze . All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- --- WHATSAPP FLOATING BUTTON --- -->
+    
     <a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- --- JAVASCRIPT FOR DYNAMIC INTERACTIONS --- -->
+    
     <script>
-        // Sticky Header scroll styling
+        
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1684,7 +1721,7 @@
             }
         });
 
-        // Mobile Burger Menu Toggle
+        
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -1696,7 +1733,7 @@
             }
         });
 
-        // Services Dropdown Toggle on Mobile
+        
         const servicesDropdown = document.getElementById('servicesDropdown');
         const servicesTrigger = document.getElementById('servicesTrigger');
 
@@ -1707,7 +1744,7 @@
             }
         });
 
-        // Close mobile menu on clicking any navigation link (except dropdown trigger)
+        
         const navLinks = document.querySelectorAll('.nav-link:not(#servicesTrigger)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -1716,7 +1753,7 @@
             });
         });
 
-        // IntersectionObserver for reveal animations
+        
         const revealElements = document.querySelectorAll('.reveal');
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
@@ -1735,7 +1772,7 @@
             revealObserver.observe(element);
         });
 
-        /* --- FAQ ACCORDION LOGIC --- */
+        
         const faqItems = document.querySelectorAll('.faq-item');
 
         faqItems.forEach(item => {
@@ -1746,7 +1783,7 @@
             questionRow.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
 
-                // Close all other FAQs
+                
                 faqItems.forEach(otherItem => {
                     otherItem.classList.remove('active');
                     otherItem.querySelector('.faq-answer-wrap').style.maxHeight = '0';
@@ -1755,7 +1792,7 @@
 
                 if (!isActive) {
                     item.classList.add('active');
-                    // Dynamically set max-height to let CSS transition run smoothly
+                    
                     answerWrap.style.maxHeight = answerWrap.scrollHeight + 'px';
                     icon.className = 'fa-solid fa-minus';
                 } else {
@@ -1766,7 +1803,7 @@
             });
         });
 
-        // Page load initial animations
+        
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
             setTimeout(() => {
@@ -1777,7 +1814,7 @@
             }, 100);
         });
 
-        // Dynamic cursor-tracking glow border initializer
+        
         document.addEventListener('DOMContentLoaded', () => {
             const cardSelectors = [
                 '.service-card',
