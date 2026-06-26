@@ -1562,6 +1562,35 @@
       .info-card { padding: 24px; }
       .ask-section { padding: 32px 24px; }
     }
+
+    .glow-border {
+        position: absolute;
+        top: -1.5px;
+        left: -1.5px;
+        right: -1.5px;
+        bottom: -1.5px;
+        border-radius: inherit;
+        padding: 1.5px;
+        background: radial-gradient(
+            circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+            rgba(0, 196, 151, 0.8) 0%,   
+            rgba(28, 50, 255, 0.8) 50%,   
+            transparent 100%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 5;
+    }
+
+    .offering-card:hover .glow-border,
+    .contact-form-card:hover .glow-border {
+        opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -1992,7 +2021,7 @@
                 }
             });
         });
-
+        
         // Page load initial animations
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
@@ -2003,63 +2032,42 @@
                 });
             }, 100);
         });
-    </script>
 
+        // Glow-border mouse tracking on service cards + form cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardSelectors = [
+                '.offering-card',
+                '.contact-form-card'
+            ].join(', ');
 
-
-      
-       
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 800, once: true, offset: 60 });
-
-  // FAQ Accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const questionDiv = item.querySelector('.faq-question');
-    questionDiv.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-  });
-</script>
-
-
-
-         
-
-      
-
-    
-          
+            const cards = document.querySelectorAll(cardSelectors);
             
-   
-
-  
-<!-- ========== FIXED JAVASCRIPT ========== -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 800, once: true, offset: 60 });
-
-  // FAQ Accordion - Only ONE open at a time
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const questionDiv = item.querySelector('.faq-question');
-    questionDiv.addEventListener('click', () => {
-      // Check if this item is already active
-      const isActive = item.classList.contains('active');
-      
-      // Close ALL other FAQ items
-      document.querySelectorAll('.faq-item').forEach(otherItem => {
-        otherItem.classList.remove('active');
-      });
-      
-      // If it wasn't active, open it (toggle)
-      if (!isActive) {
-        item.classList.add('active');
-      }
-      // If it was active, it stays closed (because we removed 'active' above)
-    });
-  });
-</script>
-
+            cards.forEach(card => {
+                const style = window.getComputedStyle(card);
+                if (style.position === 'static') {
+                    card.style.position = 'relative';
+                }
+                
+                if (!card.querySelector('.glow-border')) {
+                    const glowBorder = document.createElement('div');
+                    glowBorder.className = 'glow-border';
+                    card.appendChild(glowBorder);
+                }
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 60 });
+    </script>
 </body>
 </html>

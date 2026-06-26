@@ -1314,6 +1314,36 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   .clarity-stats { flex-direction: column; gap: 16px; }
   .hero-cta-group { flex-direction: column; align-items: center; }
 }
+
+  .glow-border {
+      position: absolute;
+      top: -1.5px;
+      left: -1.5px;
+      right: -1.5px;
+      bottom: -1.5px;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: radial-gradient(
+          circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+          rgba(0, 196, 151, 0.8) 0%,   
+          rgba(28, 50, 255, 0.8) 50%,   
+          transparent 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 5;
+  }
+
+  .service-card:hover .glow-border,
+  .eligibility-card:hover .glow-border,
+  .clarity-card:hover .glow-border {
+      opacity: 1;
+  }
 </style>
 </head>
 <body>
@@ -1889,6 +1919,34 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Glow border mouse tracking
+document.addEventListener('DOMContentLoaded', () => {
+  const cardSelectors = [
+    '.service-card',
+    '.eligibility-card',
+    '.clarity-card'
+  ].join(', ');
+  
+  const cards = document.querySelectorAll(cardSelectors);
+  cards.forEach(card => {
+    if (window.getComputedStyle(card).position === 'static') {
+      card.style.position = 'relative';
+    }
+    
+    if (!card.querySelector('.glow-border')) {
+      const glowBorder = document.createElement('div');
+      glowBorder.className = 'glow-border';
+      card.appendChild(glowBorder);
+    }
+    
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+    });
+  });
+});
 </script>
 </body>
 </html>
