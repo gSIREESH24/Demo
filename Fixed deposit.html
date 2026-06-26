@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>RupeeVyze – Corporate Fixed Deposit | Stable Returns with Capital Protection</title>
   <!-- Google Fonts + Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -89,6 +89,7 @@
     }
      /* --- STICKY GLASS NAVIGATION --- */
         .header {
+            font-family: var(--font-main);
             position: fixed;
             top: 0;
             left: 0;
@@ -142,10 +143,10 @@
         }
 
         .logo-title {
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 1.375rem;
+            font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
@@ -174,7 +175,7 @@
         }
 
         .nav-link {
-            font-size: 15px;
+            font-size: 0.9375rem;
             font-weight: 500;
             color: var(--text-secondary);
             padding: 8px 0;
@@ -868,6 +869,7 @@
 
         /* --- FOOTER SECTION (STAYS PREMIUM DARK THEME) --- */
         .footer {
+            font-family: var(--font-main);
             background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
             border-top: 1px solid var(--glass-border);
             padding: 80px 0 40px;
@@ -913,10 +915,10 @@
         }
 
         .footer-logo-title {
-            font-size: 26px;
-            font-weight: 800;
+            font-size: 1.625rem;
+            font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
@@ -1609,15 +1611,16 @@
                     <a href="aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="#" class="nav-link active" id="servicesTrigger">
+                    <a href="homepage.html#services" class="nav-link active" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="wealth-management.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Wealth Advisory</a>
-                        <a href="mutual-funds.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Funds</a>
-                        <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
-                        <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
-                        <a href="loans-realty.html" class="dropdown-link active"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
+                        <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="Fixed deposit.html" class="dropdown-link" style="color: var(--accent-green); background: rgba(0, 196, 151, 0.08); border-left: 3px solid var(--accent-green); padding-left: 18px; font-weight: 700;"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
                         <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>

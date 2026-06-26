@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equity & Commodity Broking – RupeeVyze</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  :root {
+    --bg-primary: #050a1e;
+    --bg-secondary: #0b1131;
+    --bg-tertiary: #111a47;
+    --bg-light-shady: #f8fafc;
+    --bg-pure-white: #ffffff;
+    --accent-green: #00c497;
+    --accent-green-dark: #009975;
+    --accent-green-glow: rgba(0,196,151,0.3);
+    --accent-blue: #1c32ff;
+    --accent-blue-glow: rgba(28,50,255,0.4);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-light-title: #0f172a;
+    --text-light-body: #334155;
+    --text-light-muted: #64748b;
+    --glass-bg: rgba(11,17,49,0.65);
+    --glass-border: rgba(255,255,255,0.07);
+    --border: rgba(15,23,42,0.08);
+    --transition-smooth: all 0.35s cubic-bezier(0.25,0.8,0.25,1);
+    --transition-fast: all 0.2s ease;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --heading-hero: clamp(2.375rem, 4.5vw, 3.25rem);
+    --heading-section: clamp(1.875rem, 3vw, 2.5rem);
+    --leading-body: 1.65;
+    --leading-heading: 1.2;
+    --tracking-heading: -0.025em;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    font-family: var(--font-main);
+    font-size: 16px;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    line-height: var(--leading-body);
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--bg-secondary); border: 2px solid var(--bg-primary); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
+
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
+
+  /* ── HEADER ── */
+  .header {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    background: transparent; border-bottom: 1px solid transparent;
+    transition: var(--transition-smooth); padding: 20px 0;
+  }
+  .header.scrolled {
+    background: var(--glass-bg); backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border);
+    padding: 12px 0; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+  }
+  .nav-container { display: flex; align-items: center; justify-content: space-between; }
+
+  .logo-link { display: flex; align-items: center; gap: 12px; }
+  .logo-wrapper { position: relative; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; }
+  .logo-svg { width: 100%; height: 100%; }
+  .logo-text { display: flex; flex-direction: column; justify-content: center; }
+  .logo-title { font-size: 1.375rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; line-height: 1.1; }
+  .logo-title span { color: var(--accent-green); }
+  .logo-tagline { font-size: 9px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1px; }
+
+  .nav-menu { display: flex; align-items: center; gap: 28px; }
+  .nav-item { position: relative; }
+  .nav-link {
+    font-size: 0.9375rem; font-weight: 500; color: var(--text-secondary);
+    padding: 8px 0; position: relative; display: flex; align-items: center; gap: 6px;
+  }
+  .nav-link:hover { color: var(--text-primary); }
+  .nav-link.active { color: var(--text-primary); font-weight: 600; }
+  .nav-link.active::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--accent-green), #00ffc4);
+    border-radius: 2px; box-shadow: 0 0 8px var(--accent-green);
+  }
+  .nav-link:not(.active)::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+    background: var(--accent-green); transition: var(--transition-fast); border-radius: 2px;
+  }
+  .nav-link:not(.active):hover::after { width: 100%; }
+
+  .dropdown { position: relative; }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px);
+    background: var(--bg-secondary); border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-md); padding: 12px; width: 220px;
+    opacity: 0; visibility: hidden; transition: var(--transition-smooth);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6); backdrop-filter: blur(10px); z-index: 100;
+  }
+  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(5px); }
+  .dropdown-link {
+    display: flex; align-items: center; padding: 10px 14px; border-radius: var(--border-radius-sm);
+    font-size: 14px; color: var(--text-secondary); font-weight: 500; transition: var(--transition-fast);
+  }
+  .dropdown-link:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); padding-left: 18px; border-left: 3px solid var(--accent-green); }
+  .dropdown-link i { margin-right: 10px; font-size: 13px; color: var(--accent-green); }
+
+  .nav-cta-btn {
+    background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%);
+    color: var(--bg-primary); font-size: 14px; font-weight: 700; padding: 11px 26px;
+    border-radius: 50px; box-shadow: 0 4px 15px rgba(0,196,151,0.2);
+    border: 1px solid rgba(255,255,255,0.1); cursor: pointer; display: inline-block; transition: var(--transition-smooth);
+  }
+  .nav-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,196,151,0.4); background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%); }
+
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; z-index: 1001; }
+  .mobile-toggle span { display: block; width: 24px; height: 2px; background-color: var(--text-primary); margin: 6px 0; transition: var(--transition-fast); border-radius: 2px; }
+  .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px,6px); }
+  .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+  .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-7px); }
+
+  /* ── HERO ── */
+  .hero-wrapper { position: relative; background-color: var(--bg-primary); padding-bottom: 30px; z-index: 1; }
+  .hero-banner-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 650px; height: 320px;
+    background: radial-gradient(circle, rgba(0,196,151,0.18) 0%, rgba(28,50,255,0.12) 60%, transparent 100%);
+    filter: blur(50px); z-index: 0; pointer-events: none;
+  }
+  .hero-banner {
+    padding: 160px 0 100px; position: relative; z-index: 2;
+    background: linear-gradient(135deg, rgba(5,10,30,0.92) 0%, rgba(11,17,49,0.85) 50%, rgba(17,26,71,0.9) 100%),
+                url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1600&q=80') center/cover no-repeat;
+    border: 1px solid rgba(255,255,255,0.08); border-top: none;
+    border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;
+    margin: 0 32px; box-shadow: 0 30px 60px -15px rgba(5,10,30,0.35); overflow: hidden;
+  }
+  .hero-breadcrumb {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent-green); background: rgba(0,196,151,0.12);
+    border: 1px solid rgba(0,196,151,0.3); padding: 5px 16px; border-radius: 50px;
+    margin-bottom: 1.2rem;
+  }
+  .hero-breadcrumb a { color: rgba(0,196,151,0.7); }
+  .hero-breadcrumb a:hover { color: var(--accent-green); }
+  .hero-breadcrumb-sep { opacity: 0.5; }
+  .hero-content { text-align: center; position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+  .hero-title {
+    font-size: var(--heading-hero); font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 20px; color: var(--text-primary);
+  }
+  .hero-title span {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-desc { font-size: 1.0625rem; color: var(--text-secondary); line-height: var(--leading-body); max-width: 620px; margin: 0 auto 36px; }
+  .hero-cta-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%);
+    color: var(--bg-primary); font-size: 15px; font-weight: 700; padding: 13px 32px;
+    border-radius: 50px; box-shadow: 0 8px 20px rgba(0,196,151,0.25); transition: var(--transition-smooth);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,196,151,0.45); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.07); color: var(--text-primary);
+    font-size: 15px; font-weight: 600; padding: 13px 32px; border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.15); transition: var(--transition-smooth);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--bg-secondary); border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border); padding: 28px 0;
+  }
+  .stats-strip-inner { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+  .stat-item {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0 48px; text-align: center;
+  }
+  .stat-item:not(:last-child) { border-right: 1px solid var(--glass-border); }
+  .stat-num { font-size: 1.75rem; font-weight: 800; color: var(--text-primary); line-height: 1; margin-bottom: 4px; }
+  .stat-num span { color: var(--accent-green); }
+  .stat-label { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── INTRO SECTION ── */
+  .section-dark { background-color: var(--bg-primary); padding: 90px 0; color: var(--text-primary); }
+  .section-dark-alt { background-color: var(--bg-secondary); padding: 90px 0; color: var(--text-primary); }
+  .section-light { background-color: var(--bg-pure-white); padding: 90px 0; color: var(--text-light-body); }
+  .section-light-shady { background-color: var(--bg-light-shady); padding: 90px 0; color: var(--text-light-body); border-top: 1px solid var(--border); }
+
+  .section-eyebrow {
+    display: inline-block; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent-green); background: rgba(0,196,151,0.12);
+    border: 1px solid rgba(0,196,151,0.3); padding: 6px 16px; border-radius: 50px; margin-bottom: 1.2rem;
+  }
+  .section-heading {
+    font-size: var(--heading-section); font-weight: 700; line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-heading); margin-bottom: 20px;
+  }
+  .section-heading-dark { color: var(--text-primary); }
+  .section-heading-light { color: var(--text-light-title); }
+  .section-heading span {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .section-heading-light span {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--accent-green) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  /* ── INTRO TWO-COL ── */
+  .intro-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 0;
+  }
+  .intro-text-col {}
+  .intro-text-col p { font-size: 1.0625rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; }
+  .intro-checklist { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .intro-checklist li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9375rem; color: var(--text-secondary); }
+  .intro-checklist li i { color: var(--accent-green); margin-top: 3px; flex-shrink: 0; }
+  .intro-image-col { position: relative; }
+  .intro-image-col img {
+    width: 100%; border-radius: var(--border-radius-lg);
+    display: block; box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .intro-badge {
+    position: absolute; bottom: -18px; left: -18px;
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    border: 1px solid var(--glass-border); border-radius: var(--border-radius-md);
+    padding: 16px 20px; display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  .intro-badge-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
+  }
+  .intro-badge-text { display: flex; flex-direction: column; }
+  .intro-badge-num { font-size: 15px; font-weight: 800; color: #fff; }
+  .intro-badge-sub { font-size: 11px; color: var(--text-secondary); font-weight: 500; }
+
+  /* ── SERVICES GRID ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px;
+  }
+  .service-card {
+    position: relative; background: linear-gradient(145deg, var(--bg-secondary) 0%, var(--bg-tertiary) 50%, var(--bg-primary) 100%);
+    border-radius: var(--border-radius-md); padding: 36px 32px;
+    border: 1.5px solid rgba(255,255,255,0.06); transition: var(--transition-smooth);
+    cursor: default; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: -80px; right: -80px; width: 220px; height: 220px;
+    border-radius: 50%; background: rgba(255,255,255,0.02); transition: transform 0.4s ease;
+  }
+  .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.4); border-color: rgba(0,196,151,0.3); }
+  .service-card:hover::before { transform: scale(1.25); }
+  .service-num {
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent-green); margin-bottom: 16px; opacity: 0.9;
+  }
+  .service-icon-wrap {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12);
+    margin-bottom: 20px; transition: var(--transition-fast);
+    color: var(--accent-green); font-size: 22px;
+  }
+  .service-card:hover .service-icon-wrap { background: rgba(0,196,151,0.15); border-color: rgba(0,196,151,0.4); }
+  .service-card h4 { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.3; }
+  .service-card p { font-size: 0.9375rem; line-height: 1.7; color: var(--text-secondary); }
+
+  /* ── HOW IT WORKS ── */
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; position: relative; }
+  .steps-grid::before {
+    content: ''; position: absolute; top: 40px; left: calc(12.5% + 12px); right: calc(12.5% + 12px);
+    height: 1px; background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+    z-index: 0;
+  }
+  .step-card {
+    text-align: center; padding: 32px 20px; position: relative; z-index: 1;
+    background: var(--bg-secondary); border-radius: var(--border-radius-md);
+    border: 1px solid var(--glass-border); transition: var(--transition-smooth);
+  }
+  .step-card:hover { transform: translateY(-6px); border-color: rgba(0,196,151,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+  .step-number {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-green-dark), var(--accent-green));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem; font-weight: 800; color: var(--bg-primary);
+    margin: 0 auto 20px; box-shadow: 0 4px 15px rgba(0,196,151,0.3);
+  }
+  .step-card h4 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .step-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* ── CTA BANNER (clarity card style) ── */
+  .cta-card {
+    display: flex; border-radius: var(--border-radius-lg); overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3); border: 1px solid var(--glass-border); margin-top: 0;
+  }
+  .cta-left {
+    flex: 0 0 55%; background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 45%, var(--bg-tertiary) 100%);
+    padding: 56px 52px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;
+  }
+  .cta-left::before {
+    content: ''; position: absolute; top: -80px; left: -80px; width: 300px; height: 300px;
+    border-radius: 50%; background: rgba(0,196,151,0.04); pointer-events: none;
+  }
+  .cta-left::after {
+    content: ''; position: absolute; bottom: -60px; right: 60px; width: 220px; height: 220px;
+    border-radius: 50%; background: rgba(28,50,255,0.04); pointer-events: none;
+  }
+  .cta-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,196,151,0.15); border: 1px solid rgba(0,196,151,0.3);
+    border-radius: 50px; padding: 5px 14px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-green);
+    margin-bottom: 1.4rem; width: fit-content;
+  }
+  .cta-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); animation: blink 1.4s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .cta-heading { font-size: 2.1rem; font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 16px; }
+  .cta-heading span { color: var(--accent-green); }
+  .cta-subtext { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 32px; max-width: 420px; }
+  .cta-btn-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%);
+    color: var(--bg-primary); font-size: 14.5px; font-weight: 700; padding: 12px 28px;
+    border-radius: 50px; box-shadow: 0 8px 20px rgba(0,196,151,0.25); transition: var(--transition-smooth);
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,196,151,0.4); }
+  .cta-phone { display: flex; align-items: center; gap: 10px; }
+  .cta-phone-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-green); }
+  .cta-phone-info { display: flex; flex-direction: column; }
+  .cta-phone-label { font-size: 11px; color: var(--text-secondary); font-weight: 500; text-transform: uppercase; }
+  .cta-phone-num { font-size: 15px; font-weight: 700; color: #fff; }
+  .cta-stats { display: flex; gap: 32px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .cta-stat { display: flex; flex-direction: column; }
+  .cta-stat-num { font-size: 1.5rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 2px; }
+  .cta-stat-num span { color: var(--accent-green); }
+  .cta-stat-label { font-size: 12px; color: var(--text-secondary); }
+  .cta-right { flex: 0 0 45%; position: relative; overflow: hidden; }
+  .cta-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cta-img-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,10,30,0.35) 0%, transparent 50%); pointer-events: none; }
+  .cta-badge {
+    position: absolute; bottom: 24px; left: 20px;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-radius: var(--border-radius-md); padding: 12px 16px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2); border: 1px solid var(--border);
+  }
+  .cta-badge-icon { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-green)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; }
+  .cta-badge-num { font-size: 13px; font-weight: 800; color: var(--text-light-title); }
+  .cta-badge-sub { font-size: 11px; color: var(--text-light-muted); font-weight: 600; }
+
+  /* ── WHY US ── */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .why-card {
+    background: var(--bg-pure-white); border: 1.5px solid var(--border);
+    border-radius: var(--border-radius-md); padding: 32px 26px;
+    transition: var(--transition-smooth); position: relative; overflow: hidden;
+  }
+  .why-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+    transition: width 0.3s ease;
+  }
+  .why-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(15,23,42,0.06); border-color: transparent; }
+  .why-card:hover::before { width: 5px; }
+  .why-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: rgba(28,50,255,0.06); display: flex; align-items: center; justify-content: center;
+    color: var(--accent-blue); font-size: 22px; margin-bottom: 20px;
+    transition: var(--transition-smooth); border: 1px solid rgba(28,50,255,0.08);
+  }
+  .why-card:hover .why-icon { background: linear-gradient(135deg, var(--accent-blue), var(--accent-green)); color: #fff; border-color: transparent; }
+  .why-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-light-title); margin-bottom: 8px; }
+  .why-card p { font-size: 0.9rem; color: var(--text-light-body); line-height: 1.65; }
+
+  /* ── FAQ ── */
+  .faq-list { max-width: 860px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--bg-pure-white); border: 1.5px solid var(--border);
+    border-radius: var(--border-radius-md); overflow: hidden; cursor: pointer; transition: var(--transition-smooth);
+  }
+  .faq-item:hover { border-color: rgba(28,50,255,0.2); box-shadow: 0 6px 20px rgba(15,23,42,0.03); }
+  .faq-item.active { border-color: var(--accent-green); }
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 20px 26px; background: var(--bg-pure-white); transition: var(--transition-fast); user-select: none;
+  }
+  .faq-item.active .faq-question { background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); }
+  .faq-q-text { font-weight: 700; font-size: 15px; color: var(--text-light-title); line-height: 1.4; transition: var(--transition-fast); }
+  .faq-item.active .faq-q-text { color: #fff; }
+  .faq-icon {
+    width: 28px; height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; background: rgba(15,23,42,0.05); color: var(--text-light-title);
+    transition: var(--transition-smooth); font-size: 11px;
+  }
+  .faq-item.active .faq-icon { background: rgba(255,255,255,0.15); color: #fff; transform: rotate(180deg); }
+  .faq-answer-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+  .faq-answer { font-size: 14.5px; color: var(--text-light-body); line-height: 1.7; padding: 16px 26px 22px; border-top: 1px solid var(--border); border-left: 3px solid var(--accent-green); }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
+    border-top: 1px solid var(--glass-border); padding: 80px 0 40px;
+    position: relative; z-index: 10; overflow: hidden; color: var(--text-primary);
+  }
+  .footer::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+    background-size: 40px 40px; z-index: 1; pointer-events: none;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr; gap: 40px; margin-bottom: 50px; position: relative; z-index: 2; }
+  .footer-brand { display: flex; flex-direction: column; gap: 20px; }
+  .footer-logo-stacked { display: flex; flex-direction: column; align-items: flex-start; }
+  .footer-logo-title { font-size: 1.625rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; line-height: 1.1; }
+  .footer-logo-title span { color: var(--accent-green); }
+  .footer-logo-tagline { font-size: 9px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.5px; margin-top: 4px; text-transform: uppercase; }
+  .footer-desc { font-size: 0.9375rem; color: var(--text-secondary); line-height: var(--leading-body); max-width: 380px; }
+  .footer-socials { display: flex; gap: 12px; margin-top: 10px; }
+  .social-link {
+    width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.02);
+    border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center;
+    color: var(--text-secondary); font-size: 16px; transition: var(--transition-fast);
+  }
+  .social-link:hover { background: var(--accent-green); color: var(--bg-primary); border-color: var(--accent-green); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,196,151,0.3); }
+  .footer-title { font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; position: relative; }
+  .footer-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 25px; height: 2px; background-color: var(--accent-green); border-radius: 2px; }
+  .footer-links { display: flex; flex-direction: column; gap: 14px; }
+  .footer-link { font-size: 15px; color: var(--text-secondary); transition: var(--transition-fast); display: inline-block; }
+  .footer-link:hover { color: var(--accent-green); transform: translateX(4px); }
+  .contact-info-block { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { display: flex; flex-direction: column; gap: 6px; }
+  .contact-label { font-size: 13.5px; color: var(--text-muted); font-weight: 500; }
+  .contact-value { font-size: 18px; font-weight: 700; color: var(--text-primary); transition: var(--transition-fast); }
+  .contact-value:hover { color: var(--accent-green); }
+  .footer-map-container { border-radius: var(--border-radius-sm); overflow: hidden; height: 180px; width: 100%; max-width: 200px; border: 1px solid rgba(255,255,255,0.1); }
+  .footer-map-container iframe { width: 100%; height: 100%; display: block; }
+  .footer-bottom { border-top: 1px solid var(--glass-border); padding-top: 30px; text-align: center; font-size: 14.5px; color: var(--text-muted); position: relative; z-index: 2; }
+
+  /* ── WHATSAPP ── */
+  .whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px;
+    background-color: #25d366; color: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 28px;
+    box-shadow: 0 8px 20px rgba(37,211,102,0.3); z-index: 1000; transition: var(--transition-smooth);
+  }
+  .whatsapp-float:hover { transform: scale(1.1) rotate(8deg); box-shadow: 0 12px 24px rgba(37,211,102,0.5); color: #fff; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* ── GLOW BORDER ── */
+  .glow-border {
+    position: absolute; inset: -1.5px; border-radius: inherit; padding: 1.5px;
+    background: radial-gradient(circle 180px at var(--mouse-x,-999px) var(--mouse-y,-999px), rgba(0,196,151,0.8) 0%, rgba(28,50,255,0.8) 50%, transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude; pointer-events: none; opacity: 0; transition: opacity 0.4s ease; z-index: 5;
+  }
+  .service-card:hover .glow-border, .why-card:hover .glow-border { opacity: 1; }
+  .service-card:hover, .why-card:hover { border-color: transparent !important; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2,1fr); }
+    .steps-grid::before { display: none; }
+  }
+  @media (max-width: 900px) {
+    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .intro-image-col { order: -1; }
+    .services-grid { grid-template-columns: 1fr; }
+    .cta-card { flex-direction: column; }
+    .cta-left, .cta-right { flex: none; width: 100%; }
+    .cta-right { height: 280px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-brand { align-items: center; text-align: center; }
+    .footer-desc { max-width: 100%; }
+    .footer-title::after { left: 50%; transform: translateX(-50%); }
+    .footer-title, .footer-links, .footer-bottom, .contact-info-block, .contact-item { text-align: center; align-items: center; }
+  }
+  @media (max-width: 768px) {
+    .header { padding: 15px 0; }
+    .nav-menu {
+      position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+      background: var(--bg-secondary); box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+      flex-direction: column; align-items: flex-start; justify-content: flex-start;
+      padding: 100px 30px; gap: 24px; transition: 0.4s cubic-bezier(0.25,0.8,0.25,1); z-index: 999;
+    }
+    .nav-menu.active { right: 0; }
+    .mobile-toggle { display: block; }
+    .dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; background: transparent; border: none; padding-left: 15px; width: 100%; display: none; }
+    .dropdown.active .dropdown-menu { display: block; }
+    .nav-cta-btn { width: 100%; text-align: center; margin-top: 15px; }
+    .hero-banner { padding: 130px 0 80px; margin: 0 16px; border-radius: 0 0 40px 40px; }
+    .stat-item { padding: 0 20px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .cta-heading { font-size: 1.6rem; }
+    .cta-left { padding: 36px 24px; }
+    .cta-btn-row { flex-direction: column; align-items: flex-start; }
+    .cta-btn { width: 100%; justify-content: center; }
+    .cta-stats { flex-direction: column; gap: 16px; }
+    .hero-cta-row { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-ghost { width: 100%; max-width: 300px; justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .stats-strip-inner { flex-direction: column; gap: 20px; }
+    .stat-item { border-right: none !important; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px; width: 100%; }
+    .stat-item:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AMBIENT GLOW -->
+<div style="position:fixed;top:-100px;right:-100px;width:450px;height:450px;background:radial-gradient(circle,rgba(0,196,151,0.12) 0%,transparent 70%);z-index:0;pointer-events:none;filter:blur(40px);"></div>
+
+<!-- ── HEADER ── -->
+<header class="header" id="mainHeader">
+  <div class="container nav-container">
+    <a href="homepage.html" class="logo-link">
+      <div class="logo-wrapper">
+        <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="arrow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#05a885"/>
+              <stop offset="100%" stop-color="#00c497"/>
+            </linearGradient>
+            <filter id="arrow-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+          <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M 44 32 H 76"/>
+            <path d="M 44 45 H 68"/>
+            <path d="M 56 32 C 76 32, 76 58, 56 58 H 44"/>
+            <path d="M 54 32 V 58"/>
+            <path d="M 52 58 L 74 88"/>
+          </g>
+          <path d="M 26 72 C 24 90, 46 106, 74 96 C 90 90, 100 74, 104 53 L 112 58 L 108 28 L 80 38 L 87 44 C 83 60, 75 72, 63 76 C 45 83, 32 74, 28 60 Z" fill="url(#arrow-grad)" filter="url(#arrow-glow)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-title">Rupee<span>Vyze</span></span>
+        <span class="logo-tagline">Wisdom In Every Rupee</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="navMenu">
+      <div class="nav-item"><a href="homepage.html" class="nav-link">Home</a></div>
+      <div class="nav-item"><a href="aboutus.html" class="nav-link">About Us</a></div>
+      <div class="nav-item dropdown" id="servicesDropdown">
+        <a href="homepage.html#services" class="nav-link active" id="servicesTrigger">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+          <a href="equity.html" class="dropdown-link" style="color: var(--accent-green); background: rgba(0, 196, 151, 0.08); border-left: 3px solid var(--accent-green); padding-left: 18px; font-weight: 700;"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+          <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+          <a href="Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+          <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+          <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
+          <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="calculators.html" class="nav-link">Calculators</a></div>
+      <div class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></div>
+      <div class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></div>
+      <a href="contactus.html" class="nav-cta-btn">Start Now</a>
+    </nav>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero-wrapper">
+  <div class="hero-banner-glow"></div>
+  <section class="hero-banner">
+    <div class="container hero-content">
+      <div class="hero-breadcrumb">
+        <a href="homepage.html">Home</a>
+        <span class="hero-breadcrumb-sep">/</span>
+        <span>Services</span>
+        <span class="hero-breadcrumb-sep">/</span>
+        <span>Equity & Commodity Broking</span>
+      </div>
+      <h1 class="hero-title">Equity &amp; Commodity Broking<br><span>IPO &amp; Unlisted Shares</span></h1>
+      <p class="hero-desc">Smart trading solutions backed by professional market insight and disciplined execution — for beginners and seasoned investors alike.</p>
+      <div class="hero-cta-row">
+        <a href="https://rupeevyze.com/apply-now/" class="btn-primary">
+          <i class="fa-solid fa-indian-rupee-sign"></i> Start Investing
+        </a>
+        <a href="contactus.html" class="btn-ghost">
+          <i class="fa-solid fa-phone"></i> Talk to an Advisor
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-strip-inner">
+      <div class="stat-item">
+        <span class="stat-num">5000<span>+</span></span>
+        <span class="stat-label">Active Traders</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">₹200<span>Cr+</span></span>
+        <span class="stat-label">Volume Traded</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4<span>+</span></span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">SEBI<span>✓</span></span>
+        <span class="stat-label">Registered & Regulated</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<section class="section-dark">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text-col reveal">
+        <span class="section-eyebrow">Know More About It</span>
+        <h2 class="section-heading section-heading-dark">Smart Trading Solutions with <span>Professional</span> Market Guidance</h2>
+        <p>RupeeVyze offers equity and commodity broking solutions for investors who want to actively participate in financial markets with strategic insight and disciplined execution.</p>
+        <p>Whether you are a beginner trader or an experienced investor, our services help you stay aligned with market trends while avoiding emotional decision-making.</p>
+        <ul class="intro-checklist">
+          <li><i class="fa-solid fa-circle-check"></i> Research-backed stock and commodity recommendations</li>
+          <li><i class="fa-solid fa-circle-check"></i> SEBI-registered broking with full regulatory compliance</li>
+          <li><i class="fa-solid fa-circle-check"></i> IPO applications, allotment strategies, and unlisted shares access</li>
+          <li><i class="fa-solid fa-circle-check"></i> Portfolio tracking with real-time market updates</li>
+        </ul>
+        <a href="https://rupeevyze.com/apply-now/" class="btn-primary" style="margin-top:32px; width:fit-content;">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="intro-image-col reveal">
+        <img src="https://rupeevyze.com/wp-content/uploads/2025/12/commodity-broker-service-1024x1024.jpg" alt="Commodity Broker Service">
+        <div class="intro-badge">
+          <div class="intro-badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="intro-badge-text">
+            <span class="intro-badge-num">SEBI Registered</span>
+            <span class="intro-badge-sub">Trusted & Regulated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR BROKING SERVICES ── -->
+<section class="section-dark-alt">
+  <div class="container">
+    <div style="text-align:center; max-width:600px; margin:0 auto 0;">
+      <span class="section-eyebrow">What We Offer</span>
+      <h2 class="section-heading section-heading-dark">Our <span>Broking</span> Services</h2>
+      <p style="color:var(--text-secondary); font-size:1rem; line-height:1.75;">Four core pillars designed to give you a complete trading and investment edge in Indian and global markets.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="glow-border"></div>
+        <div class="service-num">01 — EQUITY</div>
+        <div class="service-icon-wrap"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <h4>Equity Trading</h4>
+        <p>Invest in Indian equity markets with guidance on stock selection, portfolio diversification, and long-term growth strategies crafted by our research team.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="glow-border"></div>
+        <div class="service-num">02 — COMMODITY</div>
+        <div class="service-icon-wrap"><i class="fa-solid fa-coins"></i></div>
+        <h4>Commodity Trading</h4>
+        <p>Participate in commodity markets — metals, energy, and agricultural products — with research-backed support and disciplined risk management frameworks.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="glow-border"></div>
+        <div class="service-num">03 — IPO</div>
+        <div class="service-icon-wrap"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+        <h4>IPO Investments</h4>
+        <p>Expert assistance in IPO evaluations, applications, and allotment strategies — helping you capture early-stage opportunities before the crowd.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="glow-border"></div>
+        <div class="service-num">04 — UNLISTED</div>
+        <div class="service-icon-wrap"><i class="fa-solid fa-lock-open"></i></div>
+        <h4>Unlisted Shares</h4>
+        <p>Access pre-IPO and private company shares for long-term capital appreciation opportunities before they list publicly on major exchanges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section-dark">
+  <div class="container">
+    <div style="text-align:center; max-width:580px; margin:0 auto 0;">
+      <span class="section-eyebrow">Simple Process</span>
+      <h2 class="section-heading section-heading-dark">How It <span>Works</span></h2>
+      <p style="color:var(--text-secondary); font-size:1rem; line-height:1.75;">From onboarding to active trading — we make every step simple, transparent, and guided.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-number">1</div>
+        <h4>Onboard & KYC</h4>
+        <p>Complete your profile and KYC digitally in minutes. Our team assists every step of the way.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-number">2</div>
+        <h4>Risk Profiling</h4>
+        <p>We assess your goals, risk appetite, and investment horizon to recommend the right products.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-number">3</div>
+        <h4>Start Trading</h4>
+        <p>Execute trades with confidence using our research insights and expert advisor support.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-number">4</div>
+        <h4>Track & Grow</h4>
+        <p>Monitor your portfolio performance with regular reviews and rebalancing recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section class="section-dark-alt" style="padding: 80px 0;">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-left">
+        <div class="cta-tag"><span class="cta-tag-dot"></span> Start Today</div>
+        <h2 class="cta-heading">Turning <span>Market Complexity</span><br>Into Your Opportunity</h2>
+        <p class="cta-subtext">We simplify equity and commodity investments, helping you act with clarity, confidence, and a strategy built around your goals — not guesswork.</p>
+        <div class="cta-btn-row">
+          <a href="https://rupeevyze.com/apply-now/" class="cta-btn">
+            Apply Now <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+          </a>
+          <a href="tel:+919686899698" class="cta-phone">
+            <div class="cta-phone-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="cta-phone-info">
+              <span class="cta-phone-label">Call Anytime</span>
+              <span class="cta-phone-num">+91 9686899698</span>
+            </div>
+          </a>
+        </div>
+        <div class="cta-stats">
+          <div class="cta-stat"><div class="cta-stat-num">5000<span>+</span></div><span class="cta-stat-label">Happy Clients</span></div>
+          <div class="cta-stat"><div class="cta-stat-num">₹200<span>Cr+</span></div><span class="cta-stat-label">AUM Managed</span></div>
+          <div class="cta-stat"><div class="cta-stat-num">4<span>+</span></div><span class="cta-stat-label">Yrs Experience</span></div>
+        </div>
+      </div>
+      <div class="cta-right">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="Trading Platform" onerror="this.parentNode.style.background='linear-gradient(135deg,#111a47,#0b1131)';this.style.display='none'">
+        <div class="cta-img-overlay"></div>
+        <div class="cta-badge">
+          <div class="cta-badge-icon"><i class="fa-solid fa-certificate"></i></div>
+          <div>
+            <div class="cta-badge-num">SEBI Registered</div>
+            <div class="cta-badge-sub">Trusted & Regulated Advisor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ── -->
+<section class="section-light-shady">
+  <div class="container">
+    <div style="text-align:center; max-width:580px; margin:0 auto 0;">
+      <span class="section-eyebrow">Why Choose Us</span>
+      <h2 class="section-heading section-heading-light">What Makes <span>RupeeVyze</span> Different</h2>
+      <p style="color:var(--text-light-body); font-size:1rem; line-height:1.75;">Six reasons our clients trust us with their trading and investment journey.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="glow-border"></div>
+        <div class="why-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <h4>Research-Driven Calls</h4>
+        <p>Every recommendation is backed by in-depth technical and fundamental research, not speculation or tips.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="glow-border"></div>
+        <div class="why-icon"><i class="fa-solid fa-certificate"></i></div>
+        <h4>SEBI Registered</h4>
+        <p>Fully regulated and compliant — your investments are protected under SEBI guidelines at all times.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="glow-border"></div>
+        <div class="why-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h4>Goal-Based Approach</h4>
+        <p>We align every trade and investment decision to your personal financial goals and risk profile.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="glow-border"></div>
+        <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+        <h4>Dedicated Support</h4>
+        <p>A personal advisor is always a call away — for market queries, portfolio reviews, or any concerns.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="glow-border"></div>
+        <div class="why-icon"><i class="fa-solid fa-eye"></i></div>
+        <h4>Full Transparency</h4>
+        <p>No hidden charges, no surprises. Clear communication on fees, risks, and expected outcomes.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="glow-border"></div>
+        <div class="why-icon"><i class="fa-solid fa-users"></i></div>
+        <h4>For Every Investor</h4>
+        <p>From first-time traders to seasoned investors — our services are tailored to every experience level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section-light">
+  <div class="container">
+    <div style="text-align:center; max-width:580px; margin:0 auto 0;">
+      <span class="section-eyebrow">Frequently Asked</span>
+      <h2 class="section-heading section-heading-light">We've Got <span>Answers.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span class="faq-q-text">What Services Does RupeeVyze Offer?</span>
+          <span class="faq-icon"><i class="fa-solid fa-minus"></i></span>
+        </div>
+        <div class="faq-answer-wrap" style="max-height:200px;">
+          <p class="faq-answer">RupeeVyze provides a complete financial ecosystem including mutual funds, equity and commodity broking, PMS, AIFs, bonds, fixed deposits, insurance, loans, and real estate solutions — all under one roof.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Who Can Invest Or Use RupeeVyze Services?</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <div class="faq-answer-wrap">
+          <p class="faq-answer">Any Indian resident aged 18 and above can invest through RupeeVyze. We serve salaried professionals, self-employed individuals, NRIs, and corporates looking to grow and manage their wealth smartly.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Is There A Minimum Investment Amount?</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <div class="faq-answer-wrap">
+          <p class="faq-answer">Minimum investment amounts vary by product. Mutual funds can start with as little as ₹500/month via SIPs, while equity trading depends on stock prices and your chosen portfolio size.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">How Does RupeeVyze Recommend Financial Products?</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <div class="faq-answer-wrap">
+          <p class="faq-answer">We follow a goal-based advisory approach. Recommendations are made after understanding your financial goals, risk profile, investment horizon, and income stability — all through a SEBI-registered framework.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Is RupeeVyze Suitable For Beginners?</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <div class="faq-answer-wrap">
+          <p class="faq-answer">Yes. We specialize in simplifying finance. Our advisors guide beginners step-by-step to help them invest confidently and make informed decisions without getting overwhelmed.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Are My Investments Safe With RupeeVyze?</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <div class="faq-answer-wrap">
+          <p class="faq-answer">All investments are subject to market risks. However, we prioritize transparency, diversification, and regulated instruments to help manage and reduce risk effectively. RupeeVyze is SEBI-registered and follows the highest compliance standards.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-q-text">Does RupeeVyze Provide Personalized Advisory?</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <div class="faq-answer-wrap">
+          <p class="faq-answer">Yes. We offer personalized financial guidance aligned to individual goals, risk appetite, and long-term wealth objectives. Every client gets a dedicated advisor.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="contactus.html" class="btn-primary" style="display:inline-flex;">Ask Us Anything <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-stacked">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:60px;height:60px;margin-bottom:12px;display:block;">
+            <defs>
+              <linearGradient id="arrow-grad-footer" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#05a885"/>
+                <stop offset="100%" stop-color="#00c497"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <path d="M 44 32 H 76"/><path d="M 44 45 H 68"/>
+              <path d="M 56 32 C 76 32, 76 58, 56 58 H 44"/>
+              <path d="M 54 32 V 58"/><path d="M 52 58 L 74 88"/>
+            </g>
+            <path d="M 26 72 C 24 90, 46 106, 74 96 C 90 90, 100 74, 104 53 L 112 58 L 108 28 L 80 38 L 87 44 C 83 60, 75 72, 63 76 C 45 83, 32 74, 28 60 Z" fill="url(#arrow-grad-footer)"/>
+          </svg>
+          <span class="footer-logo-title">Rupee<span>Vyze</span></span>
+          <span class="footer-logo-tagline">Wisdom In Every Rupee™</span>
+        </div>
+        <p class="footer-desc">From stock broking &amp; trading to mutual funds, PMS, insurance, loans, bonds, and beyond — your one-stop destination for financial growth.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/rupeevyze.official" class="social-link" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/rupeevyze" class="social-link" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/rupeevyze" class="social-link" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@RupeeVyze" class="social-link" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <div class="footer-links">
+          <a href="homepage.html" class="footer-link">Home</a>
+          <a href="aboutus.html" class="footer-link">About Us</a>
+          <a href="contactus.html" class="footer-link">Contact Us</a>
+          <a href="blogs.html" class="footer-link">Blogs</a>
+          <a href="calculators.html" class="footer-link">Calculators</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact Info</h4>
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <span class="contact-label">Call us here</span>
+            <a href="tel:+919686899698" class="contact-value">+91 9686899698</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Need Help? Email us</span>
+            <a href="mailto:support@rupeevyze.com" class="contact-value">support@rupeevyze.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Our Location</h4>
+        <div class="footer-map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.155823869274!2d77.6253465750734!3d12.897455887413695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148d5300f80b%3A0x80858e745672c72b!2sAKR%20Tech%20Park!5e0!3m2!1sen!2sin!4v1719289800000!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2025 RupeeVyze. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  // Header scroll
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  mobileToggle.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Mobile services dropdown
+  const servicesDropdown = document.getElementById('servicesDropdown');
+  const servicesTrigger = document.getElementById('servicesTrigger');
+  servicesTrigger.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      servicesDropdown.classList.toggle('active');
+    }
+  });
+
+  // Close menu on link click (mobile)
+  document.querySelectorAll('.nav-link:not(#servicesTrigger)').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-answer-wrap').style.maxHeight = '0';
+        i.querySelector('.faq-icon i').className = 'fa-solid fa-plus';
+      });
+      if (!isOpen) {
+        item.classList.add('active');
+        item.querySelector('.faq-answer-wrap').style.maxHeight = item.querySelector('.faq-answer-wrap').scrollHeight + 'px';
+        item.querySelector('.faq-icon i').className = 'fa-solid fa-minus';
+      }
+    });
+  });
+
+  // Glow border mouse tracking
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.service-card, .why-card').forEach(card => {
+      if (window.getComputedStyle(card).position === 'static') card.style.position = 'relative';
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
+  });
+</script>
+</body>
+</html>

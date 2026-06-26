@@ -5,45 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMI Calculator | RupeeVyze - Wealth Planning Tools</title>
     
-    <!-- Meta tags for SEO -->
+    
     <meta name="description" content="Calculate your monthly EMIs, total interest payable, and overall loan payments using RupeeVyze's premium interactive EMI calculator.">
     <meta name="keywords" content="EMI Calculator, Loan EMI, Interest Rate, Loan Tenure, RupeeVyze Calculators, Financial Planning">
     <meta name="author" content="RupeeVyze">
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for icons -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        
         :root {
-            --bg-primary: #050a1e;       /* Deep space dark blue background for header and footer */
-            --bg-secondary: #0b1131;     /* Slightly lighter dark blue for cards and elements */
-            --bg-tertiary: #111a47;      /* Distinct deep blue for highlights */
+            --bg-primary: #050a1e;       
+            --bg-secondary: #0b1131;     
+            --bg-tertiary: #111a47;      
             
-            /* Shady White background for content sections */
-            --bg-light-shady: #f8fafc;   /* Slate 50 - clean, professional off-white */
-            --bg-pure-white: #ffffff;    /* Pure White */
             
-            --accent-green: #00c497;     /* Vibrant teal-green from the logo */
+            --bg-light-shady: #f8fafc;   
+            --bg-pure-white: #ffffff;    
+            
+            --accent-green: #00c497;     
             --accent-green-dark: #009975;
             --accent-green-glow: rgba(0, 196, 151, 0.3);
             
-            --accent-blue: #1c32ff;      /* Vibrant blue from logo background */
+            --accent-blue: #1c32ff;      
             --accent-blue-glow: rgba(28, 50, 255, 0.4);
             
-            --text-primary: #ffffff;     /* Pure white for dark sections */
-            --text-secondary: #94a3b8;   /* Cool slate grey for dark body copy */
-            --text-muted: #64748b;       /* Darker slate grey for subtexts */
+            --text-primary: #ffffff;     
+            --text-secondary: #94a3b8;   
+            --text-muted: #64748b;       
             
-            /* High-contrast text colors for light sections */
-            --text-light-title: #0f172a; /* Slate 900 - rich charcoal/black */
-            --text-light-body: #334155;  /* Slate 700 - readable dark slate */
-            --text-light-muted: #64748b; /* Slate 500 */
+            
+            --text-light-title: #0f172a; 
+            --text-light-body: #334155;  
+            --text-light-muted: #64748b; 
             
             --glass-bg: rgba(11, 17, 49, 0.65);
             --glass-border: rgba(255, 255, 255, 0.07);
@@ -55,9 +55,17 @@
             --border-radius-lg: 24px;
             
             --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+            --text-body: 1.0625rem;
+            --text-lead: 1.125rem;
+            --heading-hero: clamp(2.375rem, 4.5vw, 3.25rem);
+            --heading-section: clamp(1.875rem, 3vw, 2.5rem);
+            --leading-body: 1.65;
+            --leading-heading: 1.2;
+            --tracking-heading: -0.025em;
         }
 
-        /* --- GLOBAL RESETS & STYLES --- */
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -68,24 +76,29 @@
             scroll-behavior: smooth;
             background-color: var(--bg-primary);
             font-family: var(--font-main);
+            font-size: 16px;
             color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-main);
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-weight: 700;
+            letter-spacing: var(--tracking-heading);
+            line-height: var(--leading-heading);
         }
 
         body {
             background-color: var(--bg-primary);
-            line-height: 1.6;
+            font-size: var(--text-body);
+            line-height: var(--leading-body);
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Ambient Background Glows */
+        
         .ambient-glow-1 {
             position: absolute;
             top: -100px;
@@ -104,7 +117,7 @@
             transition: var(--transition-fast);
         }
 
-        /* --- SCROLLBAR --- */
+        
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -120,7 +133,7 @@
             background: var(--accent-green);
         }
 
-        /* --- CONTAINER --- */
+        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -130,7 +143,7 @@
             z-index: 10;
         }
 
-        /* --- STICKY GLASS NAVIGATION --- */
+        
         .header {
             position: fixed;
             top: 0;
@@ -185,10 +198,10 @@
         }
 
         .logo-title {
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 1.375rem;
+            font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
@@ -205,7 +218,7 @@
             margin-top: 1px;
         }
 
-        /* Desktop Navigation Menu */
+        
         .nav-menu {
             display: flex;
             align-items: center;
@@ -217,7 +230,7 @@
         }
 
         .nav-link {
-            font-size: 15px;
+            font-size: 0.9375rem;
             font-weight: 500;
             color: var(--text-secondary);
             padding: 8px 0;
@@ -248,7 +261,7 @@
             box-shadow: 0 0 8px var(--accent-green);
         }
 
-        /* Hover indicator for non-active links */
+        
         .nav-link:not(.active)::after {
             content: '';
             position: absolute;
@@ -265,7 +278,7 @@
             width: 100%;
         }
 
-        /* Dropdown Services Menu */
+        
         .dropdown {
             position: relative;
         }
@@ -339,7 +352,7 @@
             background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
         }
 
-        /* Mobile Hamburger Toggle */
+        
         .mobile-toggle {
             display: none;
             background: none;
@@ -371,7 +384,7 @@
             transform: rotate(-45deg) translate(5px, -7px);
         }
 
-        /* --- HERO WRAPPER (Solid complete deep blue background) --- */
+        
         .hero-wrapper {
             position: relative;
             background-color: var(--bg-primary);
@@ -392,7 +405,7 @@
             pointer-events: none;
         }
 
-        /* --- HERO BANNER (SUPER COOL GLASS CARD DESIGN, CURVED AT THE ENDS) --- */
+        
         .hero-banner {
             padding: 100px 0 45px;
             position: relative;
@@ -429,10 +442,10 @@
         }
 
         .hero-title {
-            font-size: 52px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.15;
+            font-size: var(--heading-hero);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
             margin-bottom: 20px;
             color: var(--text-primary);
             animation: fadeInUp 0.8s ease 0.1s forwards;
@@ -515,7 +528,7 @@
             background-clip: text;
         }
 
-        /* --- EMI CALCULATOR MAIN SECTION --- */
+        
         .emi-calc-section {
             padding: 40px 0 60px;
             background-color: var(--bg-light-shady);
@@ -545,7 +558,7 @@
             justify-content: center;
         }
 
-        /* Input Rows styling */
+        
         .emi-input-row {
             display: flex;
             align-items: center;
@@ -609,7 +622,7 @@
             min-width: 44px;
         }
 
-        /* Tenure input specific group with toggle buttons */
+        
         .tenure-group {
             max-width: 300px;
         }
@@ -645,7 +658,7 @@
             background: #cbd5e1;
         }
 
-        /* Slider styling */
+        
         .emi-slider-row {
             margin-bottom: 40px;
         }
@@ -680,7 +693,7 @@
             background: #0d1eab;
         }
 
-        /* Outputs Grid */
+        
         .emi-outputs-grid {
             display: grid;
             grid-template-columns: 1fr 1.05fr;
@@ -712,7 +725,7 @@
         .emi-result-value {
             font-size: 26px;
             font-weight: 800;
-            color: #475569; /* Slate grey color from the screenshot */
+            color: #475569; 
             letter-spacing: -0.5px;
         }
 
@@ -726,7 +739,7 @@
             margin: 6px 0;
         }
 
-        /* Chart Column styling */
+        
         .emi-chart-column {
             display: flex;
             flex-direction: column;
@@ -757,11 +770,11 @@
         }
 
         .legend-color.principal {
-            background-color: var(--accent-blue); /* Royal Blue */
+            background-color: var(--accent-blue); 
         }
 
         .legend-color.interest {
-            background-color: #c3dafe; /* Lighter soft blue */
+            background-color: #c3dafe; 
         }
 
         .emi-chart-wrapper {
@@ -779,7 +792,7 @@
             transition: background 0.3s ease;
         }
 
-        /* --- FOOTER SECTION (PREMIUM DARK THEME) --- */
+        
         .footer {
             background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
             border-top: 1px solid var(--glass-border);
@@ -806,11 +819,32 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr;
+            gap: 40px;
             margin-bottom: 50px;
             position: relative;
             z-index: 2;
+        }
+
+        .footer-map-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            height: 180px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .footer-map-container {
+                margin: 0 auto;
+            }
         }
 
         .footer-brand {
@@ -843,9 +877,9 @@
         }
 
         .footer-desc {
-            font-size: 14.5px;
+            font-size: 0.9375rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: var(--leading-body);
         }
 
         .footer-socials {
@@ -952,7 +986,7 @@
             z-index: 2;
         }
 
-        /* --- WHATSAPP FLOATING BUTTON --- */
+        
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -976,7 +1010,7 @@
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
 
-        /* Animation Keyframes */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -999,7 +1033,7 @@
             transform: translateY(0);
         }
 
-        /* Responsive Layouts */
+        
         @media (max-width: 992px) {
             .emi-calc-container {
                 grid-template-columns: 1fr;
@@ -1078,13 +1112,9 @@
                 border-radius: 0 0 40px 40px;
             }
 
-            .hero-title {
-                font-size: 38px;
-            }
 
-            .section-heading {
-                font-size: 32px;
-            }
+
+
 
             .emi-outputs-grid {
                 grid-template-columns: 1fr;
@@ -1113,13 +1143,13 @@
 </head>
 <body>
 
-    <!-- Ambient Glowing Shapes in Background -->
+    
     <div class="ambient-glow-1"></div>
 
-    <!-- --- HEADER / NAVIGATION BAR --- -->
+    
     <header class="header" id="mainHeader">
         <div class="container nav-container">
-            <!-- Brand Logo -->
+            
             <a href="homepage.html" class="logo-link">
                 <div class="logo-wrapper">
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -1149,7 +1179,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
+            
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
                     <a href="homepage.html" class="nav-link">Home</a>
@@ -1158,15 +1188,16 @@
                     <a href="aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="#" class="nav-link" id="servicesTrigger">
+                    <a href="homepage.html#services" class="nav-link" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="wealth-management.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Wealth Advisory</a>
-                        <a href="mutual-funds.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Funds</a>
-                        <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
-                        <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
-                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
+                        <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
                         <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
@@ -1182,7 +1213,7 @@
                 <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
-            <!-- Mobile Hamburger Toggle -->
+            
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -1191,7 +1222,7 @@
         </div>
     </header>
 
-    <!-- --- HERO WRAPPER --- -->
+    
     <div class="hero-wrapper">
         <div class="hero-banner-glow"></div>
         
@@ -1209,15 +1240,15 @@
         </section>
     </div>
 
-    <!-- --- EMI CALCULATOR MAIN SECTION --- -->
+    
     <section class="emi-calc-section">
         <div class="container">
             <div class="emi-calc-container">
                 
-                <!-- Card 1: Input controls -->
+                
                 <div class="emi-card-box inputs-card reveal">
                     
-                    <!-- Input Row 1: Loan Amount -->
+                    
                     <div class="emi-input-row">
                         <label for="loanAmountNum" class="emi-input-label">Loan Amount</label>
                         <div class="emi-input-field-group">
@@ -1229,7 +1260,7 @@
                         <input type="range" id="loanAmountSlider" class="emi-range-slider" min="10000" max="10000000" step="5000" value="50000">
                     </div>
 
-                    <!-- Input Row 2: Interest Rate -->
+                    
                     <div class="emi-input-row">
                         <label for="interestRateNum" class="emi-input-label">Interest Rate</label>
                         <div class="emi-input-field-group">
@@ -1241,7 +1272,7 @@
                         <input type="range" id="interestRateSlider" class="emi-range-slider" min="1" max="30" step="0.1" value="15">
                     </div>
 
-                    <!-- Input Row 3: Loan Tenure -->
+                    
                     <div class="emi-input-row">
                         <label for="loanTenureNum" class="emi-input-label">Loan Tenure</label>
                         <div class="emi-input-field-group tenure-group">
@@ -1258,11 +1289,11 @@
 
                 </div>
 
-                <!-- Card 2: Output results & pie chart -->
+                
                 <div class="emi-card-box outputs-card reveal" style="transition-delay: 0.1s;">
                     <div class="emi-outputs-grid">
                         
-                        <!-- Left Side: Numeric Results -->
+                        
                         <div class="emi-results-column">
                             
                             <div class="emi-result-block">
@@ -1286,7 +1317,7 @@
 
                         </div>
 
-                        <!-- Right Side: Pie Chart & Legend -->
+                        
                         <div class="emi-chart-column">
                             
                             <div class="emi-chart-legend">
@@ -1313,11 +1344,11 @@
         </div>
     </section>
 
-    <!-- --- FOOTER SECTION --- -->
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: Logo and Brand -->
+                
                 <div class="footer-brand">
                     <div class="footer-logo-stacked">
                         <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 10px;">
@@ -1350,7 +1381,7 @@
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
+                
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
@@ -1360,7 +1391,7 @@
                     </div>
                 </div>
 
-                <!-- Column 3: Contact Info -->
+                
                 <div>
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info-block">
@@ -1374,23 +1405,39 @@
                         </div>
                     </div>
                 </div>
+            
+                
+                <div>
+                    <h4 class="footer-title">Our Location</h4>
+                    <div class="footer-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.155823869274!2d77.6253465750734!3d12.897455887413695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148d5300f80b%3A0x80858e745672c72b!2sAKR%20Tech%20Park!5e0!3m2!1sen!2sin!4v1719289800000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
 
-            <!-- Bottom footer bar -->
+            
             <div class="footer-bottom">
                 <p>Copyright &copy; 2025 RupeeVyze . All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- --- WHATSAPP FLOATING BUTTON --- -->
+    
     <a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- --- JAVASCRIPT FOR DYNAMIC INTERACTIVE SYNC --- -->
+    
     <script>
-        // Sticky Header scroll styling
+        
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -1400,7 +1447,7 @@
             }
         });
 
-        // Mobile Burger Menu Toggle
+        
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -1412,7 +1459,7 @@
             }
         });
 
-        // Services Dropdown Toggle on Mobile
+        
         const servicesDropdown = document.getElementById('servicesDropdown');
         const servicesTrigger = document.getElementById('servicesTrigger');
 
@@ -1423,7 +1470,7 @@
             }
         });
 
-        // Close mobile menu on navigation links click
+        
         const navLinks = document.querySelectorAll('.nav-link:not(#servicesTrigger)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -1432,7 +1479,7 @@
             });
         });
 
-        // sync components
+        
         const amountNum = document.getElementById('loanAmountNum');
         const amountSlider = document.getElementById('loanAmountSlider');
         const rateNum = document.getElementById('interestRateNum');
@@ -1445,12 +1492,12 @@
 
         let tenureUnit = 'Yr';
 
-        // Comma formatting helper
+        
         function formatCommas(number) {
             return Math.round(number).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-        // Calculation Routine
+        
         function calculateEMI() {
             let P = parseFloat(amountNum.value) || 0;
             let annualRate = parseFloat(rateNum.value) || 0;
@@ -1469,35 +1516,35 @@
                 return;
             }
             
-            // Monthly rate R
+            
             let r = annualRate / 12 / 100;
             
-            // Total number of months N
+            
             let N = tenureUnit === 'Yr' ? tenureVal * 12 : tenureVal;
             
             let emi = 0;
             if (r === 0) {
                 emi = P / N;
             } else {
-                // EMI Formula: P * r * (1+r)^N / ((1+r)^N - 1)
+                
                 emi = (P * r * Math.pow(1 + r, N)) / (Math.pow(1 + r, N) - 1);
             }
             
             let totalPayable = emi * N;
             let totalInterest = totalPayable - P;
             
-            // Output text settings matching screenshot: no commas for emi/interest, comma for total payment
+            
             resEmi.innerText = Math.round(emi) + " INR";
             resInterest.innerText = Math.round(totalInterest) + " INR";
             resTotal.innerText = formatCommas(totalPayable) + " INR";
             
-            // Pie chart conic-gradient ratio calculation
+            
             let principalPercent = (P / totalPayable) * 100;
             
             pieChart.style.background = `conic-gradient(var(--accent-blue) 0% ${principalPercent}%, #c3dafe ${principalPercent}% 100%)`;
         }
 
-        // Bidirectional Sync for Amount
+        
         amountSlider.addEventListener('input', () => {
             amountNum.value = amountSlider.value;
             calculateEMI();
@@ -1511,7 +1558,7 @@
             calculateEMI();
         });
 
-        // Bidirectional Sync for Rate
+        
         rateSlider.addEventListener('input', () => {
             rateNum.value = rateSlider.value;
             calculateEMI();
@@ -1525,7 +1572,7 @@
             calculateEMI();
         });
 
-        // Bidirectional Sync for Tenure
+        
         tenureSlider.addEventListener('input', () => {
             tenureNum.value = tenureSlider.value;
             calculateEMI();
@@ -1540,7 +1587,7 @@
             calculateEMI();
         });
 
-        // Unit Toggles Yr / Mo
+        
         btnYr.addEventListener('click', () => {
             if (tenureUnit !== 'Yr') {
                 tenureUnit = 'Yr';
@@ -1579,7 +1626,7 @@
             }
         });
 
-        // IntersectionObserver for reveal animation
+        
         const revealElements = document.querySelectorAll('.reveal');
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
@@ -1598,7 +1645,7 @@
             revealObserver.observe(element);
         });
 
-        // Initial execution on load
+        
         window.addEventListener('DOMContentLoaded', () => {
             calculateEMI();
             document.querySelector('.hero-title').style.opacity = '1';

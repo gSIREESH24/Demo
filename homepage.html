@@ -5,45 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RupeeVyze | Wisdom In Every Rupee™</title>
     
-    <!-- Meta tags for SEO -->
+    
     <meta name="description" content="RupeeVyze – Wisdom In Every Rupee™. We make financial wisdom accessible, practical, and empowering for every Indian investor.">
     <meta name="keywords" content="RupeeVyze, investing, trading, wealth creation, India, Gen Z finance, financial wisdom">
     <meta name="author" content="RupeeVyze">
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for icons -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        
         :root {
-            --bg-primary: #050a1e;       /* Deep space dark blue background for header and footer */
-            --bg-secondary: #0b1131;     /* Slightly lighter dark blue for cards and elements */
-            --bg-tertiary: #111a47;      /* Distinct deep blue for highlights */
+            --bg-primary: #050a1e;       
+            --bg-secondary: #0b1131;     
+            --bg-tertiary: #111a47;      
             
-            /* Shady White background for content sections */
-            --bg-light-shady: #f8fafc;   /* Slate 50 - clean, professional off-white */
-            --bg-pure-white: #ffffff;    /* Pure White */
             
-            --accent-green: #00c497;     /* Vibrant teal-green from the logo */
+            --bg-light-shady: #f8fafc;   
+            --bg-pure-white: #ffffff;    
+            
+            --accent-green: #00c497;     
             --accent-green-dark: #009975;
             --accent-green-glow: rgba(0, 196, 151, 0.3);
             
-            --accent-blue: #1c32ff;      /* Vibrant blue from logo background / button */
+            --accent-blue: #1c32ff;      
             --accent-blue-glow: rgba(28, 50, 255, 0.4);
             
-            --text-primary: #ffffff;     /* Pure white for dark sections */
-            --text-secondary: #94a3b8;   /* Cool slate grey for dark body copy */
-            --text-muted: #64748b;       /* Darker slate grey for subtexts */
+            --text-primary: #ffffff;     
+            --text-secondary: #94a3b8;   
+            --text-muted: #64748b;       
             
-            /* High-contrast text colors for light sections */
-            --text-light-title: #0f172a; /* Slate 900 - rich charcoal/black */
-            --text-light-body: #334155;  /* Slate 700 - readable dark slate */
-            --text-light-muted: #64748b; /* Slate 500 */
+            
+            --text-light-title: #0f172a; 
+            --text-light-body: #334155;  
+            --text-light-muted: #64748b; 
             
             --glass-bg: rgba(11, 17, 49, 0.65);
             --glass-border: rgba(255, 255, 255, 0.07);
@@ -55,10 +55,17 @@
             --border-radius-lg: 24px;
             
             --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --text-body: 1.0625rem;
+            --text-lead: 1.125rem;
+            --heading-hero: clamp(2.375rem, 4.5vw, 3.25rem);
+            --heading-section: clamp(1.875rem, 3vw, 2.5rem);
+            --leading-body: 1.65;
+            --leading-heading: 1.2;
+            --tracking-heading: -0.025em;
             --border: rgba(15, 23, 42, 0.08);
         }
 
-        /* --- GLOBAL RESETS & STYLES --- */
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -69,24 +76,29 @@
             scroll-behavior: smooth;
             background-color: var(--bg-primary);
             font-family: var(--font-main);
+            font-size: 16px;
             color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-main);
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-weight: 700;
+            letter-spacing: var(--tracking-heading);
+            line-height: var(--leading-heading);
         }
 
         body {
             background-color: var(--bg-primary);
-            line-height: 1.6;
+            font-size: var(--text-body);
+            line-height: var(--leading-body);
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Ambient Background Glows */
+        
         .ambient-glow-1 {
             position: absolute;
             top: -100px;
@@ -105,7 +117,7 @@
             transition: var(--transition-fast);
         }
 
-        /* --- SCROLLBAR --- */
+        
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -121,7 +133,7 @@
             background: var(--accent-green);
         }
 
-        /* --- CONTAINER --- */
+        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -131,7 +143,7 @@
             z-index: 10;
         }
 
-        /* --- STICKY GLASS NAVIGATION --- */
+        
         .header {
             position: fixed;
             top: 0;
@@ -186,10 +198,10 @@
         }
 
         .logo-title {
-            font-size: 22px;
-            font-weight: 800;
+            font-size: 1.375rem;
+            font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
@@ -206,7 +218,7 @@
             margin-top: 1px;
         }
 
-        /* Desktop Navigation Menu */
+        
         .nav-menu {
             display: flex;
             align-items: center;
@@ -218,7 +230,7 @@
         }
 
         .nav-link {
-            font-size: 15px;
+            font-size: 0.9375rem;
             font-weight: 500;
             color: var(--text-secondary);
             padding: 8px 0;
@@ -249,7 +261,7 @@
             box-shadow: 0 0 8px var(--accent-green);
         }
 
-        /* Hover indicator for non-active links */
+        
         .nav-link:not(.active)::after {
             content: '';
             position: absolute;
@@ -266,7 +278,7 @@
             width: 100%;
         }
 
-        /* Dropdown Services Menu */
+        
         .dropdown {
             position: relative;
         }
@@ -340,7 +352,7 @@
             background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
         }
 
-        /* Mobile Hamburger Toggle */
+        
         .mobile-toggle {
             display: none;
             background: none;
@@ -372,7 +384,7 @@
             transform: rotate(-45deg) translate(5px, -7px);
         }
 
-        /* --- HERO WRAPPER --- */
+        
         .hero-wrapper {
             position: relative;
             background-color: var(--bg-primary);
@@ -393,7 +405,7 @@
             pointer-events: none;
         }
 
-        /* --- HERO BANNER (GLASS CARD DESIGN, CURVED AT THE ENDS) --- */
+        
         .hero-banner {
             padding: 170px 0 110px;
             position: relative;
@@ -429,9 +441,9 @@
 
         .hero-eyebrow {
             display: inline-block;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--accent-green);
             background: rgba(0, 196, 151, 0.12);
@@ -443,10 +455,10 @@
         }
 
         .hero-title {
-            font-size: 52px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.15;
+            font-size: var(--heading-hero);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
             margin-bottom: 20px;
             color: var(--text-primary);
             animation: fadeInUp 0.8s ease 0.1s forwards;
@@ -461,9 +473,9 @@
         }
 
         .hero-desc {
-            font-size: 16px;
+            font-size: var(--text-body);
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: var(--leading-body);
             max-width: 620px;
             margin: 0 auto 28px;
             animation: fadeInUp 0.8s ease 0.2s forwards;
@@ -475,7 +487,7 @@
             opacity: 0;
         }
 
-        /* --- SECTION STYLING --- */
+        
         .section-light {
             background-color: var(--bg-pure-white);
             color: var(--text-light-body);
@@ -496,9 +508,9 @@
 
         .section-eyebrow {
             display: inline-block;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 0.16em;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--accent-green);
             background: rgba(0, 196, 151, 0.08);
@@ -509,12 +521,12 @@
         }
 
         .section-heading {
-            font-size: 40px;
-            font-weight: 800;
+            font-size: var(--heading-section);
+            font-weight: 700;
             color: var(--text-light-title);
-            line-height: 1.2;
+            line-height: var(--leading-heading);
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            letter-spacing: -0.02em;
         }
 
         .section-heading span {
@@ -524,7 +536,7 @@
             background-clip: text;
         }
 
-        /* --- ABOUT US COMPONENT --- */
+        
         .about-story-grid {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
@@ -761,7 +773,7 @@
             font-size: 28px;
         }
 
-        /* --- VISION & MISSION SECTION --- */
+        
         .about-vm-grid {
             display: grid;
             grid-template-columns: 1fr 1.15fr;
@@ -945,7 +957,7 @@
             line-height: 1.5;
         }
 
-        /* --- WHAT MAKES US DIFFERENT (VALUES) --- */
+        
         .about-values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -990,13 +1002,26 @@
             line-height: 1.6;
         }
 
-        /* --- SERVICES SECTION --- */
+        
+        .services-full-width-container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 40px;
+            margin: 0 auto;
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             margin-top: 40px;
         }
+
+        
+        .services-grid .service-card.reveal:nth-child(4n+1) { transition-delay: 0s; }
+        .services-grid .service-card.reveal:nth-child(4n+2) { transition-delay: 0.15s; }
+        .services-grid .service-card.reveal:nth-child(4n+3) { transition-delay: 0.3s; }
+        .services-grid .service-card.reveal:nth-child(4n+4) { transition-delay: 0.45s; }
 
         .service-card {
             position: relative;
@@ -1010,7 +1035,7 @@
             border: 1.5px solid transparent;
             display: flex;
             flex-direction: column;
-            min-height: 380px;
+            min-height: 450px;
             z-index: 1;
         }
 
@@ -1133,7 +1158,7 @@
             color: var(--text-primary);
         }
 
-        /* --- CLARITY SECTION --- */
+        
         .clarity-card {
             display: flex;
             width: 100%;
@@ -1405,7 +1430,7 @@
             font-weight: 600;
         }
 
-        /* --- WHY CHOOSE US --- */
+        
         .wcu-inner {
             display: flex;
             align-items: center;
@@ -1594,7 +1619,7 @@
             letter-spacing: 0.05em;
         }
 
-        /* --- PARTNERSHIP BANNER --- */
+        
         .banner-section {
             position: relative;
             width: 100%;
@@ -1653,7 +1678,7 @@
             letter-spacing: 0.04em;
         }
 
-        /* --- REVIEWS SECTION --- */
+        
         .reviews-header {
             display: flex;
             align-items: center;
@@ -1667,6 +1692,11 @@
             align-items: center;
             gap: 6px;
             margin-left: auto;
+        }
+
+        .reviews-stars-row i {
+            color: #F5C518;
+            font-size: 16px;
         }
 
         .rating-score {
@@ -1798,7 +1828,7 @@
             color: var(--text-light-muted);
         }
 
-        /* --- FAQ SECTION --- */
+        
         .faq-list {
             max-width: 900px;
             margin: 30px auto 0;
@@ -1886,7 +1916,7 @@
             border-top: 1px solid var(--border);
         }
 
-        /* --- CONTACT SECTION (LIGHT SHADY THEME) --- */
+        
         .contact-section {
             padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
@@ -1926,7 +1956,7 @@
             gap: 24px;
         }
 
-        /* --- PREMIUM CARD DESIGN WITH BLUE SHADING AT THE ENDS --- */
+        
         .contact-info-card {
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.08);
@@ -1985,7 +2015,7 @@
             word-break: break-all;
         }
 
-        /* --- CONTACT FORM --- */
+        
         .contact-form-card {
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.08);
@@ -2062,7 +2092,7 @@
             background: linear-gradient(135deg, #3b50ff 0%, var(--accent-blue) 100%);
         }
 
-        /* --- FOOTER SECTION (STAYS PREMIUM DARK THEME) --- */
+        
         .footer {
             background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
             border-top: 1px solid var(--glass-border);
@@ -2090,11 +2120,32 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr;
+            gap: 40px;
             margin-bottom: 50px;
             position: relative;
             z-index: 2;
+        }
+
+        .footer-map-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            height: 180px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .footer-map-container {
+                margin: 0 auto;
+            }
         }
 
         .footer-brand {
@@ -2110,10 +2161,10 @@
         }
 
         .footer-logo-title {
-            font-size: 26px;
-            font-weight: 800;
+            font-size: 1.625rem;
+            font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
@@ -2131,9 +2182,9 @@
         }
 
         .footer-desc {
-            font-size: 14.5px;
+            font-size: 0.9375rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: var(--leading-body);
             max-width: 380px;
         }
 
@@ -2166,8 +2217,8 @@
         }
 
         .footer-title {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 1.125rem;
+            font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 24px;
             position: relative;
@@ -2202,7 +2253,7 @@
             transform: translateX(4px);
         }
 
-        /* Contact Info Column styles */
+        
         .contact-info-block {
             display: flex;
             flex-direction: column;
@@ -2242,7 +2293,7 @@
             z-index: 2;
         }
 
-        /* --- WHATSAPP FLOATING BUTTON --- */
+        
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -2267,7 +2318,7 @@
             color: #ffffff;
         }
 
-        /* --- ANIMATIONS & REVEALS --- */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -2290,7 +2341,7 @@
             transform: translateY(0);
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
+        
         @media (max-width: 1024px) {
             .contact-grid {
                 gap: 40px;
@@ -2411,16 +2462,8 @@
                 border-radius: 0 0 40px 40px;
             }
 
-            .hero-title {
-                font-size: 38px;
-            }
-
             .hero-desc {
-                font-size: 14.5px;
-            }
-
-            .section-heading {
-                font-size: 32px;
+                font-size: 1rem;
             }
 
             .about-story-quote {
@@ -2450,10 +2493,15 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
             }
+            .services-grid .service-card.reveal:nth-child(2n+1) { transition-delay: 0s; }
+            .services-grid .service-card.reveal:nth-child(2n+2) { transition-delay: 0.15s; }
+            .services-full-width-container {
+                padding: 0 24px;
+            }
 
             .service-card {
                 padding: 24px 20px;
-                min-height: 320px;
+                min-height: 380px;
             }
 
             .service-icon-wrap {
@@ -2518,6 +2566,10 @@
         @media (max-width: 640px) {
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+            .services-grid .service-card.reveal { transition-delay: 0s; }
+            .services-full-width-container {
+                padding: 0 16px;
             }
             .about-story-right {
                 padding-left: 32px;
@@ -2584,17 +2636,76 @@
                 gap: 20px;
             }
         }
+
+        
+        .glow-border {
+            position: absolute;
+            top: -1.5px;
+            left: -1.5px;
+            right: -1.5px;
+            bottom: -1.5px;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: radial-gradient(
+                circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+                rgba(0, 196, 151, 0.8) 0%,   
+                rgba(28, 50, 255, 0.8) 50%,   
+                transparent 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 5;
+        }
+
+        
+        .service-card:hover .glow-border,
+        .about-value-card:hover .glow-border,
+        .review-card:hover .glow-border,
+        .calculator-card:hover .glow-border,
+        .leader-card:hover .glow-border,
+        .timeline-card:hover .glow-border,
+        .contact-info-card:hover .glow-border,
+        .contact-form-card:hover .glow-border,
+        .offerings-highlight-card:hover .glow-border,
+        .offering-card:hover .glow-border,
+        .about-story-card:hover .glow-border,
+        .about-story-intro-card:hover .glow-border,
+        .about-vm-card:hover .glow-border {
+            opacity: 1;
+        }
+
+        
+        .about-value-card:hover,
+        .review-card:hover,
+        .service-card:hover,
+        .calculator-card:hover,
+        .leader-card:hover,
+        .timeline-card:hover,
+        .contact-info-card:hover,
+        .contact-form-card:hover,
+        .offerings-highlight-card:hover,
+        .offering-card:hover,
+        .about-story-card:hover,
+        .about-story-intro-card:hover,
+        .about-vm-card:hover {
+            border-color: transparent !important;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Ambient Glowing Shapes in Background -->
+    
     <div class="ambient-glow-1"></div>
 
-    <!-- --- HEADER / NAVIGATION BAR --- -->
+    
     <header class="header" id="mainHeader">
         <div class="container nav-container">
-            <!-- Brand Logo -->
+            
             <a href="#home" class="logo-link">
                 <div class="logo-wrapper">
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -2624,7 +2735,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
+            
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
                     <a href="homepage.html" class="nav-link active">Home</a>
@@ -2633,16 +2744,16 @@
                     <a href="aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="#" class="nav-link" id="servicesTrigger">
+                    <a href="#services" class="nav-link" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="wealth-management.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Wealth Advisory</a>
-                        <a href="mutual-funds.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Funds</a>
-                        <a href="tax-planning.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Tax Saving Plan</a>
-                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Bonds & Debt Services</a>
-                        <a href="retirement.html" class="dropdown-link"><i class="fa-solid fa-umbrella"></i> Retirement Planning</a>
-                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans & Realty</a>
+                        <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
                         <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
@@ -2658,7 +2769,7 @@
                 <a href="contactus.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
-            <!-- Mobile Hamburger Toggle -->
+            
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -2667,7 +2778,7 @@
         </div>
     </header>
 
-    <!-- --- HERO WRAPPER --- -->
+    
     <div class="hero-wrapper" id="home">
         <div class="hero-banner-glow"></div>
         
@@ -2687,7 +2798,7 @@
         </section>
     </div>
 
-    <!-- --- ABOUT US SECTION --- -->
+    
     <section class="section-light" id="about">
         <div class="container">
             <div style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
@@ -2696,7 +2807,7 @@
                 <p style="font-size: 16px; color: var(--text-light-body); font-style: italic;">Every great journey begins with a simple question.</p>
             </div>
 
-            <!-- Redesigned Story Section (Split Quote + Interactive Timeline) -->
+            
             <div class="about-story-grid">
                 
                 <div class="about-story-left">
@@ -2723,7 +2834,7 @@
                     <div class="about-timeline-line"></div>
                     <div class="about-timeline-line-active" id="timelineProgress"></div>
                     
-                    <!-- Story Cards -->
+                    
                     <div class="about-story-card active" data-index="0">
                         <div class="about-card-icon-wrapper">
                             <i class="fa-solid fa-bullseye"></i>
@@ -2785,7 +2896,7 @@
         </div>
     </section>
 
-    <!-- Experience Banner -->
+    
     <section class="about-exp-banner">
         <div class="container">
             <div class="about-exp-inner">
@@ -2795,7 +2906,7 @@
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
+    
     <section class="section-light-shady" id="vision-mission">
         <div class="container">
             <div class="about-vm-grid">
@@ -2812,7 +2923,7 @@
                 </div>
 
                 <div class="about-vm-right">
-                    <!-- Card 1: Vision -->
+                    
                     <div class="about-vm-card active" data-index="0">
                         <div class="about-vm-card-header">
                             <div class="about-vm-icon-wrap"><i class="fa-solid fa-eye"></i></div>
@@ -2849,7 +2960,7 @@
                         </div>
                     </div>
 
-                    <!-- Card 2: Mission -->
+                    
                     <div class="about-vm-card" data-index="1">
                         <div class="about-vm-card-header">
                             <div class="about-vm-icon-wrap"><i class="fa-solid fa-crosshairs"></i></div>
@@ -2891,76 +3002,17 @@
         </div>
     </section>
 
-    <!-- What Makes Us Different -->
-    <section class="section-light">
-        <div class="container">
-            <h2 class="section-heading" style="text-align: center;">What Makes Us Different</h2>
-            <div class="about-values-grid">
-                <div class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
-                    <h3>Wisdom In Every Rupee</h3>
-                    <p>Every financial decision is backed by expert insights and practical knowledge.</p>
-                </div>
-                <div class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>Simplified Investing</h3>
-                    <p>Complex financial concepts made easy for everyone to understand and act upon.</p>
-                </div>
-                <div class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-handshake"></i></div>
-                    <h3>Trust & Transparency</h3>
-                    <p>Complete clarity in every recommendation with no hidden fees or surprises.</p>
-                </div>
-                <div class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-users"></i></div>
-                    <h3>For Every Indian</h3>
-                    <p>Tailored solutions for Gen Z, millennials, and investors at all life stages.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bridging Tradition with Modern Finance -->
-    <section class="section-light-shady">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center;">
-                <div style="box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08); border-radius: var(--border-radius-md); overflow: hidden; height: 350px;">
-                    <img src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Tradition & Modern Finance" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div>
-                    <h2 class="section-heading">Bridging Tradition With Modern Finance</h2>
-                    <p style="font-size: 15.5px; color: var(--text-light-body); line-height: 1.75; margin-bottom: 20px;">
-                        At RupeeVyze, we respect India's rich tradition of saving and wealth preservation while
-                        embracing modern investment strategies. We help you find the perfect balance between
-                        traditional wisdom and contemporary financial tools.
-                    </p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-pure-white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 13.5px; font-weight: 700; color: var(--text-light-title);">
-                            <i class="fa-solid fa-store" style="color: var(--accent-green);"></i> Traditional Savings
-                        </span>
-                        <span style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-pure-white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 13.5px; font-weight: 700; color: var(--text-light-title);">
-                            <i class="fa-solid fa-landmark" style="color: var(--accent-green);"></i> Modern Investing
-                        </span>
-                        <span style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-pure-white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px; font-size: 13.5px; font-weight: 700; color: var(--text-light-title);">
-                            <i class="fa-solid fa-chart-line" style="color: var(--accent-green);"></i> Smart Growth
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- --- SERVICES SECTION --- -->
+    
     <section class="section-light" id="services">
-        <div class="container">
+        <div class="services-full-width-container">
             <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
                 <span class="section-eyebrow">Services</span>
                 <h2 class="section-heading">Smart Financial Solutions<br>For Every Goal, Every Stage Of Life</h2>
             </div>
 
             <div class="services-grid">
-                <!-- Service 1: Mutual Funds -->
-                <div class="service-card" onclick="window.location.href='https://rupeevyze.com/mutual-fund/'">
+                
+                <div class="service-card reveal" onclick="window.location.href='mutual.html'">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="32" cy="20" r="10" stroke="white" stroke-width="2.2" fill="none"/>
@@ -2973,13 +3025,13 @@
                     </div>
                     <h4 class="service-card-title">Mutual Funds</h4>
                     <p class="service-card-desc">Goal-based mutual fund solutions through SIPs, SWPs, STPs, and strategic planning.</p>
-                    <a href="https://rupeevyze.com/mutual-fund/" class="service-learn-more">
+                    <a href="mutual.html" class="service-learn-more">
                         <span class="service-learn-more-plus">+</span> Learn More
                     </a>
                 </div>
 
-                <!-- Service 2: Equity & Commodity -->
-                <div class="service-card" onclick="window.location.href='https://rupeevyze.com/equity-and-commodity-broking-ipo-unlisted-shares/'">
+                
+                <div class="service-card reveal" onclick="window.location.href='equity.html'">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 40 Q20 20 32 28 Q44 36 54 16" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/>
@@ -2992,13 +3044,13 @@
                     </div>
                     <h4 class="service-card-title">Equity & Commodity Broking</h4>
                     <p class="service-card-desc">Expert-backed equity and commodity trading with disciplined, informed market strategies.</p>
-                    <a href="https://rupeevyze.com/equity-and-commodity-broking-ipo-unlisted-shares/" class="service-learn-more">
+                    <a href="equity.html" class="service-learn-more">
                         <span class="service-learn-more-plus">+</span> Learn More
                     </a>
                 </div>
 
-                <!-- Service 3: PMS & AIF -->
-                <div class="service-card" onclick="window.location.href='https://rupeevyze.com/portfolio-management-system-pms-aif-sif-structured-products-mlds/'">
+                
+                <div class="service-card reveal" onclick="window.location.href='advance.html'">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="24" width="48" height="32" rx="4" stroke="white" stroke-width="2.2" fill="none"/>
@@ -3010,13 +3062,13 @@
                     </div>
                     <h4 class="service-card-title">PMS, AIF & Structured Products</h4>
                     <p class="service-card-desc">Advanced investment solutions for high-net-worth investors seeking professional portfolio management.</p>
-                    <a href="https://rupeevyze.com/portfolio-management-system-pms-aif-sif-structured-products-mlds/" class="service-learn-more">
+                    <a href="advance.html" class="service-learn-more">
                         <span class="service-learn-more-plus">+</span> Learn More
                     </a>
                 </div>
 
-                <!-- Service 4: Corporate Fixed Deposits -->
-                <div class="service-card" onclick="window.location.href='https://rupeevyze.com/fixed-deposit/'">
+                
+                <div class="service-card reveal" onclick="window.location.href='Fixed deposit.html'">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="28" width="44" height="26" rx="3" stroke="white" stroke-width="2.2" fill="none"/>
@@ -3027,13 +3079,13 @@
                     </div>
                     <h4 class="service-card-title">Corporate Fixed Deposits</h4>
                     <p class="service-card-desc">Stable, predictable returns through carefully selected, high-quality corporate fixed deposits.</p>
-                    <a href="https://rupeevyze.com/fixed-deposit/" class="service-learn-more">
+                    <a href="Fixed deposit.html" class="service-learn-more">
                         <span class="service-learn-more-plus">+</span> Learn More
                     </a>
                 </div>
 
-                <!-- Service 5: Bonds -->
-                <div class="service-card">
+                
+                <div class="service-card reveal" onclick="window.location.href='Bonds-debt.html'">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M32 8 L54 18 L54 32 C54 44 44 54 32 58 C20 54 10 44 10 32 L10 18 Z" stroke="white" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
@@ -3042,13 +3094,13 @@
                     </div>
                     <h4 class="service-card-title">Bonds & Debt Instruments</h4>
                     <p class="service-card-desc">Reliable income generation using diversified government and corporate bond investment options.</p>
-                    <a href="#" class="service-learn-more">
+                    <a href="Bonds-debt.html" class="service-learn-more">
                         <span class="service-learn-more-plus">+</span> Learn More
                     </a>
                 </div>
 
-                <!-- Service 6: Loans & Realty -->
-                <div class="service-card">
+                
+                <div class="service-card reveal">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M32 8l24 12v14c0 12-10 22-24 24C18 56 8 46 8 34V20Z" stroke="white" stroke-width="2.2" fill="none"/>
@@ -3065,8 +3117,8 @@
                     </a>
                 </div>
 
-                <!-- Service 7: Insurance -->
-                <div class="service-card">
+                
+                <div class="service-card reveal">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="32" cy="32" r="22" stroke="white" stroke-width="2.2" fill="none"/>
@@ -3082,8 +3134,8 @@
                     </a>
                 </div>
 
-                <!-- Service 8: Tax Planning -->
-                <div class="service-card">
+                
+                <div class="service-card reveal">
                     <div class="service-icon-wrap">
                         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="12" y="8" width="40" height="48" rx="4" stroke="white" stroke-width="2.2" fill="none"/>
@@ -3102,7 +3154,7 @@
         </div>
     </section>
 
-    <!-- --- CLARITY SECTION --- -->
+    
     <section class="section-light-shady">
         <div class="container">
             <div class="clarity-card">
@@ -3170,7 +3222,7 @@
         </div>
     </section>
 
-    <!-- --- WHY CHOOSE US --- -->
+    
     <section class="section-light">
         <div class="container">
             <div class="wcu-inner">
@@ -3198,7 +3250,7 @@
                     </p>
 
                     <div class="wcu-features">
-                        <!-- Feature 1 -->
+                        
                         <div class="wcu-feature">
                             <div class="wcu-feature-icon"><i class="fa-solid fa-star"></i></div>
                             <div class="wcu-feature-body">
@@ -3207,7 +3259,7 @@
                             </div>
                         </div>
 
-                        <!-- Feature 2 -->
+                        
                         <div class="wcu-feature">
                             <div class="wcu-feature-icon"><i class="fa-solid fa-bullseye"></i></div>
                             <div class="wcu-feature-body">
@@ -3216,7 +3268,7 @@
                             </div>
                         </div>
 
-                        <!-- Feature 3 -->
+                        
                         <div class="wcu-feature">
                             <div class="wcu-feature-icon"><i class="fa-solid fa-certificate"></i></div>
                             <div class="wcu-feature-body">
@@ -3248,7 +3300,7 @@
         </div>
     </section>
 
-    <!-- --- PARTNERSHIP BANNER --- -->
+    
     <section class="banner-section">
         <img src="./banner_bg.png" alt="Indian Financial Team" class="banner-bg-img">
         <div class="banner-overlay"></div>
@@ -3258,7 +3310,7 @@
         </div>
     </section>
 
-    <!-- --- REVIEWS SECTION --- -->
+    
     <section class="section-light-shady" id="reviews">
         <div class="container">
             <div class="reviews-header">
@@ -3271,7 +3323,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
                     <span class="rating-score">4.5</span>
                     <span class="rating-label">/ 5 · from 1,000+ reviews</span>
                 </div>
@@ -3279,7 +3331,7 @@
 
             <div class="reviews-scroller-wrap">
                 <div class="reviews-scroller">
-                    <!-- Iteration 1 -->
+                    
                     <div class="review-card">
                         <div class="review-card-top">
                             <div class="review-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
@@ -3365,7 +3417,7 @@
                         </div>
                     </div>
 
-                    <!-- Iteration 2 (Duplicate for loop scroll) -->
+                    
                     <div class="review-card">
                         <div class="review-card-top">
                             <div class="review-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
@@ -3455,7 +3507,7 @@
         </div>
     </section>
 
-    <!-- --- FAQ SECTION --- -->
+    
     <section class="section-light" id="faq">
         <div class="container">
             <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
@@ -3464,7 +3516,7 @@
             </div>
 
             <div class="faq-list">
-                <!-- Item 1 -->
+                
                 <div class="faq-item active">
                     <div class="faq-question">
                         <span class="faq-q-text">What Services Does RupeeVyze Offer?</span>
@@ -3475,7 +3527,7 @@
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Who Can Invest Or Use RupeeVyze Services?</span>
@@ -3486,7 +3538,7 @@
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Is There A Minimum Investment Amount?</span>
@@ -3497,7 +3549,7 @@
                     </div>
                 </div>
 
-                <!-- Item 4 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">How Does RupeeVyze Recommend Financial Products?</span>
@@ -3508,7 +3560,7 @@
                     </div>
                 </div>
 
-                <!-- Item 5 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Is My Money And Data Safe With RupeeVyze?</span>
@@ -3519,7 +3571,7 @@
                     </div>
                 </div>
 
-                <!-- Item 6 -->
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span class="faq-q-text">Can I Withdraw My Investments Anytime?</span>
@@ -3533,92 +3585,11 @@
         </div>
     </section>
 
-    <!-- --- CONTACT MAIN SECTION (LIGHT SHADY THEME) --- -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                
-                <!-- Left Side: Contact Information & Cards -->
-                <div class="contact-info reveal">
-                    <span class="about-label">Have Any Question ?</span>
-                    <h2 class="about-heading">Get In Touch</h2>
-                    <p class="contact-subtext">
-                        Get in Touch with RupeeVyze &mdash; Your Trusted Partner for Smart, Secure, and Stress-Free Financial Planning and Wealth Growth
-                    </p>
-                    
-                    <div class="contact-cards-grid">
-                        <!-- Card 1: Phone -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Our Number</span>
-                                <span class="contact-card-value">+91 9686899698</span>
-                            </div>
-                        </div>
-
-                        <!-- Card 2: Email -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Our Email</span>
-                                <span class="contact-card-value">Support@Rupeevyze.Com</span>
-                            </div>
-                        </div>
-
-                        <!-- Card 3: Location -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Location</span>
-                                <span class="contact-card-value">Karnataka – 560068</span>
-                            </div>
-                        </div>
-
-                        <!-- Card 4: Whatsapp -->
-                        <div class="contact-info-card">
-                            <div class="contact-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div class="contact-card-content">
-                                <span class="contact-card-label">Whatsapp Us</span>
-                                <span class="contact-card-value">+91 9686899698</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side: Contact Query Form -->
-                <div class="contact-form reveal" style="transition-delay: 0.1s;">
-                    <div class="contact-form-card">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="formName" class="form-label">Name</label>
-                                <input type="text" id="formName" class="form-input" placeholder="Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formPhone" class="form-label">Phone no</label>
-                                <input type="tel" id="formPhone" class="form-input" placeholder="Phone no" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formEmail" class="form-label">Email</label>
-                                <input type="email" id="formEmail" class="form-input" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formMessage" class="form-label">Message</label>
-                                <textarea id="formMessage" class="form-input" placeholder="Message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send</button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- --- FOOTER --- -->
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: Brand Info -->
+                
                 <div class="footer-brand">
                     <div class="footer-logo-stacked">
                         <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width: 65px; height: 65px; margin-bottom: 12px; display: block;">
@@ -3651,7 +3622,7 @@
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
+                
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
@@ -3661,7 +3632,7 @@
                     </div>
                 </div>
 
-                <!-- Column 3: Contact Info -->
+                
                 <div>
                     <h4 class="footer-title">Contact Info</h4>
                     <div class="contact-info-block">
@@ -3675,23 +3646,39 @@
                         </div>
                     </div>
                 </div>
+            
+                
+                <div>
+                    <h4 class="footer-title">Our Location</h4>
+                    <div class="footer-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.155823869274!2d77.6253465750734!3d12.897455887413695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148d5300f80b%3A0x80858e745672c72b!2sAKR%20Tech%20Park!5e0!3m2!1sen!2sin!4v1719289800000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
 
-            <!-- Bottom footer bar -->
+            
             <div class="footer-bottom">
                 <p>Copyright &copy; 2025 RupeeVyze . All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- --- WHATSAPP FLOATING BUTTON --- -->
+    
     <a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- --- JAVASCRIPT FOR DYNAMIC INTERACTIONS --- -->
+    
     <script>
-        // Sticky Header scroll styling
+        
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -3701,7 +3688,7 @@
             }
         });
 
-        // Mobile Burger Menu Toggle
+        
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -3713,7 +3700,7 @@
             }
         });
 
-        // Services Dropdown Toggle on Mobile
+        
         const servicesDropdown = document.getElementById('servicesDropdown');
         const servicesTrigger = document.getElementById('servicesTrigger');
 
@@ -3724,20 +3711,20 @@
             }
         });
 
-        // Close mobile menu on clicking any navigation link (except dropdown trigger)
+        
         const navLinks = document.querySelectorAll('.nav-link:not(#servicesTrigger)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 
-                // Update active state
+                
                 navLinks.forEach(n => n.classList.remove('active'));
                 link.classList.add('active');
             });
         });
 
-        // Update active link on scroll
+        
         const scrollSections = document.querySelectorAll('section[id], div[id]');
         window.addEventListener('scroll', () => {
             let current = '';
@@ -3760,7 +3747,7 @@
             }
         });
 
-        // IntersectionObserver for reveal animations
+        
         const revealElements = document.querySelectorAll('.reveal');
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
@@ -3779,7 +3766,7 @@
             revealObserver.observe(element);
         });
 
-        // Page load initial animations
+        
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
             setTimeout(() => {
@@ -3790,24 +3777,8 @@
             }, 100);
         });
 
-        // Form Submission Simulation
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('formName').value.trim();
-            const phone = document.getElementById('formPhone').value.trim();
-            const email = document.getElementById('formEmail').value.trim();
-            const message = document.getElementById('formMessage').value.trim();
-            
-            if (name && phone && email && message) {
-                alert(`Thank you, ${name}! Your message has been sent successfully. We will get in touch with you shortly.`);
-                contactForm.reset();
-            } else {
-                alert('Please fill out all fields before submitting.');
-            }
-        });
 
-        /* --- ABOUT US INTERACTIVE TIMELINE LOGIC --- */
+        
         const storyCards = document.querySelectorAll('.about-story-card');
         const timelineProgress = document.getElementById('timelineProgress');
 
@@ -3819,23 +3790,23 @@
                     card.classList.remove('active');
                 }
             });
-            // Update timeline green line progress height
+            
             const progressPercent = (index / (storyCards.length - 1)) * 100;
             timelineProgress.style.height = `${progressPercent}%`;
         }
 
         storyCards.forEach((card, index) => {
-            // Hover interaction
+            
             card.addEventListener('mouseenter', () => {
                 updateTimeline(index);
             });
-            // Click interaction for mobile
+            
             card.addEventListener('click', () => {
                 updateTimeline(index);
             });
         });
 
-        /* --- ABOUT US VISION & MISSION INTERACTION LOGIC --- */
+        
         const vmCards = document.querySelectorAll('.about-vm-card');
         const vmImages = document.querySelectorAll('.about-vm-showcase-img');
 
@@ -3855,7 +3826,7 @@
             card.addEventListener('click', handleVMSelect);
         });
 
-        /* --- FAQ ACCORDION LOGIC --- */
+        
         const faqItems = document.querySelectorAll('.faq-item');
 
         faqItems.forEach(item => {
@@ -3866,7 +3837,7 @@
             questionRow.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
 
-                // Close all other FAQs
+                
                 faqItems.forEach(otherItem => {
                     otherItem.classList.remove('active');
                     otherItem.querySelector('.faq-answer-wrap').style.maxHeight = '0';
@@ -3875,7 +3846,7 @@
 
                 if (!isActive) {
                     item.classList.add('active');
-                    // Dynamically set max-height to let CSS transition run smoothly
+                    
                     answerWrap.style.maxHeight = answerWrap.scrollHeight + 'px';
                     icon.className = 'fa-solid fa-minus';
                 } else {
@@ -3883,6 +3854,49 @@
                     answerWrap.style.maxHeight = '0';
                     icon.className = 'fa-solid fa-plus';
                 }
+            });
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardSelectors = [
+                '.service-card',
+                '.about-value-card',
+                '.review-card',
+                '.calculator-card',
+                '.leader-card',
+                '.timeline-card',
+                '.contact-info-card',
+                '.contact-form-card',
+                '.offerings-highlight-card',
+                '.offering-card',
+                '.about-story-card',
+                '.about-story-intro-card',
+                '.about-vm-card'
+            ].join(', ');
+
+            const cards = document.querySelectorAll(cardSelectors);
+            
+            cards.forEach(card => {
+                const style = window.getComputedStyle(card);
+                if (style.position === 'static') {
+                    card.style.position = 'relative';
+                }
+                
+                if (!card.querySelector('.glow-border')) {
+                    const glowBorder = document.createElement('div');
+                    glowBorder.className = 'glow-border';
+                    card.appendChild(glowBorder);
+                }
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
             });
         });
     </script>
