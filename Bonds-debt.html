@@ -9,17 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #FFFFFF;
-      color: #002147;
-      overflow-x: hidden;
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
     }
 
     :root {
@@ -261,10 +253,12 @@
             z-index: 100;
         }
 
-        .dropdown:hover .dropdown-menu {
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(5px);
+        }
         }
         .dropdown-link {
             display: flex;
@@ -563,7 +557,7 @@
             transition: var(--transition-smooth);
         }
 
-        .bonds-image-wrapper:hover .loans-img {
+        .bonds-image-wrapper:hover .bonds-img {
             transform: scale(1.03);
         }
 
@@ -744,11 +738,11 @@
 
         /* Responsive design rules */
         @media (max-width: 992px) {
-            .loans-grid {
+            .bonds-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .loans-image-wrapper {
+            .bonds-image-wrapper {
                 height: 350px;
                 order: -1; /* Image first on mobile/tablet */
             }
@@ -759,7 +753,7 @@
         }
 
         @media (max-width: 576px) {
-            .loans-image-wrapper {
+            .bonds-image-wrapper {
                 height: 250px;
             }
         }
@@ -1116,9 +1110,13 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .header {
                 padding: 15px 0;
+                background: var(--bg-secondary) !important;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--glass-border);
             }
 
             .nav-menu {
@@ -1337,7 +1335,7 @@
                 <div class="nav-item">
                     <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="contactus.html" class="nav-cta-btn">Start Now</a>
+                <a href="apply.html?service=bonds" class="nav-cta-btn">Start Now</a>
             </nav>
 
             <!-- Mobile Hamburger Toggle -->
@@ -1384,7 +1382,7 @@
                         Monitor your bond obligations and payment schedules.Make smarter financial decisions with confidence.
                     </p>
                     
-                    <a href="contactus.html" class="apply-btn">Apply Now</a>
+                    <a href="apply.html?service=bonds" class="apply-btn">Apply Now</a>
                 </div>
 
                 <!-- Right Side: Service Representative Image -->
@@ -1633,7 +1631,7 @@
         const servicesTrigger = document.getElementById('servicesTrigger');
 
         servicesTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 992) {
                 e.preventDefault();
                 servicesDropdown.classList.toggle('active');
             }

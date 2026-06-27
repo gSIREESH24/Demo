@@ -302,10 +302,12 @@
             z-index: 100;
         }
 
-        .dropdown:hover .dropdown-menu {
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(5px);
+        }
         }
 
         .dropdown-link {
@@ -1347,7 +1349,7 @@
                 <div class="nav-item">
                     <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="contactus.html" class="nav-cta-btn">Start Now</a>
+                <a href="apply.html?service=insurance" class="nav-cta-btn">Start Now</a>
             </nav>
 
             
@@ -1394,7 +1396,7 @@
                         We focus on <strong>need-based coverage and long-term protection</strong>, not product pushing.
                     </p>
                     
-                    <a href="contactus.html" class="start-btn">Start Now</a>
+                    <a href="apply.html?service=insurance" class="start-btn">Start Now</a>
                 </div>
 
                 

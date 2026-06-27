@@ -120,7 +120,9 @@
     opacity: 0; visibility: hidden; transition: var(--transition-smooth);
     box-shadow: 0 15px 35px rgba(0,0,0,0.6); backdrop-filter: blur(10px); z-index: 100;
   }
-  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(5px); }
+  @media (min-width: 769px) {
+      .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(5px); }
+  }
   .dropdown-link {
     display: flex; align-items: center; padding: 10px 14px; border-radius: var(--border-radius-sm);
     font-size: 14px; color: var(--text-secondary); font-weight: 500; transition: var(--transition-fast);
@@ -599,7 +601,7 @@
       <div class="nav-item"><a href="calculators.html" class="nav-link">Calculators</a></div>
       <div class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></div>
       <div class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></div>
-      <a href="contactus.html" class="nav-cta-btn">Start Now</a>
+      <a href="apply.html?service=equity" class="nav-cta-btn">Start Now</a>
     </nav>
 
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
@@ -623,7 +625,7 @@
       <h1 class="hero-title">Equity &amp; Commodity Broking<br><span>IPO &amp; Unlisted Shares</span></h1>
       <p class="hero-desc">Smart trading solutions backed by professional market insight and disciplined execution — for beginners and seasoned investors alike.</p>
       <div class="hero-cta-row">
-        <a href="https://rupeevyze.com/apply-now/" class="btn-primary">
+        <a href="apply.html?service=equity" class="btn-primary">
           <i class="fa-solid fa-indian-rupee-sign"></i> Start Investing
         </a>
         <a href="contactus.html" class="btn-ghost">
@@ -673,7 +675,7 @@
           <li><i class="fa-solid fa-circle-check"></i> IPO applications, allotment strategies, and unlisted shares access</li>
           <li><i class="fa-solid fa-circle-check"></i> Portfolio tracking with real-time market updates</li>
         </ul>
-        <a href="https://rupeevyze.com/apply-now/" class="btn-primary" style="margin-top:32px; width:fit-content;">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="apply.html?service=equity" class="btn-primary" style="margin-top:32px; width:fit-content;">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="intro-image-col reveal">
         <img src="https://rupeevyze.com/wp-content/uploads/2025/12/commodity-broker-service-1024x1024.jpg" alt="Commodity Broker Service">
@@ -776,7 +778,7 @@
         <h2 class="cta-heading">Turning <span>Market Complexity</span><br>Into Your Opportunity</h2>
         <p class="cta-subtext">We simplify equity and commodity investments, helping you act with clarity, confidence, and a strategy built around your goals — not guesswork.</p>
         <div class="cta-btn-row">
-          <a href="https://rupeevyze.com/apply-now/" class="cta-btn">
+          <a href="apply.html?service=equity" class="cta-btn">
             Apply Now <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
           </a>
           <a href="tel:+919686899698" class="cta-phone">

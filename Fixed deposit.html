@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        :root {
        --bg-primary: #050a1e;       /* Deep space dark blue background for header and footer */
             --bg-secondary: #0b1131;     /* Slightly lighter dark blue for cards and elements */
             --bg-tertiary: #111a47;      /* Distinct deep blue for highlights */
@@ -247,10 +252,12 @@
             z-index: 100;
         }
 
-        .dropdown:hover .dropdown-menu {
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(5px);
+        }
         }
         .dropdown-link {
             display: flex;
@@ -549,7 +556,7 @@
             transition: var(--transition-smooth);
         }
 
-        .fixed-image-wrapper:hover .loans-img {
+        .fixed-image-wrapper:hover .fixed-img {
             transform: scale(1.03);
         }
 
@@ -730,11 +737,11 @@
 
         /* Responsive design rules */
         @media (max-width: 992px) {
-            .loans-grid {
+            .fixed-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .loans-image-wrapper {
+            .fixed-image-wrapper {
                 height: 350px;
                 order: -1; /* Image first on mobile/tablet */
             }
@@ -745,7 +752,7 @@
         }
 
         @media (max-width: 576px) {
-            .loans-image-wrapper {
+            .fixed-image-wrapper {
                 height: 250px;
             }
         }
@@ -1102,9 +1109,13 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .header {
                 padding: 15px 0;
+                background: var(--bg-secondary) !important;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--glass-border);
             }
 
             .nav-menu {
@@ -1215,383 +1226,35 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 32px;
-            }
-
-            .contact-cards-grid {
-                grid-template-columns: 1fr;
-            }
+        .glow-border {
+            position: absolute;
+            top: -1.5px;
+            left: -1.5px;
+            right: -1.5px;
+            bottom: -1.5px;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: radial-gradient(
+                circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+                rgba(0, 196, 151, 0.8) 0%,   
+                rgba(28, 50, 255, 0.8) 50%,   
+                transparent 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 5;
         }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #FFFFFF;
-      color: #002147;
-      overflow-x: hidden;
-    }
-
-    :root {
-      --navy: #002147;
-      --teal: #006677;
-      --slate: #4A5568;
-      --white: #FFFFFF;
-      --light-bg: #F8FAFC;
-      --teal-light: rgba(0, 102, 119, 0.12);
-      --gradient: linear-gradient(135deg, #002147 0%, #006677 100%);
-      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 12px 28px rgba(0, 33, 71, 0.08);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .fd-page {
-      padding-top: 40px;
-      background: #002147;
-    }
-
-    /* Hero Section - UPDATED */
-    .hero-section {
-      text-align: center;
-      margin-bottom: 48px;
-      padding: 40px 0 48px;
-      background: #021B45;
-      border-radius: 0 0 48px 48px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--teal-light) ;
-      color: #00A389;
-      border: 1px solid #00A389;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 6px 20px;
-      border-radius: 40px;
-      margin-bottom: 20px;
-    }
-
-    .hero-section h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 3rem;
-      font-weight: 800;
-      background:  linear-gradient(120deg, #00A389 80%, var(--teal) 80%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .hero-section p {
-      color: #FFFFFF;
-      background: #021B45;
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.5;
-    }
-
-    /* Main Content Grid */
-    .fd-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 48px;
-      margin: 40px 0 60px;
-    }
-
-    .fd-main {
-      flex: 1.5;
-    }
-
-    .fd-sidebar {
-      flex: 1;
-    }
-
-    /* Info Card */
-    .info-card {
-      background: var(--light-bg);
-      border-radius: 32px;
-      padding: 32px;
-      margin-bottom: 32px;
-      transition: transform 0.3s ease, box-shadow 0.3s;
-    }
-
-    .info-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .info-card h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-
-    .info-card h2 i {
-      color: #00A389;
-      margin-right: 10px;
-    }
-
-    .info-card p {
-      color: var(--slate);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .highlight-text {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--navy);
-      background: rgba(0, 163, 137, 0.08);
-      padding: 16px 20px;
-      border-radius: 20px;
-      margin: 20px 0;
-      border-left: 4px solid #00A389;
-    }
-
-    /* Benefits Grid */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 16px;
-      margin: 20px 0;
-    }
-
-    .benefit-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: var(--white);
-      border-radius: 60px;
-      border: 1px solid rgba(0, 163, 137, 0.15);
-      transition: all 0.2s;
-    }
-
-    .benefit-item:hover {
-      background: var(--teal-light) ;
-      transform: translateX(5px);
-    }
-
-    .benefit-item i {
-      color: #00A389;
-      font-size: 1.1rem;
-    }
-
-    .benefit-item span {
-      color: var(--slate);
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--gradient);
-      color: white;
-      border: none;
-      padding: 14px 32px;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.25s;
-      text-decoration: none;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0, 163, 137, 0.3);
-    }
-
-    /* Sidebar Cards */
-    .sidebar-card {
-      background: var(--white);
-      border: 1px solid rgba(0, 163, 137, 0.1);
-      border-radius: 28px;
-      padding: 28px;
-      margin-bottom: 28px;
-      transition: all 0.3s;
-    }
-
-    .sidebar-card:hover {
-      box-shadow: var(--shadow-md);
-    }
-
-    .sidebar-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sidebar-card h3 i {
-      color: #00A389;
-    }
-
-    .sidebar-card p {
-      color: var(--slate);
-      line-height: 1.5;
-      font-size: 0.9rem;
-    }
-
-    .apply-link {
-      display: inline-block;
-      margin-top: 16px;
-      color: #00A389;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    /* Why Choose Us Box */
-    .why-choose-card {
-      background: white;
-      border: 1px solid rgba(0, 163, 137, 0.15);
-      border-radius: 28px;
-      padding: 28px;
-      margin-bottom: 28px;
-      transition: all 0.3s;
-    }
-
-    .why-choose-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-    }
-
-    .why-choose-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .why-choose-card h3 i {
-      color: #00A389;
-      font-size: 1.4rem;
-    }
-
-    .why-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .why-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(0, 163, 137, 0.08);
-      color: var(--slate);
-      font-size: 0.9rem;
-    }
-
-    .why-list li:last-child {
-      border-bottom: none;
-    }
-
-    .why-list li i {
-      color: #00A389;
-      font-size: 0.9rem;
-      width: 20px;
-    }
-
-    /* FAQ Section - UPDATED */
-    .faq-section {
-      margin: 60px 0 40px;
-    }
-
-    .faq-title {
-      text-align: center;
-      font-family: 'Outfit', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #00A389;
-      margin-bottom: 48px;
-    }
-
-   
-
-    .faq-columns {
-  display: flex;
-  gap: 20px;
-}
-
-.faq-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-   
-
-    @media (max-width: 900px) {
-      .fd-grid { flex-direction: column; }
-      .hero-section h1 { font-size: 2.2rem; }
-      .faq-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 550px) {
-       .faq-columns {flex-direction: column;}
-      .container { padding: 0 20px; }
-      .info-card { padding: 24px; }
-      .ask-section { padding: 32px 24px; }
-    }
-
-    .glow-border {
-        position: absolute;
-        top: -1.5px;
-        left: -1.5px;
-        right: -1.5px;
-        bottom: -1.5px;
-        border-radius: inherit;
-        padding: 1.5px;
-        background: radial-gradient(
-            circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
-            rgba(0, 196, 151, 0.8) 0%,   
-            rgba(28, 50, 255, 0.8) 50%,   
-            transparent 100%
-        );
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask-composite: exclude;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        z-index: 5;
-    }
-
-    .offering-card:hover .glow-border,
-    .contact-form-card:hover .glow-border {
-        opacity: 1;
-    }
-  </style>
+        .offering-card:hover .glow-border,
+        .contact-form-card:hover .glow-border {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
@@ -1662,7 +1325,7 @@
                 <div class="nav-item">
                     <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="contactus.html" class="nav-cta-btn">Start Now</a>
+                <a href="apply.html?service=fixed" class="nav-cta-btn">Start Now</a>
             </nav>
 
              <!-- Mobile Hamburger Toggle -->
@@ -1708,12 +1371,12 @@
                         Fixed deposits offer a secure investment option with predictable returns.Build your savings with confidence.
                     </p>
                     
-                    <a href="contactus.html" class="apply-btn">Apply Now</a>
+                    <a href="apply.html?service=fixed" class="apply-btn">Apply Now</a>
                 </div>
 
                 <!-- Right Side: Service Representative Image -->
                 <div class="fixed-image-wrapper reveal" style="transition-delay: 0.2s;">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.XVJ6cso1LHZLZIEWoK33qQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="loans-img" alt="Loans & Realty Services">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.XVJ6cso1LHZLZIEWoK33qQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" class="fixed-img" alt="Loans & Realty Services">
                 </div>
 
             </div>
@@ -1957,7 +1620,7 @@
         const servicesTrigger = document.getElementById('servicesTrigger');
 
         servicesTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 992) {
                 e.preventDefault();
                 servicesDropdown.classList.toggle('active');
             }

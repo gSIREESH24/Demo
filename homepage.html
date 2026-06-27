@@ -302,10 +302,12 @@
             z-index: 100;
         }
 
-        .dropdown:hover .dropdown-menu {
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(5px);
+        }
         }
 
         .dropdown-link {
@@ -2766,7 +2768,7 @@
                 <div class="nav-item">
                     <a href="contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="contactus.html" class="nav-cta-btn">Start Now</a>
+                <a href="apply.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
             
@@ -2790,7 +2792,7 @@
                     RupeeVyze simplifies investing and wealth management through expert guidance, transparent advice, and goal‑based financial solutions for every stage of life.
                 </p>
                 <div class="hero-cta-group">
-                    <a href="contactus.html" class="nav-cta-btn" style="font-size: 15px; padding: 13px 32px;">
+                    <a href="apply.html" class="nav-cta-btn" style="font-size: 15px; padding: 13px 32px;">
                         <i class="fa-solid fa-indian-rupee-sign" style="margin-right: 6px;"></i> Start Now
                     </a>
                 </div>
@@ -3173,7 +3175,7 @@
                         </p>
                         
                         <div class="clarity-cta-row">
-                            <a href="https://rupeevyze.com/apply-now/" class="clarity-btn">
+                            <a href="apply.html" class="clarity-btn">
                                 Start Now <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
                             </a>
                             <a href="tel:+919686899698" class="clarity-agent">
