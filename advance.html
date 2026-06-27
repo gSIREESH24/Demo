@@ -87,7 +87,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   z-index: 10;
 }
 
-/* ── HEADER ── */
 .header {
   position: fixed;
   top: 0; left: 0;
@@ -282,7 +281,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   border-radius: 2px;
 }
 
-/* ── HERO ── */
 .hero-wrapper {
   position: relative;
   background-color: var(--bg-primary);
@@ -430,7 +428,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   color: var(--accent-green);
 }
 
-/* ── SECTIONS ── */
 .section-dark {
   background-color: var(--bg-primary);
   padding: 90px 0;
@@ -511,7 +508,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   background-clip: text;
 }
 
-/* ── INTRO SPLIT ── */
 .intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -605,7 +601,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
 .badge-label { font-size: 11px; color: var(--text-secondary); font-weight: 600; }
 .badge-value { font-size: 14px; font-weight: 800; color: var(--text-primary); }
 
-/* ── SERVICES CARDS ── */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -713,7 +708,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   border-radius: 50px;
 }
 
-/* ── CLARITY / CTA CARD ── */
 .clarity-card {
   display: flex;
   width: 100%;
@@ -915,7 +909,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   border-radius: 2px;
 }
 
-/* ── WHY CHOOSE / ELIGIBILITY ── */
 .eligibility-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -973,7 +966,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   line-height: 1.65;
 }
 
-/* ── FAQ ── */
 .faq-list {
   max-width: 860px;
   margin: 40px auto 0;
@@ -1058,7 +1050,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
 
 .faq-cta { text-align: center; margin-top: 36px; }
 
-/* ── FOOTER ── */
 .footer {
   background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
   border-top: 1px solid var(--glass-border);
@@ -1206,7 +1197,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   z-index: 2;
 }
 
-/* ── WHATSAPP ── */
 .whatsapp-float {
   position: fixed;
   bottom: 30px; right: 30px;
@@ -1229,7 +1219,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   color: white;
 }
 
-/* ── REVEAL ── */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -1238,7 +1227,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
 
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .services-grid { gap: 20px; }
   .eligibility-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1345,12 +1333,10 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   .eligibility-card:hover .glow-border,
   .clarity-card:hover .glow-border {
       opacity: 1;
-  }
-</style>
+  }</style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
 <header class="header" id="mainHeader">
   <div class="container nav-container">
 
@@ -1422,7 +1408,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </header>
 
-<!-- ── HERO ── -->
 <div class="hero-wrapper">
   <div class="hero-banner-glow"></div>
   <section class="hero-banner">
@@ -1445,7 +1430,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </section>
 </div>
 
-<!-- ── INTRO ── -->
 <section class="section-dark">
   <div class="container">
     <div style="max-width:680px; margin-bottom:0;">
@@ -1500,7 +1484,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </section>
 
-<!-- ── SERVICES CARDS ── -->
 <section class="section-dark-alt">
   <div class="container">
     <div style="text-align:center; max-width:600px; margin:0 auto;">
@@ -1571,7 +1554,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </section>
 
-<!-- ── WHO SHOULD INVEST ── -->
 <section class="section-light">
   <div class="container">
     <div style="text-align:center; max-width:600px; margin:0 auto;">
@@ -1615,7 +1597,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </section>
 
-<!-- ── CTA CARD ── -->
 <section class="section-dark">
   <div class="container">
     <div class="clarity-card">
@@ -1682,7 +1663,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </section>
 
-<!-- ── FAQ ── -->
 <section class="section-light-shady">
   <div class="container">
     <div style="text-align:center; max-width:600px; margin:0 auto;">
@@ -1772,7 +1752,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -1851,19 +1830,16 @@ a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
   </div>
 </footer>
 
-<!-- ── WHATSAPP ── -->
 <a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <script>
-// Header scroll
 const header = document.getElementById('mainHeader');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Mobile toggle
 const mobileToggle = document.getElementById('mobileToggle');
 const navMenu = document.getElementById('navMenu');
 mobileToggle.addEventListener('click', () => {
@@ -1871,7 +1847,6 @@ mobileToggle.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
 
-// Services dropdown on mobile
 const servicesDropdown = document.getElementById('servicesDropdown');
 const servicesTrigger = document.getElementById('servicesTrigger');
 servicesTrigger.addEventListener('click', (e) => {
@@ -1881,7 +1856,6 @@ servicesTrigger.addEventListener('click', (e) => {
   }
 });
 
-// Close mobile menu on link click
 document.querySelectorAll('.nav-link:not(#servicesTrigger), .nav-cta-btn').forEach(link => {
   link.addEventListener('click', () => {
     mobileToggle.classList.remove('active');
@@ -1889,7 +1863,6 @@ document.querySelectorAll('.nav-link:not(#servicesTrigger), .nav-cta-btn').forEa
   });
 });
 
-// FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item => {
   item.querySelector('.faq-question').addEventListener('click', () => {
     const isActive = item.classList.contains('active');
@@ -1910,7 +1883,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// Scroll reveal
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1922,7 +1894,6 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Glow border mouse tracking
 document.addEventListener('DOMContentLoaded', () => {
   const cardSelectors = [
     '.service-card',
@@ -1948,7 +1919,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
     });
   });
-});
-</script>
+});</script>
 </body>
 </html>

@@ -19,12 +19,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        
         :root {
             --bg-primary: #050a1e;       
             --bg-secondary: #0b1131;     
             --bg-tertiary: #111a47;      
-            
             
             --bg-light-shady: #f8fafc;   
             --bg-pure-white: #ffffff;    
@@ -39,7 +37,6 @@
             --text-primary: #ffffff;     
             --text-secondary: #94a3b8;   
             --text-muted: #64748b;       
-            
             
             --text-light-title: #0f172a; 
             --text-light-body: #334155;  
@@ -65,7 +62,6 @@
             --border: rgba(15, 23, 42, 0.08);
         }
 
-        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -98,7 +94,6 @@
             position: relative;
         }
 
-        
         .ambient-glow-1 {
             position: absolute;
             top: -100px;
@@ -117,7 +112,6 @@
             transition: var(--transition-fast);
         }
 
-        
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -133,7 +127,6 @@
             background: var(--accent-green);
         }
 
-        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -143,7 +136,6 @@
             z-index: 10;
         }
 
-        
         .header {
             position: fixed;
             top: 0;
@@ -218,7 +210,6 @@
             margin-top: 1px;
         }
 
-        
         .nav-menu {
             display: flex;
             align-items: center;
@@ -261,7 +252,6 @@
             box-shadow: 0 0 8px var(--accent-green);
         }
 
-        
         .nav-link:not(.active)::after {
             content: '';
             position: absolute;
@@ -278,7 +268,6 @@
             width: 100%;
         }
 
-        
         .dropdown {
             position: relative;
         }
@@ -354,7 +343,6 @@
             background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
         }
 
-        
         .mobile-toggle {
             display: none;
             background: none;
@@ -386,7 +374,6 @@
             transform: rotate(-45deg) translate(5px, -7px);
         }
 
-        
         .hero-wrapper {
             position: relative;
             background-color: var(--bg-primary);
@@ -407,7 +394,6 @@
             pointer-events: none;
         }
 
-        
         .hero-banner {
             padding: 170px 0 110px;
             position: relative;
@@ -489,7 +475,6 @@
             opacity: 0;
         }
 
-        
         .section-light {
             background-color: var(--bg-pure-white);
             color: var(--text-light-body);
@@ -538,7 +523,6 @@
             background-clip: text;
         }
 
-        
         .about-story-grid {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
@@ -775,7 +759,6 @@
             font-size: 28px;
         }
 
-        
         .about-vm-grid {
             display: grid;
             grid-template-columns: 1fr 1.15fr;
@@ -959,7 +942,6 @@
             line-height: 1.5;
         }
 
-        
         .about-values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1004,7 +986,6 @@
             line-height: 1.6;
         }
 
-        
         .services-full-width-container {
             width: 100%;
             max-width: 100%;
@@ -1019,7 +1000,6 @@
             margin-top: 40px;
         }
 
-        
         .services-grid .service-card.reveal:nth-child(4n+1) { transition-delay: 0s; }
         .services-grid .service-card.reveal:nth-child(4n+2) { transition-delay: 0.15s; }
         .services-grid .service-card.reveal:nth-child(4n+3) { transition-delay: 0.3s; }
@@ -1160,7 +1140,6 @@
             color: var(--text-primary);
         }
 
-        
         .clarity-card {
             display: flex;
             width: 100%;
@@ -1432,7 +1411,6 @@
             font-weight: 600;
         }
 
-        
         .wcu-inner {
             display: flex;
             align-items: center;
@@ -1621,7 +1599,6 @@
             letter-spacing: 0.05em;
         }
 
-        
         .banner-section {
             position: relative;
             width: 100%;
@@ -1680,7 +1657,6 @@
             letter-spacing: 0.04em;
         }
 
-        
         .reviews-header {
             display: flex;
             align-items: center;
@@ -1830,7 +1806,6 @@
             color: var(--text-light-muted);
         }
 
-        
         .faq-list {
             max-width: 900px;
             margin: 30px auto 0;
@@ -1918,7 +1893,6 @@
             border-top: 1px solid var(--border);
         }
 
-        
         .contact-section {
             padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
@@ -1958,7 +1932,6 @@
             gap: 24px;
         }
 
-        
         .contact-info-card {
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.08);
@@ -2017,7 +1990,6 @@
             word-break: break-all;
         }
 
-        
         .contact-form-card {
             background: #ffffff;
             border: 1px solid rgba(15, 23, 42, 0.08);
@@ -2094,7 +2066,6 @@
             background: linear-gradient(135deg, #3b50ff 0%, var(--accent-blue) 100%);
         }
 
-        
         .footer {
             background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
             border-top: 1px solid var(--glass-border);
@@ -2255,7 +2226,6 @@
             transform: translateX(4px);
         }
 
-        
         .contact-info-block {
             display: flex;
             flex-direction: column;
@@ -2295,7 +2265,6 @@
             z-index: 2;
         }
 
-        
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -2320,7 +2289,6 @@
             color: #ffffff;
         }
 
-        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -2343,7 +2311,6 @@
             transform: translateY(0);
         }
 
-        
         @media (max-width: 1024px) {
             .contact-grid {
                 gap: 40px;
@@ -2639,7 +2606,6 @@
             }
         }
 
-        
         .glow-border {
             position: absolute;
             top: -1.5px;
@@ -2664,7 +2630,6 @@
             z-index: 5;
         }
 
-        
         .service-card:hover .glow-border,
         .about-value-card:hover .glow-border,
         .review-card:hover .glow-border,
@@ -2681,7 +2646,6 @@
             opacity: 1;
         }
 
-        
         .about-value-card:hover,
         .review-card:hover,
         .service-card:hover,
@@ -3680,7 +3644,6 @@
 
     
     <script>
-        
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -3690,7 +3653,6 @@
             }
         });
 
-        
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -3702,7 +3664,6 @@
             }
         });
 
-        
         const servicesDropdown = document.getElementById('servicesDropdown');
         const servicesTrigger = document.getElementById('servicesTrigger');
 
@@ -3713,22 +3674,17 @@
             }
         });
 
-        
         const navLinks = document.querySelectorAll('.nav-link:not(#servicesTrigger)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 
-                
                 navLinks.forEach(n => n.classList.remove('active'));
                 link.classList.add('active');
             });
         });
 
-
-
-        
         const revealElements = document.querySelectorAll('.reveal');
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
@@ -3747,7 +3703,6 @@
             revealObserver.observe(element);
         });
 
-        
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
             setTimeout(() => {
@@ -3758,8 +3713,6 @@
             }, 100);
         });
 
-
-        
         const storyCards = document.querySelectorAll('.about-story-card');
         const timelineProgress = document.getElementById('timelineProgress');
 
@@ -3787,7 +3740,6 @@
             });
         });
 
-        
         const vmCards = document.querySelectorAll('.about-vm-card');
         const vmImages = document.querySelectorAll('.about-vm-showcase-img');
 
@@ -3807,7 +3759,6 @@
             card.addEventListener('click', handleVMSelect);
         });
 
-        
         const faqItems = document.querySelectorAll('.faq-item');
 
         faqItems.forEach(item => {
@@ -3818,7 +3769,6 @@
             questionRow.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
 
-                
                 faqItems.forEach(otherItem => {
                     otherItem.classList.remove('active');
                     otherItem.querySelector('.faq-answer-wrap').style.maxHeight = '0';
@@ -3838,7 +3788,6 @@
             });
         });
 
-        
         document.addEventListener('DOMContentLoaded', () => {
             const cardSelectors = [
                 '.service-card',

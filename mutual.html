@@ -110,7 +110,6 @@
         z-index: 10;
     }
 
-    /* ===== HEADER / NAV ===== */
     .header {
         position: fixed;
         top: 0; left: 0; width: 100%;
@@ -182,7 +181,6 @@
     .mobile-toggle.active span:nth-child(2) { opacity: 0; }
     .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -7px); }
 
-    /* ===== HERO ===== */
     .hero-wrapper { position: relative; background-color: var(--bg-primary); padding-bottom: 30px; z-index: 1; }
     .hero-banner-glow {
         position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -217,7 +215,6 @@
     .hero-agent-label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
     .hero-agent-phone { font-size: 15px; font-weight: 700; color: #ffffff; }
 
-    /* ===== SECTIONS ===== */
     .section-light { background-color: var(--bg-pure-white); color: var(--text-light-body); padding: 80px 0; border-top: 1px solid var(--border); position: relative; z-index: 10; }
     .section-light-shady { background-color: var(--bg-light-shady); color: var(--text-light-body); padding: 80px 0; border-top: 1px solid var(--border); position: relative; z-index: 10; }
     .section-eyebrow {
@@ -228,7 +225,6 @@
     .section-heading { font-size: var(--heading-section); font-weight: 700; color: var(--text-light-title); line-height: var(--leading-heading); margin-bottom: 20px; letter-spacing: -0.02em; }
     .section-heading span { background: linear-gradient(135deg, var(--bg-tertiary), var(--accent-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-    /* ===== INTRO (goal-based mutual fund solutions) ===== */
     .goal-intro-grid { display: flex; align-items: center; gap: 60px; margin-top: 40px; }
     .goal-intro-text { flex: 1; }
     .goal-intro-text p { font-size: 16px; line-height: 1.75; color: var(--text-light-body); margin-bottom: 16px; }
@@ -255,7 +251,6 @@
     .goal-intro-badge-num { font-size: 14px; font-weight: 800; color: var(--text-light-title); line-height: 1.1; }
     .goal-intro-badge-sub { font-size: 11px; color: var(--text-light-muted); font-weight: 600; }
 
-    /* ===== SERVICES GRID ===== */
     .services-full-width-container { width: 100%; max-width: 100%; padding: 0 40px; margin: 0 auto; }
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
     .services-grid .service-card.reveal:nth-child(4n+1) { transition-delay: 0s; }
@@ -296,7 +291,6 @@
     .service-card:hover .glow-border, .goal-intro-image:hover .glow-border { opacity: 1; }
     .service-card:hover, .goal-intro-image:hover { border-color: transparent !important; }
 
-    /* ===== CTA BANNER ===== */
     .banner-section { position: relative; width: 100%; height: 280px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
     .banner-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .banner-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5, 10, 30, 0.88) 0%, rgba(11, 17, 49, 0.8) 55%, rgba(5, 10, 30, 0.92) 100%); }
@@ -305,7 +299,6 @@
     .banner-title span { color: var(--accent-green); }
     .banner-subtitle { font-size: 16px; font-weight: 500; color: var(--text-secondary); margin-bottom: 24px; }
 
-    /* ===== FAQ ===== */
     .faq-list { max-width: 900px; margin: 30px auto 0; display: flex; flex-direction: column; gap: 12px; }
     .faq-item { background: var(--bg-pure-white); border: 1.5px solid var(--border); border-radius: var(--border-radius-md); overflow: hidden; cursor: pointer; transition: var(--transition-smooth); }
     .faq-item:hover { border-color: rgba(28, 50, 255, 0.2); box-shadow: 0 6px 20px rgba(15, 23, 42, 0.02); }
@@ -320,7 +313,6 @@
     .faq-answer { font-size: 14.5px; color: var(--text-light-body); line-height: 1.65; padding: 16px 24px 20px; border-top: 1px solid var(--border); }
     .faq-cta { text-align: center; margin-top: 40px; }
 
-    /* ===== FOOTER ===== */
     .footer { background: linear-gradient(180deg, #050a1e 0%, #030614 100%); border-top: 1px solid var(--glass-border); padding: 80px 0 40px; position: relative; z-index: 10; overflow: hidden; color: var(--text-primary); }
     .footer::before {
         content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -351,7 +343,6 @@
     .contact-value:hover { color: var(--accent-green); }
     .footer-bottom { border-top: 1px solid var(--glass-border); padding-top: 30px; text-align: center; font-size: 14.5px; color: var(--text-muted); position: relative; z-index: 2; }
 
-    /* ===== WHATSAPP FLOAT ===== */
     .whatsapp-float {
         position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background-color: #25d366; color: white;
         border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px;
@@ -359,11 +350,9 @@
     }
     .whatsapp-float:hover { transform: scale(1.1) rotate(8deg); box-shadow: 0 12px 24px rgba(37, 211, 102, 0.5); color: #ffffff; }
 
-    /* ===== REVEAL ===== */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
         .goal-intro-grid { grid-template-columns: 1fr; flex-direction: column; gap: 40px; }
         .goal-intro-image { height: 280px; width: 100%; }
@@ -419,14 +408,12 @@
         .hero-title { font-size: 30px; }
         .section-heading { font-size: 26px; }
         .goal-pills { gap: 8px; }
-    }
-</style>
+    }</style>
 </head>
 <body>
 
 <div class="ambient-glow-1"></div>
 
-<!-- HEADER -->
 <header class="header" id="mainHeader">
     <div class="container nav-container">
         <a href="homepage.html" class="logo-link">
@@ -487,7 +474,6 @@
     </div>
 </header>
 
-<!-- HERO -->
 <div class="hero-wrapper">
     <div class="hero-banner-glow"></div>
     <section class="hero-banner">
@@ -513,7 +499,6 @@
     </section>
 </div>
 
-<!-- INTRO -->
 <section class="section-light">
     <div class="container">
         <span class="section-eyebrow">Know More About It</span>
@@ -565,7 +550,6 @@
     </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section-light-shady" id="services">
     <div class="services-full-width-container">
         <div style="text-align: center; max-width: 640px; margin: 0 auto 10px;">
@@ -634,7 +618,6 @@
     </div>
 </section>
 
-<!-- CTA BANNER -->
 <section class="banner-section">
     <img src="https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=600&q=80" alt="Plan your goals" class="banner-bg-img">
     <div class="banner-overlay"></div>
@@ -645,7 +628,6 @@
     </div>
 </section>
 
-<!-- FAQ -->
 <section class="section-light" id="faq">
     <div class="container">
         <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
@@ -723,7 +705,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -806,14 +787,12 @@
 </a>
 
 <script>
-    // Header glass-on-scroll
     const header = document.getElementById('mainHeader');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
     });
 
-    // Mobile nav toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
     mobileToggle.addEventListener('click', () => {
@@ -822,7 +801,6 @@
         if (!navMenu.classList.contains('active')) servicesDropdown.classList.remove('active');
     });
 
-    // Services dropdown (mobile tap)
     const servicesDropdown = document.getElementById('servicesDropdown');
     const servicesTrigger = document.getElementById('servicesTrigger');
     servicesTrigger.addEventListener('click', (e) => {
@@ -832,7 +810,6 @@
         }
     });
 
-    // Close mobile menu after tapping a link
     document.querySelectorAll('.nav-link:not(#servicesTrigger)').forEach(link => {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
@@ -840,7 +817,6 @@
         });
     });
 
-    // Scroll-reveal for service cards
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -852,7 +828,6 @@
     }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // FAQ accordion
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const questionRow = item.querySelector('.faq-question');
@@ -876,7 +851,6 @@
         });
     });
 
-    // Glow-border mouse tracking on service cards + intro image
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.service-card, .goal-intro-image');
         cards.forEach(card => {
@@ -897,7 +871,6 @@
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
-    });
-</script>
+    });</script>
 </body>
 </html>
