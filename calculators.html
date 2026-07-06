@@ -526,7 +526,7 @@
 
         .calculators-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-top: 50px;
         }
@@ -534,8 +534,6 @@
         .calculator-card {
             background: linear-gradient(to bottom, rgba(28, 50, 255, 0.02) 0%, #ffffff 12%, #ffffff 88%, rgba(28, 50, 255, 0.02) 100%);
             border: 1px solid rgba(15, 23, 42, 0.05);
-            border-top: 4px solid var(--accent-blue);
-            border-bottom: 4px solid var(--accent-blue);
             border-radius: var(--border-radius-lg);
             padding: 40px 30px;
             display: flex;
@@ -1096,6 +1094,7 @@
 
         @media (max-width: 1024px) {
             .calculators-grid {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
         }
@@ -1374,11 +1373,57 @@
                     <div class="calc-img-wrapper">
                         <img src="calculator_graphic.png" class="calc-img" alt="EMI Calculator">
                     </div>
-                    <h3 class="calc-title">EMI Calculators</h3>
+                    <h3 class="calc-title">EMI Calculator</h3>
+                    <p class="calc-desc">Calculate your monthly EMI payouts, total interest, and overall loan repayment structure.</p>
                     <a href="emi-calculator.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
                         <button class="calc-btn">Calculate</button>
                     </a>
                 </div>
+
+                <div class="calculator-card reveal" style="transition-delay: 0.1s;">
+                    <div class="calc-img-wrapper">
+                        <img src="sip_calculator.png" class="calc-img" alt="SIP Calculator">
+                    </div>
+                    <h3 class="calc-title">SIP Calculator</h3>
+                    <p class="calc-desc">Estimate the future value of your systematic mutual fund investments based on expected returns.</p>
+                    <a href="sip-calculator.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                        <button class="calc-btn">Calculate</button>
+                    </a>
+                </div>
+
+                <div class="calculator-card reveal" style="transition-delay: 0.2s;">
+                    <div class="calc-img-wrapper">
+                        <img src="sip_swp_calculator.png" class="calc-img" alt="SIP + SWP Calculator">
+                    </div>
+                    <h3 class="calc-title">SIP + SWP Calculator</h3>
+                    <p class="calc-desc">Plan your lifecycle investments—accumulate capital through SIP, then systematically withdraw regular income.</p>
+                    <a href="sip-swp-calculator.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                        <button class="calc-btn">Calculate</button>
+                    </a>
+                </div>
+
+                <div class="calculator-card reveal" style="transition-delay: 0.3s;">
+                    <div class="calc-img-wrapper">
+                        <img src="swp_calculator.png" class="calc-img" alt="SWP Calculator">
+                    </div>
+                    <h3 class="calc-title">SWP Calculator</h3>
+                    <p class="calc-desc">Calculate the payout sustainability and remaining value of your lump sum under systematic withdrawal plans.</p>
+                    <a href="swp-calculator.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                        <button class="calc-btn">Calculate</button>
+                    </a>
+                </div>
+
+                <div class="calculator-card reveal" style="transition-delay: 0.4s;">
+                    <div class="calc-img-wrapper">
+                        <img src="sip_delay_calculator.png" class="calc-img" alt="SIP Delay Calculator">
+                    </div>
+                    <h3 class="calc-title">SIP Delay Calculator</h3>
+                    <p class="calc-desc">Find out the exact wealth impact and opportunity loss of delaying your monthly investments.</p>
+                    <a href="sip-delay-calculator.html" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                        <button class="calc-btn">Calculate</button>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>

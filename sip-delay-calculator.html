@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Delay Calculator | RupeeVyze - Wealth Planning Tools</title>
+    
+    <meta name="description" content="Find out the cost of delaying your investments using RupeeVyze's interactive SIP Delay Calculator. Compare starting today vs delaying.">
+    <meta name="keywords" content="SIP Delay Calculator, Cost of Delay, SIP Calculator, Financial Planning, Opportunity Loss, RupeeVyze Calculators">
+    <meta name="author" content="RupeeVyze">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #050a1e;       
+            --bg-secondary: #0b1131;     
+            --bg-tertiary: #111a47;      
+            
+            --bg-light-shady: #f8fafc;   
+            --bg-pure-white: #ffffff;    
+            
+            --accent-green: #00c497;     
+            --accent-green-dark: #009975;
+            --accent-green-glow: rgba(0, 196, 151, 0.3);
+            
+            --accent-blue: #1c32ff;      
+            --accent-blue-glow: rgba(28, 50, 255, 0.4);
+            
+            --accent-red: #ef4444;
+            --accent-red-glow: rgba(239, 68, 68, 0.3);
+            
+            --text-primary: #ffffff;     
+            --text-secondary: #94a3b8;   
+            --text-muted: #64748b;       
+            
+            --text-light-title: #0f172a; 
+            --text-light-body: #334155;  
+            --text-light-muted: #64748b; 
+            
+            --glass-bg: rgba(11, 17, 49, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.07);
+            
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-fast: all 0.2s ease;
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+            --text-body: 1.0625rem;
+            --text-lead: 1.125rem;
+            --heading-hero: clamp(2.375rem, 4.5vw, 3.25rem);
+            --heading-section: clamp(1.875rem, 3vw, 2.5rem);
+            --leading-body: 1.65;
+            --leading-heading: 1.2;
+            --tracking-heading: -0.025em;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            font-family: var(--font-main);
+            font-size: 16px;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-main);
+            font-weight: 700;
+            letter-spacing: var(--tracking-heading);
+            line-height: var(--leading-heading);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            font-size: var(--text-body);
+            line-height: var(--leading-body);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .ambient-glow-1 {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--accent-green-glow) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-secondary);
+            border: 2px solid var(--bg-primary);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-green);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition-smooth);
+            padding: 20px 0;
+        }
+
+        .header.scrolled {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 12px 0;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-title {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .logo-title span {
+            color: var(--accent-green);
+        }
+
+        .logo-tagline {
+            font-size: 9px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-link.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-green), #00ffc4);
+            border-radius: 2px;
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+
+        .nav-link:not(.active)::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: var(--transition-fast);
+            border-radius: 2px;
+        }
+
+        .nav-link:not(.active):hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-md);
+            padding: 12px;
+            width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        @media (min-width: 769px) {
+            .dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(5px);
+            }
+        }
+
+        .dropdown-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: var(--border-radius-sm);
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        .dropdown-link:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 18px;
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .dropdown-link i {
+            margin-right: 10px;
+            font-size: 13px;
+            color: var(--accent-green);
+        }
+
+        .nav-cta-btn {
+            background: linear-gradient(135deg, var(--accent-green-dark) 0%, var(--accent-green) 100%);
+            color: var(--bg-primary);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 11px 26px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 196, 151, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 196, 151, 0.4);
+            background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-primary);
+            margin: 6px 0;
+            transition: var(--transition-fast);
+            border-radius: 2px;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -7px);
+        }
+
+        .hero-wrapper {
+            position: relative;
+            background-color: var(--bg-primary);
+            padding-bottom: 30px; 
+            z-index: 1;
+        }
+
+        .hero-banner-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(0, 196, 151, 0.18) 0%, rgba(28, 50, 255, 0.12) 60%, transparent 100%);
+            filter: blur(50px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-banner {
+            padding: 150px 0 90px;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: none; 
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            margin: 0 32px;
+            box-shadow: 0 30px 60px -15px rgba(5, 10, 30, 0.35);
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: var(--heading-hero);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .breadcrumb-link {
+            color: var(--text-secondary);
+            transition: var(--transition-fast);
+        }
+
+        .breadcrumb-link:hover {
+            color: var(--accent-green);
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        .breadcrumb-current {
+            color: var(--accent-green);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0, 196, 151, 0.3);
+        }
+
+        .calc-section {
+            padding: 40px 0 60px;
+            background-color: var(--bg-light-shady);
+            color: var(--text-light-body);
+            position: relative;
+            z-index: 10;
+        }
+
+        .calc-container {
+            display: grid;
+            grid-template-columns: 1.15fr 1.35fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .card-box {
+            background-color: var(--bg-pure-white);
+            border: 1.5px solid rgba(15, 23, 42, 0.06);
+            border-radius: var(--border-radius-lg);
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.02);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 12px;
+        }
+
+        .input-label {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-light-title);
+        }
+
+        .input-field-group {
+            display: flex;
+            align-items: stretch;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+            transition: var(--transition-fast);
+            max-width: 250px;
+            width: 100%;
+        }
+
+        .input-field-group:focus-within {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(28, 50, 255, 0.1);
+        }
+
+        .number-input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-light-title);
+            background: transparent;
+            text-align: right;
+            -moz-appearance: textfield;
+        }
+
+        .number-input::-webkit-outer-spin-button,
+        .number-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .input-suffix {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            color: #64748b;
+            font-weight: 700;
+            padding: 0 18px;
+            border-left: 1.5px solid #cbd5e1;
+            font-size: 16px;
+            min-width: 44px;
+        }
+
+        .slider-row {
+            margin-bottom: 40px;
+        }
+
+        .slider-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            box-shadow: 0 2px 8px rgba(28, 50, 255, 0.35);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+            background: #0d1eab;
+        }
+
+        .outputs-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .result-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 15px;
+            color: var(--text-light-muted);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .result-value {
+            font-size: 26px;
+            font-weight: 800;
+            color: #475569; 
+            letter-spacing: -0.5px;
+        }
+
+        .result-value.highlight-green {
+            color: var(--accent-green-dark);
+            font-size: 26px;
+        }
+
+        .result-value.highlight-blue {
+            color: var(--accent-blue);
+            font-size: 26px;
+        }
+
+        .result-value.highlight-red {
+            color: var(--accent-red);
+            font-size: 32px;
+        }
+
+        .dotted-divider {
+            border-top: 2.5px dashed #cbd5e1;
+            width: 100%;
+            margin: 6px 0;
+        }
+
+        .visual-bars {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bar-label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-light-muted);
+        }
+
+        .bar-track {
+            width: 100%;
+            height: 16px;
+            background: #e2e8f0;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 50px;
+            transition: width 0.3s ease;
+        }
+
+        .bar-fill.start-today {
+            background: linear-gradient(90deg, var(--accent-green-dark), var(--accent-green));
+        }
+
+        .bar-fill.start-later {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .loss-badge {
+            background: #fee2e2;
+            color: #ef4444;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .validation-error {
+            display: none;
+            background: #fef2f2;
+            border: 1px solid #fee2e2;
+            color: #b91c1c;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .footer {
+            background: linear-gradient(180deg, #050a1e 0%, #030614 100%);
+            border-top: 1px solid var(--glass-border);
+            padding: 80px 0 40px;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-map-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            height: 180px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .footer-map-container {
+                margin: 0 auto;
+            }
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo-stacked {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .footer-logo-title span {
+            color: var(--accent-green);
+        }
+
+        .footer-logo-tagline {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        .footer-desc {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: var(--leading-body);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 14px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: var(--transition-fast);
+        }
+
+        .social-link:hover {
+            color: #ffffff;
+            background: var(--accent-green);
+            box-shadow: 0 0 10px var(--accent-green-glow);
+            transform: translateY(-2px);
+        }
+
+        .footer-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-link {
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            transition: var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+            padding-left: 6px;
+            border-left: 2px solid var(--accent-green);
+        }
+
+        .contact-info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: #ffffff;
+            transition: var(--transition-fast);
+        }
+
+        .contact-value:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--glass-border);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background-color: #25d366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition-smooth);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08) translateY(-4px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .calc-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-banner {
+                margin: 0 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 0;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--bg-secondary);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 30px;
+                gap: 24px;
+                transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+                z-index: 999;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                background: transparent;
+                border: none;
+                padding-left: 15px;
+                width: 100%;
+                display: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-link {
+                padding: 8px 0;
+            }
+
+            .nav-cta-btn {
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .hero-banner {
+                padding: 130px 0 70px;
+                border-radius: 0 0 40px 40px;
+            }
+        }
+
+        .glow-border {
+            position: absolute;
+            top: -1.5px;
+            left: -1.5px;
+            right: -1.5px;
+            bottom: -1.5px;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: radial-gradient(
+                circle 180px at var(--mouse-x, -999px) var(--mouse-y, -999px),
+                rgba(0, 196, 151, 0.8) 0%,   
+                rgba(28, 50, 255, 0.8) 50%,   
+                transparent 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 5;
+        }
+
+        .card-box:hover .glow-border {
+            opacity: 1;
+        }
+
+        .card-box:hover {
+            border-color: transparent !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow-1"></div>
+
+    <header class="header" id="mainHeader">
+        <div class="container nav-container">
+            <a href="homepage.html" class="logo-link">
+                <div class="logo-wrapper">
+                    <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="arrow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#05a885" />
+                                <stop offset="100%" stop-color="#00c497" />
+                            </linearGradient>
+                            <filter id="arrow-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                            <path d="M 44 32 H 76" />
+                            <path d="M 44 45 H 68" />
+                            <path d="M 56 32 C 76 32, 76 58, 56 58 H 44" />
+                            <path d="M 54 32 V 58" />
+                            <path d="M 52 58 L 74 88" />
+                        </g>
+                        <path d="M 26 72 C 24 90, 46 106, 74 96 C 90 90, 100 74, 104 53 L 112 58 L 108 28 L 80 38 L 87 44 C 83 60, 75 72, 63 76 C 45 83, 32 74, 28 60 Z" fill="url(#arrow-grad)" filter="url(#arrow-glow)"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Rupee<span>Vyze</span></span>
+                    <span class="logo-tagline">Wisdom In Every Rupee</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item">
+                    <a href="homepage.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="aboutus.html" class="nav-link">About Us</a>
+                </div>
+                <div class="nav-item dropdown" id="servicesDropdown">
+                    <a href="homepage.html#services" class="nav-link" id="servicesTrigger">
+                        Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
+                        <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="calculators.html" class="nav-link active">Calculators</a>
+                </div>
+                <div class="nav-item">
+                    <a href="blogs.html" class="nav-link">Blogs</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contactus.html" class="nav-link">Contact Us</a>
+                </div>
+                <a href="apply.html" class="nav-cta-btn">Start Now</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="hero-wrapper">
+        <div class="hero-banner-glow"></div>
+        <section class="hero-banner">
+            <div class="container hero-content">
+                <h1 class="hero-title">SIP Delay <span>Calculator</span></h1>
+                <div class="breadcrumbs">
+                    <a href="homepage.html" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                    <a href="calculators.html" class="breadcrumb-link">Calculators</a>
+                    <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span class="breadcrumb-current">SIP Delay Calculator</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="calc-section">
+        <div class="container">
+            <div id="validationAlert" class="validation-error"></div>
+            <div class="calc-container">
+                
+                <div class="card-box inputs-card reveal">
+                    
+                    <div class="input-row">
+                        <label for="sipAmountNum" class="input-label">Monthly SIP Amount</label>
+                        <div class="input-field-group">
+                            <input type="number" id="sipAmountNum" class="number-input" value="25000">
+                            <span class="input-suffix">₹</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="sipAmountSlider" class="range-slider" min="500" max="1000000" step="500" value="25000">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="interestRateNum" class="input-label">Expected Return (p.a.)</label>
+                        <div class="input-field-group">
+                            <input type="number" id="interestRateNum" class="number-input" step="0.1" value="12">
+                            <span class="input-suffix">%</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="interestRateSlider" class="range-slider" min="0" max="30" step="0.1" value="12">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="loanTenureNum" class="input-label">Investment Duration</label>
+                        <div class="input-field-group">
+                            <input type="number" id="loanTenureNum" class="number-input" value="10">
+                            <span class="input-suffix">Yrs</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="loanTenureSlider" class="range-slider" min="1" max="40" step="1" value="10">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="delayNum" class="input-label">Delay Period</label>
+                        <div class="input-field-group">
+                            <input type="number" id="delayNum" class="number-input" value="6">
+                            <span class="input-suffix">Months</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="delaySlider" class="range-slider" min="0" max="120" step="1" value="6">
+                    </div>
+
+                </div>
+
+                <div class="card-box outputs-card reveal" style="transition-delay: 0.1s;">
+                    <div class="outputs-column">
+                        
+                        <div class="result-block">
+                            <span class="result-label">Value if Started Today</span>
+                            <span class="result-value highlight-green" id="resToday">58,09,104 INR</span>
+                        </div>
+                        <div class="dotted-divider"></div>
+                        <div class="result-block">
+                            <span class="result-label">Value if Started Later</span>
+                            <span class="result-value highlight-blue" id="resDelayed">53,49,150 INR</span>
+                        </div>
+                        <div class="dotted-divider"></div>
+                        <div class="result-block">
+                            <span class="result-label">Opportunity Loss</span>
+                            <span class="result-value highlight-red" id="resLoss">4,59,954 INR</span>
+                        </div>
+
+                        <div class="visual-bars">
+                            <div class="bar-group">
+                                <div class="bar-label-row">
+                                    <span>Started Today (100%)</span>
+                                    <span id="valTodayPct">₹ 58,09,104</span>
+                                </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill start-today" style="width: 100%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bar-group">
+                                <div class="bar-label-row">
+                                    <span>Started Later</span>
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <span id="valDelayedPct">₹ 53,49,150</span>
+                                        <span class="loss-badge" id="lossPercent">-8%</span>
+                                    </div>
+                                </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill start-later" id="barDelayed" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-stacked">
+                        <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 10px;">
+                            <defs>
+                                <linearGradient id="arrow-grad-footer" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#05a885" />
+                                    <stop offset="100%" stop-color="#00c497" />
+                                </linearGradient>
+                            </defs>
+                            <g stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                <path d="M 44 32 H 76" />
+                                <path d="M 44 45 H 68" />
+                                <path d="M 56 32 C 76 32, 76 58, 56 58 H 44" />
+                                <path d="M 54 32 V 58" />
+                                <path d="M 52 58 L 74 88" />
+                            </g>
+                            <path d="M 26 72 C 24 90, 46 106, 74 96 C 90 90, 100 74, 104 53 L 112 58 L 108 28 L 80 38 L 87 44 C 83 60, 75 72, 63 76 C 45 83, 32 74, 28 60 Z" fill="url(#arrow-grad-footer)" />
+                        </svg>
+                        <span class="footer-logo-title">Rupee<span>Vyze</span></span>
+                        <span class="footer-logo-tagline">Wisdom In Every Rupee&trade;</span>
+                    </div>
+                    <p class="footer-desc">
+                        From stock broking & trading to mutual funds, PMS, insurance, loans, bonds, and beyond &mdash; we aim to become your one-stop destination for financial growth.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="homepage.html" class="footer-link">Home</a>
+                        <a href="aboutus.html" class="footer-link">About Us</a>
+                        <a href="contactus.html" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-info-block">
+                        <div class="contact-item">
+                            <span class="contact-label">Call us here</span>
+                            <a href="tel:+919686899698" class="contact-value">+91 9686899698</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Need Help ? Email us</span>
+                            <a href="mailto:Support@Rupeevyze.Com" class="contact-value">Support@Rupeevyze.Com</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div>
+                    <h4 class="footer-title">Our Location</h4>
+                    <div class="footer-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.155823869274!2d77.6253465750734!3d12.897455887413695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae148d5300f80b%3A0x80858e745672c72b!2sAKR%20Tech%20Park!5e0!3m2!1sen!2sin!4v1719289800000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2025 RupeeVyze . All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919686899698" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesTrigger = document.getElementById('servicesTrigger');
+
+        servicesTrigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                servicesDropdown.classList.toggle('active');
+            }
+        });
+
+        function formatINR(number) {
+            const x = Math.round(number).toString();
+            let lastThree = x.substring(x.length - 3);
+            const otherNumbers = x.substring(0, x.length - 3);
+            if (otherNumbers != '') {
+                lastThree = ',' + lastThree;
+            }
+            const res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            return res;
+        }
+
+        // Elements
+        const amountNum = document.getElementById('sipAmountNum');
+        const amountSlider = document.getElementById('sipAmountSlider');
+        const rateNum = document.getElementById('interestRateNum');
+        const rateSlider = document.getElementById('interestRateSlider');
+        const tenureNum = document.getElementById('loanTenureNum');
+        const tenureSlider = document.getElementById('loanTenureSlider');
+        const delayNum = document.getElementById('delayNum');
+        const delaySlider = document.getElementById('delaySlider');
+        const validationAlert = document.getElementById('validationAlert');
+
+        function validateInputs(P, R, Y, D) {
+            if (isNaN(P) || P <= 0) {
+                return "SIP Amount must be greater than 0";
+            }
+            if (isNaN(Y) || Y <= 0) {
+                return "Investment Duration must be greater than 0";
+            }
+            if (isNaN(R) || R < 0) {
+                return "Expected Return must be greater than or equal to 0";
+            }
+            if (isNaN(D) || D < 0) {
+                return "Delay must be greater than or equal to 0";
+            }
+            if (D >= Y * 12) {
+                return "Delay must be less than the total investment period (" + (Y * 12) + " months)";
+            }
+            return "";
+        }
+
+        function calculateDelaySIP() {
+            const P = parseFloat(amountNum.value);
+            const R = parseFloat(rateNum.value);
+            const Y = parseFloat(tenureNum.value);
+            const D = parseFloat(delayNum.value);
+
+            // Dynamic cap for delay slider
+            delaySlider.max = Y * 12 - 1;
+            if (parseFloat(delayNum.value) > delaySlider.max) {
+                delayNum.value = delaySlider.max;
+            }
+
+            const err = validateInputs(P, R, Y, D);
+            if (err !== "") {
+                validationAlert.style.display = "block";
+                validationAlert.innerText = err;
+                return;
+            }
+            validationAlert.style.display = "none";
+
+            const i = R / (12 * 100);
+            const n = Y * 12;
+            const n1 = n - D;
+
+            let FV1 = 0;
+            let FV2 = 0;
+
+            if (R > 0) {
+                FV1 = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+                FV2 = P * ((Math.pow(1 + i, n1) - 1) / i) * (1 + i);
+            } else {
+                FV1 = P * n;
+                FV2 = P * n1;
+            }
+
+            const loss = FV1 - FV2;
+
+            document.getElementById('resToday').innerText = formatINR(FV1) + " INR";
+            document.getElementById('resDelayed').innerText = formatINR(FV2) + " INR";
+            document.getElementById('resLoss').innerText = formatINR(loss) + " INR";
+
+            document.getElementById('valTodayPct').innerText = "₹ " + formatINR(FV1);
+            document.getElementById('valDelayedPct').innerText = "₹ " + formatINR(FV2);
+
+            let delayedBarWidth = 0;
+            let lossPercent = 0;
+            if (FV1 > 0) {
+                delayedBarWidth = (FV2 / FV1) * 100;
+                lossPercent = Math.round(((FV1 - FV2) / FV1) * 100);
+            }
+
+            document.getElementById('barDelayed').style.width = delayedBarWidth + "%";
+            document.getElementById('lossPercent').innerText = "-" + lossPercent + "%";
+        }
+
+        // Link inputs
+        function setupSync(numInput, sliderInput, isDelay = false) {
+            numInput.addEventListener('input', () => {
+                let val = parseFloat(numInput.value);
+                if (!isNaN(val)) {
+                    if (val > parseFloat(sliderInput.max)) sliderInput.max = val;
+                    sliderInput.value = val;
+                }
+                calculateDelaySIP();
+            });
+
+            sliderInput.addEventListener('input', () => {
+                numInput.value = sliderInput.value;
+                calculateDelaySIP();
+            });
+        }
+
+        setupSync(amountNum, amountSlider);
+        setupSync(rateNum, rateSlider);
+        setupSync(tenureNum, tenureSlider);
+        setupSync(delayNum, delaySlider, true);
+
+        // Initial run
+        calculateDelaySIP();
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            root: null,
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        });
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.hero-title').style.opacity = '1';
+            setTimeout(() => {
+                const initialElements = document.querySelectorAll('.hero-banner .breadcrumbs, .header');
+                initialElements.forEach(el => {
+                    el.style.opacity = '1';
+                });
+            }, 100);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-box');
+            cards.forEach(card => {
+                if (!card.querySelector('.glow-border')) {
+                    const glowBorder = document.createElement('div');
+                    glowBorder.className = 'glow-border';
+                    card.appendChild(glowBorder);
+                }
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
