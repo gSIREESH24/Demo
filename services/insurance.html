@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | RupeeVyze - Wisdom In Every Rupee</title>
+    <title>Insurance Advisory Services | RupeeVyze - Wisdom In Every Rupee</title>
     
     
-    <meta name="description" content="Learn about RupeeVyze, our mission, vision, and core values. Discover how we bring wisdom to every rupee with our tailored wealth management and financial advisory solutions.">
-    <meta name="keywords" content="RupeeVyze, About RupeeVyze, Financial Planning, Wealth Advisory, Invest wisely, Mutual Funds, Calculators">
+    <meta name="description" content="Comprehensive protection plans covering life, property, travel, and businesses. Get professional, unbiased insurance advisory to secure your financial future.">
+    <meta name="keywords" content="insurance, life insurance, health insurance, business insurance, risk protection, RupeeVyze">
     <meta name="author" content="RupeeVyze">
     
     
@@ -398,16 +398,13 @@
             padding: 150px 0 90px;
             position: relative;
             z-index: 2;
-            
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-top: none; 
-            
             border-bottom-left-radius: 60px;
             border-bottom-right-radius: 60px;
-            
             margin: 0 32px;
             box-shadow: 0 30px 60px -15px rgba(5, 10, 30, 0.35);
             overflow: hidden;
@@ -488,121 +485,6 @@
             text-shadow: 0 0 10px rgba(0, 196, 151, 0.3);
         }
 
-        .about-section {
-            padding: 60px 0 80px; 
-            position: relative;
-            background-color: var(--bg-light-shady);
-            color: var(--text-light-body);
-            z-index: 10;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 50px; 
-            align-items: center;
-        }
-
-        .about-image-group {
-            position: relative;
-            width: 100%;
-            height: 420px; 
-            display: flex;
-            align-items: center;
-        }
-
-        .image-grid-bg {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 160px;
-            height: 200px;
-            background-image: 
-                linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .wavy-shape {
-            position: absolute;
-            bottom: 40px;
-            left: -15px;
-            width: 120px;
-            height: 80px;
-            z-index: 2;
-            opacity: 0.95;
-        }
-
-        .about-img-main {
-            width: 78%;
-            height: 380px; 
-            border-radius: var(--border-radius-lg);
-            background: url('images/smiling_couple.png') no-repeat center center/cover;
-            margin-left: auto;
-            position: relative;
-            z-index: 3;
-            box-shadow: 0 30px 50px -15px rgba(15, 23, 42, 0.2);
-            border: 1px solid rgba(15, 23, 42, 0.05);
-        }
-
-        .about-img-circle {
-            position: absolute;
-            top: 0px; 
-            left: 0;
-            width: 150px; 
-            height: 150px; 
-            border-radius: 50%;
-            background: url('images/business_handshake.png') no-repeat center center/cover;
-            border: 6px solid var(--bg-light-shady);
-            box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.25);
-            z-index: 4;
-        }
-
-        .about-experience-badge {
-            position: absolute;
-            bottom: 20px; 
-            left: 10px;
-            background: linear-gradient(135deg, #1c32ff 0%, #0d1eab 100%);
-            color: #ffffff;
-            padding: 12px 24px; 
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 12px 25px rgba(28, 50, 255, 0.3);
-            z-index: 5;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 280px; 
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .badge-thumb-icon {
-            width: 34px; 
-            height: 34px;
-            background: #ffffff;
-            color: #1c32ff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            flex-shrink: 0;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-
-        .badge-text {
-            font-size: 12.5px; 
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .about-text-content {
-            display: flex;
-            flex-direction: column;
-        }
-
         .about-label {
             display: inline-block;
             align-self: flex-start;
@@ -618,447 +500,339 @@
             margin-bottom: 12px;
         }
 
-        .about-heading {
-            font-size: var(--heading-section);
-            font-weight: 700;
+        .section-heading {
+            font-size: 48px; 
+            font-weight: 800;
             color: var(--text-light-title);
-            line-height: var(--leading-heading);
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
+            line-height: 1.25;
+            margin-bottom: 28px; 
+            letter-spacing: -1px;
         }
 
-        .about-heading span {
+        .section-heading span {
             background: linear-gradient(135deg, var(--bg-tertiary), var(--accent-green));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .about-timeline {
-            position: relative;
-            padding-left: 8px;
-            margin-top: 5px;
-        }
-
-        .timeline-step {
-            display: flex;
-            gap: 20px; 
-            margin-bottom: 24px; 
-            position: relative;
-        }
-
-        .timeline-step:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-marker {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .marker-icon {
-            width: 42px; 
-            height: 42px; 
-            border-radius: 50%;
-            background: #ffffff;
-            border: 3px solid #e2e8f0;
-            color: var(--text-light-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            z-index: 2;
-            transition: var(--transition-smooth);
-        }
-
-        .marker-line {
-            width: 3px;
-            background: #e2e8f0;
-            flex-grow: 1;
-            margin-top: 6px;
-            margin-bottom: -6px;
-            z-index: 1;
-            transition: var(--transition-smooth);
-        }
-
-        .timeline-step:hover .marker-icon {
-            border-color: #1c32ff;
-            background: #1c32ff;
-            color: #ffffff;
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(28, 50, 255, 0.35);
-        }
-
-        .timeline-step:hover .marker-line {
-            background: #1c32ff;
-        }
-
-        .timeline-card {
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.05);
-            border-top: 3px solid transparent;
-            border-bottom: 3px solid transparent;
-            border-radius: var(--border-radius-md);
-            padding: 20px; 
-            flex-grow: 1;
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .timeline-step:hover .timeline-card {
-            transform: translateY(-4px);
-            background: linear-gradient(to bottom, rgba(28, 50, 255, 0.02) 0%, #ffffff 12%, #ffffff 88%, rgba(28, 50, 255, 0.02) 100%);
-            border-top: 3px solid var(--accent-blue);
-            border-bottom: 3px solid var(--accent-blue);
-            border-color: rgba(28, 50, 255, 0.25);
-            box-shadow: 0 -12px 24px -8px rgba(28, 50, 255, 0.2), 0 12px 24px -8px rgba(28, 50, 255, 0.2), 0 20px 40px rgba(15, 23, 42, 0.08);
-        }
-
-        .step-badge {
-            display: inline-block;
-            font-size: 10.5px; 
-            font-weight: 700;
-            color: #1c32ff;
-            background: rgba(28, 50, 255, 0.06);
-            padding: 3px 10px; 
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 10px; 
-        }
-
-        .about-tagline {
-            font-size: 15px; 
-            color: var(--text-light-muted);
-            margin-bottom: 12px; 
-            font-weight: 600;
-            border-left: 3px solid var(--accent-green);
-            padding-left: 10px;
-        }
-
-        .highlight-question-card {
-            background-color: rgba(226, 168, 86, 0.07);
-            border-left: 4px solid #d97706;
-            border-radius: 8px;
-            padding: 12px 16px; 
-            margin-bottom: 12px; 
-            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.03);
-        }
-
-        .highlight-question {
-            font-size: 16px; 
-            font-weight: 700;
-            color: #b45309;
-            line-height: 1.45;
-        }
-
-        .about-p-highlight {
-            font-size: 14.5px;
-            font-weight: 700;
-            color: var(--text-light-title);
-        }
-
-        .about-p-highlight strong {
-            color: #1c32ff;
-            font-weight: 800;
-        }
-
-        .about-p-body {
-            font-size: 14.5px; 
-            color: var(--text-light-body);
-            line-height: 1.7;
-        }
-
-        .partnership-banner {
-            position: relative;
-            padding: 100px 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: #030614; 
-        }
-
-        .partnership-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('images/business_team.png') no-repeat center center/cover;
-            filter: grayscale(100%) brightness(30%); 
-            z-index: 1;
-        }
-
-        .partnership-banner::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, rgba(5, 10, 30, 0.35) 0%, rgba(3, 6, 20, 0.6) 100%);
-            z-index: 2;
-        }
-
-        .partnership-content {
-            position: relative;
-            z-index: 10;
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .partnership-title {
-            font-size: 38px;
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1.25;
-            letter-spacing: -0.5px;
-        }
-
-        .partnership-title span {
-            background: linear-gradient(135deg, var(--accent-green) 0%, #00ffc4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .partnership-sub {
-            font-size: 18px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.95);
-            margin-top: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .banner-dot-grid {
-            position: absolute;
-            bottom: 15px;
-            left: 30px;
-            width: 80px;
-            height: 110px;
-            background-image: radial-gradient(rgba(28, 50, 255, 0.65) 2px, transparent 2px);
-            background-size: 14px 14px;
-            z-index: 3;
-            opacity: 0.7;
-            pointer-events: none;
-        }
-
-        .banner-chevrons {
-            position: absolute;
-            top: 20px;
-            left: 45px;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            z-index: 3;
-            opacity: 0.12;
-            color: #ffffff;
-            font-size: 15px;
-        }
-
-        .banner-circle-overlay {
-            position: absolute;
-            top: -50px;
-            right: 18%;
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .banner-rect-overlay {
-            position: absolute;
-            top: 40px;
-            right: 50px;
-            width: 140px;
-            height: 140px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: transparent;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .banner-crescent {
-            position: absolute;
-            bottom: 10px;
-            right: 26%;
-            width: 75px;
-            height: 75px;
-            z-index: 3;
-            opacity: 0.85;
-            transform: rotate(-10deg); 
-        }
-
-        .ecosystem-section {
-            padding: 70px 0 90px;
-            background-color: var(--bg-pure-white);
-            color: var(--text-light-body);
-            position: relative;
-            z-index: 10;
-            border-top: 1px solid rgba(15, 23, 42, 0.03);
-        }
-
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: 0.95fr 1.05fr; 
-            gap: 60px;
-            align-items: center; 
-        }
-
-        .ecosystem-img-wrapper {
-            position: relative;
-            width: 100%;
-        }
-
-        .ecosystem-img {
-            width: 100%;
-            height: 440px; 
-            border-radius: var(--border-radius-lg);
-            background: url('images/business_discussion.png') no-repeat center center/cover;
-            box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.2);
-            border: 1px solid rgba(15, 23, 42, 0.04);
-        }
-
-        .philosophy-bullets {
-            margin-top: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .philosophy-bullets li {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--text-light-title);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .philosophy-bullets li i {
-            color: var(--accent-green);
-            font-size: 16px;
-        }
-
-        .team-section {
-            padding: 90px 0;
+        .insurance-section {
+            padding: 80px 0 100px;
             background-color: var(--bg-light-shady);
             color: var(--text-light-body);
             position: relative;
             z-index: 10;
-            border-top: 1px solid rgba(15, 23, 42, 0.03);
         }
 
-        .team-grid {
+        .insurance-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; 
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .leader-card {
-            background: linear-gradient(to bottom, rgba(28, 50, 255, 0.03) 0%, var(--bg-pure-white) 10%, var(--bg-pure-white) 90%, rgba(28, 50, 255, 0.03) 100%);
-            border: 1px solid rgba(15, 23, 42, 0.05);
-            border-top: 4px solid var(--accent-blue);
-            border-bottom: 4px solid var(--accent-blue);
-            border-radius: var(--border-radius-lg);
-            padding: 45px 35px;
+        .insurance-text-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 -12px 24px -12px rgba(28, 50, 255, 0.15), 0 12px 24px -12px rgba(28, 50, 255, 0.15), 0 15px 35px rgba(15, 23, 42, 0.02);
-            transition: var(--transition-smooth);
-            position: relative;
         }
 
-        .leader-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 -15px 30px -10px rgba(28, 50, 255, 0.25), 0 15px 30px -10px rgba(28, 50, 255, 0.25), 0 25px 50px -10px rgba(15, 23, 42, 0.1);
-            border-color: rgba(28, 50, 255, 0.3);
-        }
-
-        .leader-photo-wrapper {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid var(--bg-light-shady);
-            overflow: hidden;
+        .insurance-subheading {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-light-title);
             margin-bottom: 24px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+            line-height: 1.3;
+        }
+
+        .insurance-p {
+            font-size: 15.5px;
+            line-height: 1.75;
+            color: var(--text-light-body);
+            margin-bottom: 20px;
+        }
+
+        .insurance-p:last-of-type {
+            margin-bottom: 8px;
+        }
+
+        .start-btn {
+            align-self: flex-start;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0d1eab 100%);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(28, 50, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: inline-block;
             transition: var(--transition-smooth);
+            margin-top: 24px;
+            text-align: center;
         }
 
-        .leader-card:hover .leader-photo-wrapper {
-            border-color: var(--accent-blue);
-            transform: scale(1.03);
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(28, 50, 255, 0.4);
+            background: linear-gradient(135deg, #384eff 0%, #1c32ff 100%);
         }
 
-        .leader-photo {
+        .insurance-image-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            height: 400px;
+        }
+
+        .insurance-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: var(--transition-smooth);
         }
 
-        .leader-name {
-            font-size: 22px;
+        .insurance-image-wrapper:hover .insurance-img {
+            transform: scale(1.03);
+        }
+
+        .offerings-section {
+            padding: 90px 0 110px;
+            background-color: var(--bg-pure-white);
+            position: relative;
+            z-index: 10;
+        }
+
+        .offerings-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .offerings-info-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: sticky;
+            top: 120px;
+        }
+
+        .offerings-highlight-card {
+            background: linear-gradient(135deg, rgba(0, 196, 151, 0.02) 0%, rgba(28, 50, 255, 0.03) 100%);
+            border-radius: var(--border-radius-md);
+            padding: 28px;
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+            border: 1px solid rgba(0, 196, 151, 0.1);
+            border-left: 5px solid var(--accent-green);
+            width: 100%;
+        }
+
+        .offerings-highlight-card .highlight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(0, 196, 151, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .offerings-highlight-card .highlight-text p {
+            color: var(--text-light-body);
+            font-size: 15.5px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .offering-rows-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .offering-row {
+            background: var(--bg-pure-white);
+            border: 1.5px solid rgba(15, 23, 42, 0.06);
+            border-radius: var(--border-radius-md);
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+        }
+
+        .offering-row:hover {
+            transform: translateX(10px);
+            border-color: rgba(0, 196, 151, 0.25);
+            box-shadow: 0 12px 30px rgba(0, 196, 151, 0.06);
+            background: linear-gradient(90deg, rgba(0, 196, 151, 0.01) 0%, rgba(28, 50, 255, 0.01) 100%);
+        }
+
+        .offering-row-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--accent-blue);
+            background: rgba(28, 50, 255, 0.06);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .offering-row:hover .offering-row-icon {
+            background: var(--accent-green);
+            color: var(--text-primary);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px var(--accent-green-glow);
+        }
+
+        .offering-row-content {
+            flex-grow: 1;
+        }
+
+        .offering-row-title {
+            font-size: 20px;
             font-weight: 800;
             color: var(--text-light-title);
             margin-bottom: 6px;
+            transition: var(--transition-fast);
         }
 
-        .leader-role {
-            font-size: 11.5px;
-            font-weight: 700;
-            color: #1c32ff;
-            background: rgba(28, 50, 255, 0.06);
-            padding: 5px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 22px;
-            display: inline-block;
+        .offering-row:hover .offering-row-title {
+            color: var(--accent-green-dark);
         }
 
-        .leader-quote {
-            font-size: 15px;
-            font-style: italic;
+        .offering-row-desc {
+            font-size: 14.5px;
             color: var(--text-light-body);
-            line-height: 1.6;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .offering-row-arrow {
+            font-size: 18px;
+            color: var(--text-light-muted);
+            transition: var(--transition-smooth);
+            opacity: 0.5;
+        }
+
+        .offering-row:hover .offering-row-arrow {
+            color: var(--accent-green);
+            transform: translateX(5px);
+            opacity: 1;
+        }
+
+        .faq-section {
+            padding: 80px 0 100px;
+            background-color: var(--bg-light-shady);
             position: relative;
-            padding: 0 10px;
-            max-width: 380px;
+            z-index: 10;
         }
 
-        .leader-quote::before {
-            content: '“';
-            font-family: Georgia, serif;
-            font-size: 44px;
-            color: rgba(28, 50, 255, 0.12);
-            position: absolute;
-            top: -15px;
-            left: -15px;
+        .faq-list {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .leader-quote::after {
-            content: '”';
-            font-family: Georgia, serif;
-            font-size: 44px;
-            color: rgba(28, 50, 255, 0.12);
-            position: absolute;
-            bottom: -32px;
-            right: -10px;
+        .faq-item {
+            background: var(--bg-pure-white);
+            border: 1.5px solid rgba(15, 23, 42, 0.08);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(28, 50, 255, 0.2);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.02);
+        }
+
+        .faq-item.active {
+            border-color: var(--accent-green);
+            box-shadow: 0 8px 25px rgba(5, 10, 30, 0.04);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 24px;
+            background: var(--bg-pure-white);
+            transition: var(--transition-fast);
+            user-select: none;
+        }
+
+        .faq-item.active .faq-question {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+        }
+
+        .faq-q-text {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-light-title);
+            line-height: 1.4;
+            transition: var(--transition-fast);
+        }
+
+        .faq-item.active .faq-q-text {
+            color: #ffffff;
+        }
+
+        .faq-icon {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.05);
+            color: var(--text-light-title);
+            transition: var(--transition-smooth);
+            font-size: 11px;
+        }
+
+        .faq-item.active .faq-icon {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            transform: rotate(180deg);
+        }
+
+        .faq-answer-wrap {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-answer {
+            font-size: 14.5px;
+            color: var(--text-light-body);
+            line-height: 1.65;
+            padding: 16px 24px 20px;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
         }
 
         .footer {
@@ -1294,18 +1068,6 @@
             }
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -1317,23 +1079,21 @@
             transform: translateY(0);
         }
 
-        @media (max-width: 1024px) {
-
-            .about-image-group {
-                height: 380px;
+        @media (max-width: 992px) {
+            .insurance-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-            
-            .about-img-main {
-                height: 340px;
+            .insurance-image-wrapper {
+                height: 350px;
+                order: -1; 
             }
-
-            .about-img-circle {
-                width: 130px;
-                height: 130px;
+            .offerings-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-
-            .ecosystem-img {
-                height: 380px;
+            .offerings-info-box {
+                position: static;
             }
         }
 
@@ -1396,80 +1156,15 @@
                 margin-top: 15px;
             }
 
-            .hero-wrapper {
-                padding-bottom: 20px;
-            }
-
             .hero-banner {
                 padding: 130px 0 70px;
                 margin: 0 16px;
                 border-radius: 0 0 40px 40px;
             }
 
-            .about-grid, .ecosystem-grid, .team-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .about-image-group, .ecosystem-img-wrapper {
-                position: static;
-                height: 380px;
-                justify-content: center;
-            }
-
-            .ecosystem-img-wrapper {
-                order: -1; 
-            }
-            
-            .about-img-main {
-                width: 75%;
-                height: 340px;
-            }
-            
-            .about-img-circle {
-                width: 130px;
-                height: 130px;
-                border-width: 5px;
-                border-color: var(--bg-light-shady);
-            }
-
-            .ecosystem-img {
-                width: 85%;
-                height: 340px;
-                margin: 0 auto;
-            }
-
-            .about-experience-badge {
-                padding: 10px 18px;
-                left: 15px;
-                bottom: 15px;
-            }
-
-            .badge-thumb-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 13px;
-            }
-
-            .badge-text {
-                font-size: 11.5px;
-            }
-
-            .partnership-title {
-                font-size: 28px;
-            }
-
-            .partnership-sub {
-                font-size: 15px;
-                margin-top: 10px;
-            }
-
-            .banner-dot-grid, 
-            .banner-chevrons, 
-            .banner-circle-overlay, 
-            .banner-rect-overlay, 
-            .banner-crescent {
-                display: none; 
+            .section-heading {
+                font-size: 36px;
+                margin-bottom: 20px;
             }
 
             .footer-grid {
@@ -1497,38 +1192,12 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
+            .insurance-image-wrapper {
+                height: 250px;
+            }
             .hero-title {
                 font-size: 32px;
-            }
-
-            .about-heading {
-                font-size: 28px;
-            }
-            
-            .about-img-main {
-                width: 85%;
-                height: 300px;
-                margin-left: auto;
-            }
-
-            .about-img-circle {
-                width: 110px;
-                height: 110px;
-                top: -10px;
-            }
-            
-            .about-experience-badge {
-                max-width: 240px;
-            }
-
-            .ecosystem-img {
-                width: 100%;
-                height: 300px;
-            }
-            
-            .leader-card {
-                padding: 30px 20px;
             }
         }
 
@@ -1592,12 +1261,10 @@
     <header class="header" id="mainHeader">
         <div class="container nav-container">
             
-            <a href="homepage.html" class="logo-link">
+            <a href="../homepage.html" class="logo-link">
                 <div class="logo-wrapper">
-                    
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            
                             <linearGradient id="arrow-grad" x1="0%" y1="100%" x2="100%" y2="0%">
                                 <stop offset="0%" stop-color="#05a885" />
                                 <stop offset="100%" stop-color="#00c497" />
@@ -1607,7 +1274,6 @@
                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
                             </filter>
                         </defs>
-                        
                         <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
                             <path d="M 44 32 H 76" />
                             <path d="M 44 45 H 68" />
@@ -1615,7 +1281,6 @@
                             <path d="M 54 32 V 58" />
                             <path d="M 52 58 L 74 88" />
                         </g>
-                        
                         <path d="M 26 72 C 24 90, 46 106, 74 96 C 90 90, 100 74, 104 53 L 112 58 L 108 28 L 80 38 L 87 44 C 83 60, 75 72, 63 76 C 45 83, 32 74, 28 60 Z" fill="url(#arrow-grad)" filter="url(#arrow-glow)"/>
                     </svg>
                 </div>
@@ -1628,36 +1293,35 @@
             
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
-                    <a href="homepage.html" class="nav-link">Home</a>
+                    <a href="../homepage.html" class="nav-link">Home</a>
                 </div>
                 <div class="nav-item">
-                    <a href="aboutus.html" class="nav-link active">About Us</a>
+                    <a href="../aboutus.html" class="nav-link">About Us</a>
                 </div>
-                
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="homepage.html#services" class="nav-link" id="servicesTrigger">
+                    <a href="../homepage.html#services" class="nav-link active" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="services/mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
-                        <a href="services/equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
-                        <a href="services/advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
-                        <a href="services/Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
-                        <a href="services/Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
-                        <a href="services/loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
-                        <a href="services/insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
+                        <a href="../services/mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="../services/equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="../services/advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="../services/Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="../services/Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="../services/loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
+                        <a href="../services/insurance.html" class="dropdown-link" style="color: var(--accent-green); background: rgba(0, 196, 151, 0.08); border-left: 3px solid var(--accent-green); padding-left: 18px; font-weight: 700;"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a href="calculators.html" class="nav-link">Calculators</a>
+                    <a href="../calculators.html" class="nav-link">Calculators</a>
                 </div>
                 <div class="nav-item">
-                    <a href="blogs.html" class="nav-link">Blogs</a>
+                    <a href="../blogs.html" class="nav-link">Blogs</a>
                 </div>
                 <div class="nav-item">
-                    <a href="contactus.html" class="nav-link">Contact Us</a>
+                    <a href="../contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="apply.html" class="nav-cta-btn">Start Now</a>
+                <a href="../apply.html?service=insurance" class="nav-cta-btn">Start Now</a>
             </nav>
 
             
@@ -1673,255 +1337,212 @@
     <div class="hero-wrapper">
         <div class="hero-banner-glow"></div>
         
-        
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">About <span>Us</span></h1>
+                <h1 class="hero-title">Insurance Advisory <span>Services</span></h1>
                 <div class="breadcrumbs">
-                    <a href="homepage.html" class="breadcrumb-link">Home</a>
+                    <a href="../homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="breadcrumb-current">About Us</span>
+                    <span class="breadcrumb-current">Insurance Solutions</span>
                 </div>
             </div>
         </section>
     </div>
 
     
-    <section class="about-section">
+    <section class="insurance-section">
         <div class="container">
-            <div class="about-grid">
+            <div class="insurance-grid">
                 
                 
-                <div class="about-image-group reveal">
+                <div class="insurance-text-content reveal">
+                    <span class="about-label">Overview</span>
+                    <h2 class="section-heading" style="text-align: left; margin-bottom: 20px;">Know More About <span>Insurance</span></h2>
                     
-                    <div class="image-grid-bg"></div>
+                    <h3 class="insurance-subheading">Comprehensive Risk Protection For You And Your Assets</h3>
                     
-                    
-                    <svg class="wavy-shape" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10,75 Q30,25 55,65 T100,20" stroke="#1c32ff" stroke-width="12" stroke-linecap="round" fill="none"/>
-                    </svg>
-                    
-                    
-                    <div class="about-img-circle"></div>
-                    
-                    
-                    <div class="about-img-main"></div>
-                    
-                    
-                    <div class="about-experience-badge">
-                        <div class="badge-thumb-icon">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                        </div>
-                        <span class="badge-text">We Have More Than 10 Years Of Experience</span>
-                    </div>
-                </div>
-
-                
-                <div class="about-text-content reveal" style="transition-delay: 0.2s;">
-                    
-                    <span class="about-label">About Us</span>
-                    
-                    <h2 class="about-heading">Meet RupeeVyze – <span>Wisdom In Every Rupee™</span></h2>
-                    
-                    
-                    <div class="about-timeline">
-                        
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                                <div class="marker-line"></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">The Spark</span>
-                                <p class="about-tagline">Every great journey begins with a simple question.</p>
-                                
-                                <div class="highlight-question-card">
-                                    <div class="highlight-question">
-                                        Why does managing money feel so complicated, when it should be empowering?
-                                    </div>
-                                </div>
-                                
-                                <p class="about-p-highlight">
-                                    That question sparked the birth of <strong>RupeeVyze</strong>.
-                                </p>
-                            </div>
-                        </div>
-
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-bullseye"></i></div>
-                                <div class="marker-line"></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">Our Mission</span>
-                                <p class="about-p-body">
-                                    We started with a clear mission &mdash; to make financial wisdom accessible, practical, and empowering for every Indian. Our goal is to simplify investing, trading, and long-term wealth creation for Gen Z, millennials, and investors across all stages of life.
-                                </p>
-                            </div>
-                        </div>
-
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">Our Philosophy</span>
-                                <p class="about-p-body">
-                                    At RupeeVyze, we believe money is not just about numbers on a screen. It is a tool &mdash; a powerful enabler of freedom, security, and dreams. When guided by the right knowledge and strategy, every rupee has the potential to create lasting value.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div> 
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    
-    <section class="partnership-banner reveal">
-        
-        <div class="banner-dot-grid"></div>
-        <div class="banner-chevrons">
-            <i class="fa-solid fa-chevron-up"></i>
-            <i class="fa-solid fa-chevron-up"></i>
-            <i class="fa-solid fa-chevron-up"></i>
-        </div>
-        <div class="banner-circle-overlay"></div>
-        <div class="banner-rect-overlay"></div>
-        <svg class="banner-crescent" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15,80 A 65 65 0 0 1 85,15" stroke="#1c32ff" stroke-width="16" stroke-linecap="round" fill="none"/>
-        </svg>
-
-        <div class="partnership-content">
-            <h2 class="partnership-title">A Partnership For Business <span>Triumphs</span></h2>
-            <p class="partnership-sub">Your Vision, Our Support</p>
-        </div>
-    </section>
-
-    
-    <section class="ecosystem-section">
-        <div class="container">
-            <div class="ecosystem-grid">
-                
-                
-                <div class="about-text-content reveal">
-                    <div class="about-timeline">
-                        
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-network-wired"></i></div>
-                                <div class="marker-line"></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">Ecosystem</span>
-                                <p class="about-p-highlight" style="margin-bottom: 8px;">
-                                    We are building more than just a financial services platform.
-                                </p>
-                                <p class="about-p-body">
-                                    We are creating an <strong>end-to-end financial ecosystem</strong>, designed to support you at every step of your financial journey.
-                                </p>
-                            </div>
-                        </div>
-
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                                <div class="marker-line"></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">Our Offerings</span>
-                                <p class="about-p-body">
-                                    From stock broking and trading to mutual funds, portfolio management, insurance, loans, bonds, and wealth solutions &mdash; our aim is to become your trusted <strong>one-stop destination for financial growth</strong>.
-                                </p>
-                            </div>
-                        </div>
-
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                <div class="marker-line"></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">Our Creed</span>
-                                <p class="about-p-highlight" style="margin-bottom: 12px;">
-                                    Our philosophy is simple:
-                                </p>
-                                <ul class="philosophy-bullets">
-                                    <li><i class="fa-solid fa-circle-check"></i> Every rupee counts.</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Every decision matters.</li>
-                                    <li><i class="fa-solid fa-circle-check"></i> Every dream deserves wisdom.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        
-                        <div class="timeline-step">
-                            <div class="timeline-marker">
-                                <div class="marker-icon"><i class="fa-solid fa-compass"></i></div>
-                            </div>
-                            <div class="timeline-card">
-                                <span class="step-badge">The Horizon</span>
-                                <p class="about-p-body">
-                                    This is just the beginning of the RupeeVyze story &mdash; and we're excited to grow, learn, and build a financially confident future with you.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                
-                <div class="ecosystem-img-wrapper reveal" style="transition-delay: 0.2s;">
-                    <div class="ecosystem-img"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header reveal" style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
-                <span class="about-label" style="display: inline-block; margin-bottom: 6px;">Our Leadership</span>
-                <h2 class="about-heading" style="font-size: 36px; margin-bottom: 0;">The Minds Guiding <span>RupeeVyze</span></h2>
-            </div>
-            
-            <div class="team-grid">
-                
-                <div class="leader-card reveal">
-                    <div class="leader-photo-wrapper">
-                        <img src="images/founder_male.png" class="leader-photo" alt="Sandeep Vyas">
-                    </div>
-                    <h3 class="leader-name">Sandeep Vyas</h3>
-                    <span class="leader-role">Founder & CEO</span>
-                    <p class="leader-quote">
-                        Helping every Indian family secure their financial future through mathematical clarity, transparency, and data-backed wisdom.
+                    <p class="insurance-p">
+                        Insurance is the foundation of every financial plan. RupeeVyze provides unbiased insurance advisory to ensure you are adequately protected without overspending.
                     </p>
-                </div>
-                
-                
-                <div class="leader-card reveal" style="transition-delay: 0.2s;">
-                    <div class="leader-photo-wrapper">
-                        <img src="images/founder_female.png" class="leader-photo" alt="Riya Sharma">
-                    </div>
-                    <h3 class="leader-name">Riya Sharma</h3>
-                    <span class="leader-role">Co-Founder & CIO</span>
-                    <p class="leader-quote">
-                        Bringing institutional-grade investment wisdom, risk-management, and compounding strategies to retail portfolios across India.
+                    <p class="insurance-p">
+                        We focus on <strong>need-based coverage and long-term protection</strong>, not product pushing.
                     </p>
+                    
+                    <a href="../apply.html?service=insurance" class="start-btn">Start Now</a>
+                </div>
+
+                
+                <div class="insurance-image-wrapper reveal" style="transition-delay: 0.2s;">
+                    <img src="../images/insurance_advisory.png" class="insurance-img" alt="Insurance Advisory Services">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="offerings-section">
+        <div class="container">
+            <div class="offerings-container">
+                
+                <div class="offerings-info-box reveal">
+                    <span class="about-label">What We Offer :</span>
+                    <h2 class="section-heading" style="text-align: left; margin-bottom: 24px;">Insurance Solutions <span>Offered</span></h2>
+                    
+                    <div class="offerings-highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <p>We assist with policy selection, renewal guidance, and claim support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="offering-rows-list reveal" style="transition-delay: 0.1s;">
+                    
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Life Insurance</h3>
+                            <p class="offering-row-desc">Secure your family's financial future with term plans, endowment policies, and wealth-building solutions.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">General Insurance</h3>
+                            <p class="offering-row-desc">All-inclusive health plans, critical illness cover, and standard protection packages tailored for you.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-house-circle-check"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Property Insurance</h3>
+                            <p class="offering-row-desc">Guard your home, physical assets, and properties against environmental damages or structural issues.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-plane-departure"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Travel Insurance</h3>
+                            <p class="offering-row-desc">Global and domestic travel insurance plans covering medical emergencies, trip cancellations, and baggage losses.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
+
+                    
+                    <div class="offering-row">
+                        <div class="offering-row-icon">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <div class="offering-row-content">
+                            <h3 class="offering-row-title">Vehicle & Commercial Insurance</h3>
+                            <p class="offering-row-desc">End-to-end motor policies for personal cars/bikes and liability solutions to protect commercial operations.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right offering-row-arrow"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 30px;" class="reveal">
+                <span class="about-label">General Questions</span>
+                <h2 class="section-heading">Frequently Asked <span>Questions</span></h2>
+            </div>
+
+            <div class="faq-list reveal" style="transition-delay: 0.1s;">
+                
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span class="faq-q-text">What Services Does RupeeVyze Offer?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-minus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap" style="max-height: 200px;">
+                        <p class="faq-answer">RupeeVyze provides a complete financial ecosystem including mutual funds, equity and commodity broking, PMS, AIFs, bonds, fixed deposits, insurance, loans, and real estate solutions — all under one roof.</p>
+                    </div>
+                </div>
+
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Who Can Invest Or Use RupeeVyze Services?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Any Indian resident aged 18 and above can invest through RupeeVyze. We serve salaried professionals, self-employed individuals, NRIs, and corporates looking to grow and manage their wealth smartly.</p>
+                    </div>
+                </div>
+
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Is There A Minimum Investment Amount?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">You can start your investment journey with as little as ₹500 per month through our SIP plans. There is no upper limit, and our advisors will help you build a portfolio that fits your goals.</p>
+                    </div>
+                </div>
+
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">How Does RupeeVyze Recommend Financial Products?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">We use a data-driven approach combined with a deep profiling of your financial goals, risk appetite, and investment horizon. Our SEBI-registered advisors then craft a personalized strategy tailored just for you.</p>
+                    </div>
+                </div>
+
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Is My Money And Data Safe With RupeeVyze?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Absolutely. RupeeVyze is SEBI-registered and follows the highest compliance standards. Your investments are held with SEBI-regulated custodians and your personal data is encrypted end-to-end.</p>
+                    </div>
+                </div>
+
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Can I Withdraw My Investments Anytime?</span>
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer-wrap">
+                        <p class="faq-answer">Yes. Most mutual fund investments can be redeemed within 1–3 business days. Fixed deposits and lock-in products have specific tenure terms, which are clearly communicated before investing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     
     <footer class="footer">
         <div class="container">
@@ -1963,9 +1584,9 @@
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="homepage.html" class="footer-link">Home</a>
-                        <a href="aboutus.html" class="footer-link">About Us</a>
-                        <a href="contactus.html" class="footer-link">Contact Us</a>
+                        <a href="../homepage.html" class="footer-link">Home</a>
+                        <a href="../aboutus.html" class="footer-link">About Us</a>
+                        <a href="../contactus.html" class="footer-link">Contact Us</a>
                     </div>
                 </div>
 
@@ -2054,7 +1675,6 @@
         });
 
         const revealElements = document.querySelectorAll('.reveal');
-        
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2063,20 +1683,46 @@
                 }
             });
         };
-
         const revealObserver = new IntersectionObserver(revealCallback, {
             root: null,
             threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         });
-
         revealElements.forEach(element => {
             revealObserver.observe(element);
         });
 
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionRow = item.querySelector('.faq-question');
+            const answerWrap = item.querySelector('.faq-answer-wrap');
+            const icon = item.querySelector('.faq-icon i');
+
+            questionRow.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer-wrap').style.maxHeight = '0';
+                    otherItem.querySelector('.faq-icon i').className = 'fa-solid fa-plus';
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    
+                    answerWrap.style.maxHeight = answerWrap.scrollHeight + 'px';
+                    icon.className = 'fa-solid fa-minus';
+                } else {
+                    item.classList.remove('active');
+                    answerWrap.style.maxHeight = '0';
+                    icon.className = 'fa-solid fa-plus';
+                }
+            });
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero-title').style.opacity = '1';
-            
             setTimeout(() => {
                 const initialElements = document.querySelectorAll('.hero-banner .breadcrumbs, .header');
                 initialElements.forEach(el => {

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIP + SWP Calculator | RupeeVyze - Wealth Planning Tools</title>
+    <title>Education Calculator | RupeeVyze - Wealth Planning Tools</title>
     
-    <meta name="description" content="Plan your wealth accumulation and retirement phase using RupeeVyze's premium interactive SIP + SWP calculator.">
-    <meta name="keywords" content="SIP SWP Calculator, Retirement Calculator, Pension Planner, Wealth Planning, RupeeVyze Calculators">
+    <meta name="description" content="Find out the cost of delaying your investments using RupeeVyze's interactive SIP Delay Calculator. Compare starting today vs delaying.">
+    <meta name="keywords" content="SIP Delay Calculator, Cost of Delay, SIP Calculator, Financial Planning, Opportunity Loss, RupeeVyze Calculators">
     <meta name="author" content="RupeeVyze">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +31,8 @@
             --accent-blue: #1c32ff;      
             --accent-blue-glow: rgba(28, 50, 255, 0.4);
             
-            --accent-orange: #f59e0b;
-            --accent-orange-glow: rgba(245, 158, 11, 0.3);
+            --accent-red: #ef4444;
+            --accent-red-glow: rgba(239, 68, 68, 0.3);
             
             --text-primary: #ffffff;     
             --text-secondary: #94a3b8;   
@@ -291,7 +291,7 @@
             z-index: 100;
         }
 
-        @media (min-width: 769px) {
+        @media (min-width: 993px) {
             .dropdown:hover .dropdown-menu {
                 opacity: 1;
                 visibility: visible;
@@ -514,29 +514,6 @@
             justify-content: center;
         }
 
-        .phase-header {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--text-light-title);
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .phase-header.sip {
-            color: var(--accent-blue);
-            border-color: rgba(28, 50, 255, 0.15);
-        }
-
-        .phase-header.swp {
-            color: var(--accent-green-dark);
-            border-color: rgba(0, 196, 151, 0.15);
-            margin-top: 30px;
-        }
-
         .input-row {
             display: flex;
             align-items: center;
@@ -546,7 +523,7 @@
         }
 
         .input-label {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--text-light-title);
         }
@@ -559,7 +536,7 @@
             overflow: hidden;
             background: #ffffff;
             transition: var(--transition-fast);
-            max-width: 200px;
+            max-width: 250px;
             width: 100%;
         }
 
@@ -572,8 +549,8 @@
             width: 100%;
             border: none;
             outline: none;
-            padding: 8px 14px;
-            font-size: 15px;
+            padding: 10px 16px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--text-light-title);
             background: transparent;
@@ -594,14 +571,14 @@
             background: #f1f5f9;
             color: #64748b;
             font-weight: 700;
-            padding: 0 14px;
+            padding: 0 18px;
             border-left: 1.5px solid #cbd5e1;
-            font-size: 14px;
-            min-width: 40px;
+            font-size: 16px;
+            min-width: 44px;
         }
 
         .slider-row {
-            margin-bottom: 24px;
+            margin-bottom: 40px;
         }
 
         .slider-row:last-child {
@@ -610,7 +587,7 @@
 
         .range-slider {
             width: 100%;
-            height: 5px;
+            height: 6px;
             background: #e2e8f0;
             border-radius: 10px;
             outline: none;
@@ -620,63 +597,26 @@
 
         .range-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             background: var(--accent-blue);
-            box-shadow: 0 2px 6px rgba(28, 50, 255, 0.35);
+            box-shadow: 0 2px 8px rgba(28, 50, 255, 0.35);
             cursor: pointer;
             transition: var(--transition-fast);
         }
 
-        .range-slider.swp-slider::-webkit-slider-thumb {
-            background: var(--accent-green);
-            box-shadow: 0 2px 6px rgba(0, 196, 151, 0.35);
-        }
-
         .range-slider::-webkit-slider-thumb:hover {
             transform: scale(1.15);
+            background: #0d1eab;
         }
 
         .outputs-column {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
             height: 100%;
-        }
-
-        .output-section-title {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--text-light-title);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .output-section-title.accumulation {
-            color: var(--accent-blue);
-        }
-
-        .output-section-title.distribution {
-            color: var(--accent-green-dark);
-        }
-
-        .results-box {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--border-radius-md);
-            padding: 20px;
-        }
-
-        .results-box.two-col {
-            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
         }
 
         .result-block {
@@ -687,105 +627,92 @@
         }
 
         .result-label {
-            font-size: 12.5px;
+            font-size: 15px;
             color: var(--text-light-muted);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
         .result-value {
-            font-size: 17px;
+            font-size: 26px;
             font-weight: 800;
-            color: #334155; 
-            letter-spacing: -0.3px;
-        }
-
-        .result-value.highlight-blue {
-            color: var(--accent-blue);
-            font-size: 19px;
+            color: #475569; 
+            letter-spacing: -0.5px;
         }
 
         .result-value.highlight-green {
             color: var(--accent-green-dark);
-            font-size: 19px;
+            font-size: 26px;
         }
 
-        .visualizer-card {
-            margin-top: 10px;
+        .result-value.highlight-blue {
+            color: var(--accent-blue);
+            font-size: 26px;
+        }
+
+        .result-value.highlight-red {
+            color: var(--accent-red);
+            font-size: 32px;
+        }
+
+        .dotted-divider {
+            border-top: 2.5px dashed #cbd5e1;
+            width: 100%;
+            margin: 6px 0;
+        }
+
+        .visual-bars {
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .prog-bar-container {
-            width: 100%;
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .prog-bar-labels {
+        .bar-label-row {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
+            font-size: 13.5px;
             font-weight: 700;
             color: var(--text-light-muted);
-            margin-bottom: 6px;
         }
 
-        .prog-bar-track {
+        .bar-track {
             width: 100%;
-            height: 12px;
+            height: 16px;
             background: #e2e8f0;
-            border-radius: 10px;
+            border-radius: 50px;
+            position: relative;
             overflow: hidden;
-            display: flex;
         }
 
-        .prog-bar-fill {
+        .bar-fill {
             height: 100%;
+            border-radius: 50px;
             transition: width 0.3s ease;
         }
 
-        .prog-bar-fill.invested {
-            background-color: var(--accent-blue);
+        .bar-fill.start-today {
+            background: linear-gradient(90deg, var(--accent-green-dark), var(--accent-green));
         }
 
-        .prog-bar-fill.returns {
-            background-color: #93c5fd;
+        .bar-fill.start-later {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
         }
 
-        .prog-bar-fill.withdrawn {
-            background-color: var(--accent-green);
-        }
-
-        .prog-bar-fill.remaining {
-            background-color: #a7f3d0;
-        }
-
-        .prog-bar-legend {
-            display: flex;
-            gap: 20px;
-            margin-top: 8px;
-            justify-content: center;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .loss-badge {
+            background: #fee2e2;
+            color: #ef4444;
+            padding: 4px 10px;
+            border-radius: 50px;
             font-size: 12px;
-            font-weight: 700;
-            color: var(--text-light-muted);
+            font-weight: 800;
         }
-
-        .legend-color {
-            width: 16px;
-            height: 10px;
-            border-radius: 2px;
-        }
-
-        .legend-color.invested { background-color: var(--accent-blue); }
-        .legend-color.returns { background-color: #93c5fd; }
-        .legend-color.withdrawn { background-color: var(--accent-green); }
-        .legend-color.remaining { background-color: #a7f3d0; }
 
         .validation-error {
             display: none;
@@ -798,26 +725,6 @@
             font-size: 14px;
             font-weight: 600;
             text-align: center;
-        }
-
-        .warning-banner {
-            display: none;
-            background: #fffbeb;
-            border: 1px solid #fef3c7;
-            color: #b45309;
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 15px;
-            font-size: 14.5px;
-            font-weight: 700;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .warning-banner i {
-            font-size: 20px;
         }
 
         .footer {
@@ -1072,7 +979,8 @@
             }
         }
 
-        @media (max-width: 768px) {
+        /* ===== TABLET & MOBILE NAVIGATION (≤ 992px) ===== */
+        @media (max-width: 992px) {
             .header {
                 padding: 15px 0;
             }
@@ -1135,10 +1043,267 @@
                 padding: 130px 0 70px;
                 border-radius: 0 0 40px 40px;
             }
+        }
 
-            .results-box {
+        /* ===== MOBILE (≤ 768px) ===== */
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 120px 0 60px;
+                border-radius: 0 0 30px 30px;
+                margin: 0 8px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+
+            .breadcrumbs {
+                font-size: 12px;
+                padding: 6px 14px;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .calc-section {
+                padding: 30px 0 40px;
+            }
+
+            .card-box {
+                padding: 20px 16px;
+                border-radius: var(--border-radius-md);
+            }
+
+            .input-row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .input-label {
+                font-size: 15px;
+                min-width: 100%;
+            }
+
+            .input-field-group {
+                max-width: 100%;
+            }
+
+            .number-input {
+                padding: 8px 12px;
+                font-size: 15px;
+            }
+
+            .slider-row {
+                margin-bottom: 22px;
+            }
+
+            .range-slider {
+                height: 5px;
+            }
+
+            .range-slider::-webkit-slider-thumb {
+                width: 20px;
+                height: 20px;
+            }
+
+            .result-value {
+                font-size: 22px;
+            }
+
+            .result-value.highlight-green {
+                font-size: 22px;
+            }
+
+            .result-value.highlight-blue {
+                font-size: 22px;
+            }
+
+            .result-value.highlight-red {
+                font-size: 26px;
+            }
+
+            .outputs-column {
+                gap: 14px;
+            }
+
+            .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 30px;
+            }
+
+            .footer {
+                padding: 50px 0 30px;
+            }
+
+            .footer-map-container {
+                max-width: 100%;
+                height: 160px;
+            }
+
+            .whatsapp-float {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .visual-bars {
+                margin-top: 10px;
+                gap: 14px;
+            }
+
+            .bar-label-row {
+                font-size: 12px;
+            }
+
+            .loss-badge {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+        }
+
+        /* ===== SMALL PHONES (≤ 480px) ===== */
+        @media (max-width: 480px) {
+            .hero-banner {
+                padding: 100px 0 40px;
+                border-radius: 0 0 20px 20px;
+                margin: 0 4px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2rem);
+                margin-bottom: 14px;
+            }
+
+            .breadcrumbs {
+                font-size: 10px;
+                padding: 4px 10px;
+                gap: 4px;
+            }
+
+            .card-box {
+                padding: 16px 12px;
+            }
+
+            .input-label {
+                font-size: 13px;
+            }
+
+            .number-input {
+                padding: 6px 10px;
+                font-size: 14px;
+                min-width: 40px;
+            }
+
+            .input-suffix {
+                padding: 0 8px;
+                font-size: 12px;
+                min-width: 30px;
+            }
+
+            .input-field-group {
+                border-radius: 6px;
+            }
+
+            .slider-row {
+                margin-bottom: 16px;
+            }
+
+            .range-slider {
+                height: 4px;
+            }
+
+            .range-slider::-webkit-slider-thumb {
+                width: 18px;
+                height: 18px;
+            }
+
+            .result-value {
+                font-size: 18px;
+            }
+
+            .result-value.highlight-green {
+                font-size: 18px;
+            }
+
+            .result-value.highlight-blue {
+                font-size: 18px;
+            }
+
+            .result-value.highlight-red {
+                font-size: 22px;
+            }
+
+            .result-label {
+                font-size: 13px;
+            }
+
+            .dotted-divider {
+                margin: 4px 0;
+            }
+
+            .validation-error {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .footer-title {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+
+            .footer-desc {
+                font-size: 14px;
+            }
+
+            .footer-logo-title {
+                font-size: 20px;
+            }
+
+            .logo-title {
+                font-size: 1.1rem;
+            }
+
+            .logo-wrapper {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo-tagline {
+                font-size: 7px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.3rem;
+            }
+
+            .card-box {
+                padding: 12px 8px;
+            }
+
+            .input-label {
+                font-size: 12px;
+            }
+
+            .number-input {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .input-suffix {
+                font-size: 11px;
+                padding: 0 6px;
+                min-width: 26px;
+            }
+
+            .result-value {
+                font-size: 16px;
+            }
+
+            .result-value.highlight-red {
+                font-size: 18px;
             }
         }
 
@@ -1181,7 +1346,7 @@
 
     <header class="header" id="mainHeader">
         <div class="container nav-container">
-            <a href="homepage.html" class="logo-link">
+            <a href="../homepage.html" class="logo-link">
                 <div class="logo-wrapper">
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -1212,35 +1377,35 @@
 
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
-                    <a href="homepage.html" class="nav-link">Home</a>
+                    <a href="../homepage.html" class="nav-link">Home</a>
                 </div>
                 <div class="nav-item">
-                    <a href="aboutus.html" class="nav-link">About Us</a>
+                    <a href="../aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="homepage.html#services" class="nav-link" id="servicesTrigger">
+                    <a href="../homepage.html#services" class="nav-link" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
-                        <a href="equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
-                        <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
-                        <a href="Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
-                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
-                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
-                        <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
+                        <a href="../services/mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="../services/equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="../services/advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="../services/Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="../services/Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="../services/loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
+                        <a href="../services/insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a href="calculators.html" class="nav-link active">Calculators</a>
+                    <a href="../calculators.html" class="nav-link active">Calculators</a>
                 </div>
                 <div class="nav-item">
-                    <a href="blogs.html" class="nav-link">Blogs</a>
+                    <a href="../blogs.html" class="nav-link">Blogs</a>
                 </div>
                 <div class="nav-item">
-                    <a href="contactus.html" class="nav-link">Contact Us</a>
+                    <a href="../contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="apply.html" class="nav-cta-btn">Start Now</a>
+                <a href="../apply.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
@@ -1255,13 +1420,13 @@
         <div class="hero-banner-glow"></div>
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">SIP + SWP <span>Calculator</span></h1>
+                <h1 class="hero-title">Education <span>Calculator</span></h1>
                 <div class="breadcrumbs">
-                    <a href="homepage.html" class="breadcrumb-link">Home</a>
+                    <a href="../homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <a href="calculators.html" class="breadcrumb-link">Calculators</a>
+                    <a href="../calculators.html" class="breadcrumb-link">Calculators</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="breadcrumb-current">SIP + SWP Calculator</span>
+                    <span class="breadcrumb-current">Education Calculator</span>
                 </div>
             </div>
         </section>
@@ -1272,169 +1437,127 @@
             <div id="validationAlert" class="validation-error"></div>
             <div class="calc-container">
                 
-                <div class="card-box inputs-card reveal" style="justify-content: flex-start; padding-top: 30px; padding-bottom: 30px;">
-                    
-                    <div class="phase-header sip">
-                        <i class="fa-solid fa-chart-line"></i> Phase 1 - SIP (Accumulation)
-                    </div>
+                <div class="card-box inputs-card reveal">
                     
                     <div class="input-row">
-                        <label for="sipAmountNum" class="input-label">Monthly SIP Amount</label>
+                        <label for="childAgeNum" class="input-label">Child's Current Age</label>
                         <div class="input-field-group">
-                            <input type="number" id="sipAmountNum" class="number-input" value="25000">
-                            <span class="input-suffix">₹</span>
-                        </div>
-                    </div>
-                    <div class="slider-row">
-                        <input type="range" id="sipAmountSlider" class="range-slider" min="500" max="500000" step="500" value="25000">
-                    </div>
-
-                    <div class="input-row">
-                        <label for="sipTenureNum" class="input-label">SIP Duration</label>
-                        <div class="input-field-group">
-                            <input type="number" id="sipTenureNum" class="number-input" value="10">
+                            <input type="number" id="childAgeNum" class="number-input" value="5">
                             <span class="input-suffix">Yrs</span>
                         </div>
                     </div>
                     <div class="slider-row">
-                        <input type="range" id="sipTenureSlider" class="range-slider" min="1" max="40" step="1" value="10">
+                        <input type="range" id="childAgeSlider" class="range-slider" min="0" max="25" value="5">
                     </div>
 
                     <div class="input-row">
-                        <label for="sipRateNum" class="input-label">Annual Return (SIP)</label>
+                        <label for="educationAgeNum" class="input-label">Higher Education Age</label>
                         <div class="input-field-group">
-                            <input type="number" id="sipRateNum" class="number-input" step="0.1" value="12">
-                            <span class="input-suffix">%</span>
-                        </div>
-                    </div>
-                    <div class="slider-row">
-                        <input type="range" id="sipRateSlider" class="range-slider" min="0" max="30" step="0.1" value="12">
-                    </div>
-
-                    <div class="phase-header swp">
-                        <i class="fa-solid fa-wallet"></i> Phase 2 - SWP (Distribution)
-                    </div>
-
-                    <div class="input-row">
-                        <label for="swpAmountNum" class="input-label">Monthly Withdrawal</label>
-                        <div class="input-field-group">
-                            <input type="number" id="swpAmountNum" class="number-input" value="20000">
-                            <span class="input-suffix">₹</span>
-                        </div>
-                    </div>
-                    <div class="slider-row">
-                        <input type="range" id="swpAmountSlider" class="range-slider swp-slider" min="500" max="500000" step="500" value="20000">
-                    </div>
-
-                    <div class="input-row">
-                        <label for="swpTenureNum" class="input-label">Withdrawal Duration</label>
-                        <div class="input-field-group">
-                            <input type="number" id="swpTenureNum" class="number-input" value="10">
+                            <input type="number" id="educationAgeNum" class="number-input"  value="18">
                             <span class="input-suffix">Yrs</span>
                         </div>
                     </div>
                     <div class="slider-row">
-                        <input type="range" id="swpTenureSlider" class="range-slider swp-slider" min="1" max="40" step="1" value="10">
+                        <input type="range" id="educationAgeSlider" class="range-slider" min="15" max="30"  value="18">
                     </div>
 
                     <div class="input-row">
-                        <label for="swpRateNum" class="input-label">Annual Return (SWP)</label>
+                        <label for="courseDurationNum" class="input-label">Course Duration</label>
                         <div class="input-field-group">
-                            <input type="number" id="swpRateNum" class="number-input" step="0.1" value="12">
+                            <input type="number" id="courseDurationNum" class="number-input" value="4">
+                            <span class="input-suffix">Yrs</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="courseDurationSlider" class="range-slider" min="1" max="10"  value="4">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="annualCostNum" class="input-label">Current Annual Education Cost</label>
+                        <div class="input-field-group">
+                            <input type="number" id="annualCostNum" class="number-input" value="500000">
+                            <span class="input-suffix">₹</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="annualCostSlider" class="range-slider" min="50000" max="5000000" step="50000" value="500000">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="currentSavingsNum" class="input-label">Current Savings</label>
+                        <div class="input-field-group">
+                            <input type="number" id="currentSavingsNum" class="number-input" value="100000">
+                            <span class="input-suffix">₹</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="currentSavingsSlider" class="range-slider" min="0" max="10000000" step="50000" value="100000">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="inflationNum" class="input-label">Education Inflation</label>
+                        <div class="input-field-group">
+                            <input type="number" id="inflationNum" class="number-input" step="0.1" value="8">
                             <span class="input-suffix">%</span>
                         </div>
                     </div>
                     <div class="slider-row">
-                        <input type="range" id="swpRateSlider" class="range-slider swp-slider" min="0" max="30" step="0.1" value="12">
+                        <input type="range" id="inflationSlider" class="range-slider" min="0" max="20" step="0.1" value="8">
+                    </div>
+
+                    <div class="input-row">
+                        <label for="inflationNum" class="input-label">Expected Investment Return</label>
+                        <div class="input-field-group">
+                            <input type="number" id="returnRateNum" class="number-input" step="0.1" value="12">
+                            <span class="input-suffix">%</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="returnRateSlider" class="range-slider" min="0" max="20" step="0.1" value="12">
                     </div>
 
                 </div>
 
-                <div class="card-box outputs-card reveal" style="transition-delay: 0.1s; justify-content: flex-start; padding-top: 30px; padding-bottom: 30px;">
+                <div class="card-box outputs-card reveal" style="transition-delay: 0.1s;">
                     <div class="outputs-column">
                         
-                        <div>
-                            <div class="output-section-title accumulation">
-                                <i class="fa-solid fa-circle-arrow-up"></i> Phase 1 - Accumulation Results
-                            </div>
-                            <div class="results-box">
-                                <div class="result-block">
-                                    <span class="result-label">SIP Investment</span>
-                                    <span class="result-value" id="resSipInvestment">30,00,000</span>
-                                </div>
-                                <div class="result-block">
-                                    <span class="result-label">SIP Returns</span>
-                                    <span class="result-value" id="resSipReturns">28,09,104</span>
-                                </div>
-                                <div class="result-block">
-                                    <span class="result-label">Maturity Corpus</span>
-                                    <span class="result-value highlight-blue" id="resMaturityCorpus">58,09,104</span>
-                                </div>
-                            </div>
+                        <div class="result-block">
+                            <span class="result-label">Future Education Cost</span>
+                            <span class="result-value highlight-green" id="resToday">58,09,104 INR</span>
+                        </div>
+                        <div class="dotted-divider"></div>
+                        <div class="result-block">
+                            <span class="result-label">Future value of Current Savings</span>
+                            <span class="result-value highlight-blue" id="resDelayed">53,49,150 INR</span>
+                        </div>
+                        <div class="dotted-divider"></div>
+                        <div class="result-block">
+                            <span class="result-label">Additional Corpus Required</span>
+                            <span class="result-value highlight-red" id="resLoss">4,59,954 INR</span>
                         </div>
 
-                        <div>
-                            <div class="output-section-title distribution">
-                                <i class="fa-solid fa-circle-arrow-down"></i> Phase 2 - Distribution Results
-                            </div>
-                            <div class="results-box two-col">
-                                <div class="result-block">
-                                    <span class="result-label">Total Withdrawal</span>
-                                    <span class="result-value" id="resTotalWithdrawal">24,00,000</span>
+                        <div class="visual-bars">
+                            <div class="bar-group">
+                                <div class="bar-label-row">
+                                    <span>Education Cost</span>
+                                    <span id="valTodayPct">₹ 58,09,104</span>
                                 </div>
-                                <div class="result-block">
-                                    <span class="result-label">Remaining Corpus</span>
-                                    <span class="result-value highlight-green" id="resRemainingCorpus">1,08,16,125</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="visualizer-card">
-                            <div class="prog-bar-container">
-                                <div class="prog-bar-labels">
-                                    <span>SIP Accumulation Breakdown</span>
-                                </div>
-                                <div class="prog-bar-track">
-                                    <div class="prog-bar-fill invested" id="sipInvestedBar" style="width: 52%"></div>
-                                    <div class="prog-bar-fill returns" id="sipReturnsBar" style="width: 48%"></div>
-                                </div>
-                                <div class="prog-bar-legend">
-                                    <div class="legend-item">
-                                        <span class="legend-color invested"></span>
-                                        <span>Invested (<span id="sipInvestedPct">52</span>%)</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <span class="legend-color returns"></span>
-                                        <span>Returns (<span id="sipReturnsPct">48</span>%)</span>
-                                    </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill start-today" style="width: 100%"></div>
                                 </div>
                             </div>
 
-                            <div class="prog-bar-container" style="margin-top: 10px;">
-                                <div class="prog-bar-labels">
-                                    <span>SWP Distribution Breakdown</span>
-                                </div>
-                                <div class="prog-bar-track">
-                                    <div class="prog-bar-fill withdrawn" id="swpWithdrawnBar" style="width: 22%"></div>
-                                    <div class="prog-bar-fill remaining" id="swpRemainingBar" style="width: 78%"></div>
-                                </div>
-                                <div class="prog-bar-legend">
-                                    <div class="legend-item">
-                                        <span class="legend-color withdrawn"></span>
-                                        <span>Withdrawn (<span id="swpWithdrawnPct">22</span>%)</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <span class="legend-color remaining"></span>
-                                        <span>Remaining (<span id="swpRemainingPct">78</span>%)</span>
+                            <div class="bar-group">
+                                <div class="bar-label-row">
+                                    <span>Future Savings</span>
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <span id="valDelayedPct">₹ 53,49,150</span>
+                                        <span class="loss-badge" id="lossPercent">0%</span>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div id="warningBanner" class="warning-banner">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <div>
-                                <strong>Warning!</strong> Your accumulated corpus runs out early at <span id="warningTime">5 years, 3 months</span>. Try increasing your SIP amount, extending the SIP duration, or lowering your SWP withdrawal amount.
+                                <div class="bar-track">
+                                    <div class="bar-fill start-later" id="barDelayed" style="width: 92%"></div>
+                                </div>
                             </div>
                         </div>
 
@@ -1483,9 +1606,9 @@
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="homepage.html" class="footer-link">Home</a>
-                        <a href="aboutus.html" class="footer-link">About Us</a>
-                        <a href="contactus.html" class="footer-link">Contact Us</a>
+                        <a href="../homepage.html" class="footer-link">Home</a>
+                        <a href="../aboutus.html" class="footer-link">About Us</a>
+                        <a href="../contactus.html" class="footer-link">Contact Us</a>
                     </div>
                 </div>
 
@@ -1551,197 +1674,191 @@
         const servicesTrigger = document.getElementById('servicesTrigger');
 
         servicesTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 992) {
                 e.preventDefault();
                 servicesDropdown.classList.toggle('active');
             }
         });
 
         function formatINR(number) {
-            const x = Math.round(number).toString();
-            let lastThree = x.substring(x.length - 3);
-            const otherNumbers = x.substring(0, x.length - 3);
-            if (otherNumbers != '') {
-                lastThree = ',' + lastThree;
-            }
-            const res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
-            return res;
+            return Math.round(number).toLocaleString("en-IN");
         }
 
-        // Inputs
-        const sipAmountNum = document.getElementById('sipAmountNum');
-        const sipAmountSlider = document.getElementById('sipAmountSlider');
-        const sipTenureNum = document.getElementById('sipTenureNum');
-        const sipTenureSlider = document.getElementById('sipTenureSlider');
-        const sipRateNum = document.getElementById('sipRateNum');
-        const sipRateSlider = document.getElementById('sipRateSlider');
-
-        const swpAmountNum = document.getElementById('swpAmountNum');
-        const swpAmountSlider = document.getElementById('swpAmountSlider');
-        const swpTenureNum = document.getElementById('swpTenureNum');
-        const swpTenureSlider = document.getElementById('swpTenureSlider');
-        const swpRateNum = document.getElementById('swpRateNum');
-        const swpRateSlider = document.getElementById('swpRateSlider');
-
+        // Elements
+        const childAgeNum = document.getElementById('childAgeNum');
+        const childAgeSlider = document.getElementById('childAgeSlider');
+        const educationAgeNum = document.getElementById('educationAgeNum');
+        const educationAgeSlider = document.getElementById('educationAgeSlider');
+        const courseDurationNum = document.getElementById('courseDurationNum');
+        const courseDurationSlider = document.getElementById('courseDurationSlider');
+        const annualCostNum = document.getElementById('annualCostNum');
+        const annualCostSlider = document.getElementById('annualCostSlider');
+        const currentSavingsNum = document.getElementById('currentSavingsNum');
+        const currentSavingsSlider = document.getElementById('currentSavingsSlider');
+        const inflationNum = document.getElementById('inflationNum');
+        const inflationSlider = document.getElementById('inflationSlider');
+        const returnRateNum = document.getElementById('returnRateNum');
+        const returnRateSlider = document.getElementById('returnRateSlider');
         const validationAlert = document.getElementById('validationAlert');
-        const warningBanner = document.getElementById('warningBanner');
 
-        function validateInputs() {
-            const P = parseFloat(sipAmountNum.value);
-            const Y1 = parseFloat(sipTenureNum.value);
-            const R1 = parseFloat(sipRateNum.value);
-            
-            const W = parseFloat(swpAmountNum.value);
-            const Y2 = parseFloat(swpTenureNum.value);
-            const R2 = parseFloat(swpRateNum.value);
+        function validateInputs(
+    childAge,
+    educationAge,
+    courseDuration,
+    annualCost,
+    currentSavings,
+    inflation,
+    returnRate
+) {
 
-            if (isNaN(P) || P <= 0) return "SIP Amount must be greater than 0";
-            if (isNaN(Y1) || Y1 <= 0) return "SIP Duration must be greater than 0";
-            if (isNaN(R1) || R1 < 0) return "SIP Expected Return must be greater than or equal to 0";
-            
-            if (isNaN(W) || W <= 0) return "Withdrawal Amount must be greater than 0";
-            if (isNaN(Y2) || Y2 <= 0) return "Withdrawal Duration must be greater than 0";
-            if (isNaN(R2) || R2 < 0) return "SWP Expected Return must be greater than or equal to 0";
-            
-            return "";
-        }
+    if (childAge < 0 || childAge > 25) {
+        return "Enter a valid child's age.";
+    }
 
-        function calculateSIPSWP() {
-            const err = validateInputs();
-            if (err !== "") {
-                validationAlert.style.display = "block";
-                validationAlert.innerText = err;
-                return;
-            }
-            validationAlert.style.display = "none";
+    if (educationAge <= childAge) {
+        return "Higher education age must be greater than child's age.";
+    }
 
-            // Phase 1 - SIP Calculations
-            const P = parseFloat(sipAmountNum.value);
-            const Y1 = parseFloat(sipTenureNum.value);
-            const R1 = parseFloat(sipRateNum.value);
+    if (courseDuration <= 0) {
+        return "Course duration must be greater than zero.";
+    }
 
-            const i1 = R1 / (12 * 100);
-            const n1 = Y1 * 12;
+    if (annualCost <= 0) {
+        return "Enter a valid annual education cost.";
+    }
 
-            let FV = 0;
-            if (R1 > 0) {
-                FV = P * ((Math.pow(1 + i1, n1) - 1) / i1) * (1 + i1);
-            } else {
-                FV = P * n1;
-            }
+    if (currentSavings < 0) {
+        return "Current savings cannot be negative.";
+    }
 
-            const sipInvestment = P * n1;
-            const sipReturns = FV - sipInvestment;
+    if (inflation < 0) {
+        return "Inflation cannot be negative.";
+    }
 
-            document.getElementById('resSipInvestment').innerText = "₹ " + formatINR(sipInvestment);
-            document.getElementById('resSipReturns').innerText = "₹ " + formatINR(sipReturns);
-            document.getElementById('resMaturityCorpus').innerText = "₹ " + formatINR(FV);
+    if (returnRate < 0) {
+        return "Expected return cannot be negative.";
+    }
 
-            // Phase 1 Bars
-            let sipInvestmentPct = 0;
-            let sipReturnsPct = 0;
-            if (FV > 0) {
-                sipInvestmentPct = Math.round((sipInvestment / FV) * 100);
-                sipReturnsPct = 100 - sipInvestmentPct;
-            }
-            document.getElementById('sipInvestedBar').style.width = sipInvestmentPct + "%";
-            document.getElementById('sipReturnsBar').style.width = sipReturnsPct + "%";
-            document.getElementById('sipInvestedPct').innerText = sipInvestmentPct;
-            document.getElementById('sipReturnsPct').innerText = sipReturnsPct;
+    return "";
+}
 
-            // Phase 2 - SWP Calculations
-            const W = parseFloat(swpAmountNum.value);
-            const Y2 = parseFloat(swpTenureNum.value);
-            const R2 = parseFloat(swpRateNum.value);
+function calculateEducation() {
 
-            const i2 = R2 / (12 * 100);
-            const n2 = Y2 * 12;
+    const childAge = Number(childAgeNum.value);
+    const educationAge = Number(educationAgeNum.value);
+    const courseDuration = Number(courseDurationNum.value);
+    const annualCost = Number(annualCostNum.value);
+    const currentSavings = Number(currentSavingsNum.value);
+    const inflation = Number(inflationNum.value);
+    const returnRate = Number(returnRateNum.value);
 
-            let currentCorpus = FV;
-            let totalWithdrawal = 0;
-            let runOutMonth = -1;
+    const error = validateInputs(
+        childAge,
+        educationAge,
+        courseDuration,
+        annualCost,
+        currentSavings,
+        inflation,
+        returnRate
+    );
 
-            for (let m = 1; m <= n2; m++) {
-                if (currentCorpus <= 0) {
-                    runOutMonth = m - 1;
-                    break;
-                }
-                let interest = currentCorpus * i2;
-                let updatedCorpus = currentCorpus + interest;
-                let withdrawal = Math.min(W, updatedCorpus);
-                currentCorpus = updatedCorpus - withdrawal;
-                totalWithdrawal += withdrawal;
+    if (error !== "") {
+        validationAlert.style.display = "block";
+        validationAlert.innerHTML = error;
+        return;
+    }
 
-                if (currentCorpus <= 0 && withdrawal < W) {
-                    runOutMonth = m;
-                    break;
-                }
-            }
+    validationAlert.style.display = "none";
 
-            const remainingCorpus = currentCorpus > 0 ? currentCorpus : 0;
+    const yearsLeft = educationAge - childAge;
 
-            document.getElementById('resTotalWithdrawal').innerText = "₹ " + formatINR(totalWithdrawal);
-            document.getElementById('resRemainingCorpus').innerText = "₹ " + formatINR(remainingCorpus);
+    let futureAnnualCost =
+        annualCost * Math.pow(1 + inflation / 100, yearsLeft);
 
-            // Phase 2 Warning / Info
-            if (runOutMonth !== -1) {
-                warningBanner.style.display = "flex";
-                const yrs = Math.floor(runOutMonth / 12);
-                const mos = runOutMonth % 12;
-                let timeStr = "";
-                if (yrs > 0) {
-                    timeStr += yrs + " year" + (yrs > 1 ? "s" : "");
-                }
-                if (mos > 0) {
-                    if (timeStr !== "") timeStr += ", ";
-                    timeStr += mos + " month" + (mos > 1 ? "s" : "");
-                }
-                if (timeStr === "") timeStr = "0 months";
-                document.getElementById('warningTime').innerText = timeStr;
-            } else {
-                warningBanner.style.display = "none";
-            }
+    let totalEducationCost = 0;
 
-            // Phase 2 Bars
-            const totalSWPValue = totalWithdrawal + remainingCorpus;
-            let swpWithdrawnPct = 0;
-            let swpRemainingPct = 0;
-            if (totalSWPValue > 0) {
-                swpWithdrawnPct = Math.round((totalWithdrawal / totalSWPValue) * 100);
-                swpRemainingPct = 100 - swpWithdrawnPct;
-            }
-            document.getElementById('swpWithdrawnBar').style.width = swpWithdrawnPct + "%";
-            document.getElementById('swpRemainingBar').style.width = swpRemainingPct + "%";
-            document.getElementById('swpWithdrawnPct').innerText = swpWithdrawnPct;
-            document.getElementById('swpRemainingPct').innerText = swpRemainingPct;
-        }
+    for (let i = 0; i < courseDuration; i++) {
+        totalEducationCost += futureAnnualCost * Math.pow(1 + inflation / 100, i);
+    }
 
+    const futureSavings =
+        currentSavings * Math.pow(1 + returnRate / 100, yearsLeft);
+
+    const corpusRequired =
+        Math.max(totalEducationCost - futureSavings, 0);
+
+    document.getElementById("resToday").innerHTML =
+        "₹ " + formatINR(totalEducationCost);
+
+    document.getElementById("resDelayed").innerHTML =
+        "₹ " + formatINR(futureSavings);
+
+    document.getElementById("resLoss").innerHTML =
+        "₹ " + formatINR(corpusRequired);
+
+    document.getElementById("valTodayPct").innerHTML =
+        "₹ " + formatINR(totalEducationCost);
+
+    document.getElementById("valDelayedPct").innerHTML =
+        "₹ " + formatINR(futureSavings);
+
+    let percentage = totalEducationCost === 0
+        ? 0
+        : (futureSavings / totalEducationCost) * 100;
+
+    percentage = Math.min(percentage, 100);
+
+    document.getElementById("barDelayed").style.width =
+        percentage + "%";
+
+    document.getElementById("lossPercent").innerHTML =
+        Math.round(100 - percentage) + "%";
+}
+        
         // Link inputs
-        function setupSync(numInput, sliderInput) {
-            numInput.addEventListener('input', () => {
-                let val = parseFloat(numInput.value);
-                if (!isNaN(val)) {
-                    if (val > parseFloat(sliderInput.max)) sliderInput.max = val;
-                    sliderInput.value = val;
-                }
-                calculateSIPSWP();
-            });
+        // Link Number Input and Slider
+function setupSync(numInput, sliderInput) {
 
-            sliderInput.addEventListener('input', () => {
-                numInput.value = sliderInput.value;
-                calculateSIPSWP();
-            });
-        }
+    numInput.addEventListener('input', () => {
 
-        setupSync(sipAmountNum, sipAmountSlider);
-        setupSync(sipTenureNum, sipTenureSlider);
-        setupSync(sipRateNum, sipRateSlider);
-        setupSync(swpAmountNum, swpAmountSlider);
-        setupSync(swpTenureNum, swpTenureSlider);
-        setupSync(swpRateNum, swpRateSlider);
+        let value = parseFloat(numInput.value);
 
-        // Initial run
-        calculateSIPSWP();
+        if (isNaN(value)) return;
+
+        const min = parseFloat(sliderInput.min);
+        const max = parseFloat(sliderInput.max);
+
+        if (value < min) value = min;
+        if (value > max) value = max;
+
+        numInput.value = value;
+        sliderInput.value = value;
+
+        calculateEducation();
+    });
+
+    sliderInput.addEventListener('input', () => {
+
+        numInput.value = sliderInput.value;
+
+        calculateEducation();
+
+    });
+
+}
+
+// Connect all inputs
+setupSync(childAgeNum, childAgeSlider);
+setupSync(educationAgeNum, educationAgeSlider);
+setupSync(courseDurationNum, courseDurationSlider);
+setupSync(annualCostNum, annualCostSlider);
+setupSync(currentSavingsNum, currentSavingsSlider);
+setupSync(inflationNum, inflationSlider);
+setupSync(returnRateNum, returnRateSlider);
+
+// Initial calculation
+calculateEducation();
+        
 
         const revealElements = document.querySelectorAll('.reveal');
         const revealCallback = (entries, observer) => {
@@ -1761,15 +1878,25 @@
             revealObserver.observe(element);
         });
 
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('.hero-title').style.opacity = '1';
-            setTimeout(() => {
-                const initialElements = document.querySelectorAll('.hero-banner .breadcrumbs, .header');
-                initialElements.forEach(el => {
-                    el.style.opacity = '1';
-                });
-            }, 100);
+        window.addEventListener("DOMContentLoaded", () => {
+
+    calculateEducation();
+
+    document.querySelector(".hero-title").style.opacity = "1";
+
+    setTimeout(() => {
+
+        const initialElements = document.querySelectorAll(
+            ".hero-banner .breadcrumbs, .header"
+        );
+
+        initialElements.forEach(el => {
+            el.style.opacity = "1";
         });
+
+    }, 100);
+
+});
 
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.card-box');

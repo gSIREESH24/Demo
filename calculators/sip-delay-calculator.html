@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWP Calculator | RupeeVyze - Wealth Planning Tools</title>
+    <title>SIP Delay Calculator | RupeeVyze - Wealth Planning Tools</title>
     
-    <meta name="description" content="Calculate your Systematic Withdrawal Plan (SWP), regular income payouts, and remaining investment corpus using RupeeVyze's premium interactive SWP calculator.">
-    <meta name="keywords" content="SWP Calculator, Systematic Withdrawal Plan, Mutual Fund Withdrawal, Retirement Income, Wealth Calculator, RupeeVyze Calculators">
+    <meta name="description" content="Find out the cost of delaying your investments using RupeeVyze's interactive SIP Delay Calculator. Compare starting today vs delaying.">
+    <meta name="keywords" content="SIP Delay Calculator, Cost of Delay, SIP Calculator, Financial Planning, Opportunity Loss, RupeeVyze Calculators">
     <meta name="author" content="RupeeVyze">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +30,9 @@
             
             --accent-blue: #1c32ff;      
             --accent-blue-glow: rgba(28, 50, 255, 0.4);
+            
+            --accent-red: #ef4444;
+            --accent-red-glow: rgba(239, 68, 68, 0.3);
             
             --text-primary: #ffffff;     
             --text-secondary: #94a3b8;   
@@ -608,18 +611,12 @@
             background: #0d1eab;
         }
 
-        .outputs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.05fr;
-            gap: 24px;
-            align-items: center;
-            height: 100%;
-        }
-
-        .results-column {
+        .outputs-column {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            height: 100%;
+            justify-content: center;
         }
 
         .result-block {
@@ -643,9 +640,19 @@
             letter-spacing: -0.5px;
         }
 
-        .result-value.font-large {
-            font-size: 32px;
+        .result-value.highlight-green {
+            color: var(--accent-green-dark);
+            font-size: 26px;
+        }
+
+        .result-value.highlight-blue {
             color: var(--accent-blue);
+            font-size: 26px;
+        }
+
+        .result-value.highlight-red {
+            color: var(--accent-red);
+            font-size: 32px;
         }
 
         .dotted-divider {
@@ -654,68 +661,57 @@
             margin: 6px 0;
         }
 
-        .chart-column {
+        .visual-bars {
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 28px;
+            gap: 20px;
         }
 
-        .chart-legend {
+        .bar-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            width: 100%;
+            gap: 8px;
         }
 
-        .legend-item {
+        .bar-label-row {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-light-body);
-        }
-
-        .legend-label-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .legend-color {
-            width: 24px;
-            height: 14px;
-            border-radius: 3px;
-            display: inline-block;
-        }
-
-        .legend-color.withdrawn {
-            background-color: var(--accent-blue); 
-        }
-
-        .legend-color.remaining {
-            background-color: var(--accent-green); 
-        }
-
-        .legend-percent {
-            color: var(--text-light-muted);
             font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-light-muted);
         }
 
-        .chart-wrapper {
-            width: 200px;
-            height: 200px;
-            position: relative;
-        }
-
-        .pie-chart {
+        .bar-track {
             width: 100%;
+            height: 16px;
+            background: #e2e8f0;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
             height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(var(--accent-blue) 0% 50%, var(--accent-green) 50% 100%);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            transition: background 0.3s ease;
+            border-radius: 50px;
+            transition: width 0.3s ease;
+        }
+
+        .bar-fill.start-today {
+            background: linear-gradient(90deg, var(--accent-green-dark), var(--accent-green));
+        }
+
+        .bar-fill.start-later {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .loss-badge {
+            background: #fee2e2;
+            color: #ef4444;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
         }
 
         .validation-error {
@@ -729,26 +725,6 @@
             font-size: 14px;
             font-weight: 600;
             text-align: center;
-        }
-
-        .warning-banner {
-            display: none;
-            background: #fffbeb;
-            border: 1px solid #fef3c7;
-            color: #b45309;
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 15px;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .warning-banner i {
-            font-size: 18px;
         }
 
         .footer {
@@ -1066,15 +1042,6 @@
                 padding: 130px 0 70px;
                 border-radius: 0 0 40px 40px;
             }
-
-            .outputs-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .results-column {
-                order: 2;
-            }
         }
 
         .glow-border {
@@ -1116,7 +1083,7 @@
 
     <header class="header" id="mainHeader">
         <div class="container nav-container">
-            <a href="homepage.html" class="logo-link">
+            <a href="../homepage.html" class="logo-link">
                 <div class="logo-wrapper">
                     <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -1147,35 +1114,35 @@
 
             <nav class="nav-menu" id="navMenu">
                 <div class="nav-item">
-                    <a href="homepage.html" class="nav-link">Home</a>
+                    <a href="../homepage.html" class="nav-link">Home</a>
                 </div>
                 <div class="nav-item">
-                    <a href="aboutus.html" class="nav-link">About Us</a>
+                    <a href="../aboutus.html" class="nav-link">About Us</a>
                 </div>
                 <div class="nav-item dropdown" id="servicesDropdown">
-                    <a href="homepage.html#services" class="nav-link" id="servicesTrigger">
+                    <a href="../homepage.html#services" class="nav-link" id="servicesTrigger">
                         Services <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
-                        <a href="equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
-                        <a href="advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
-                        <a href="Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
-                        <a href="Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
-                        <a href="loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
-                        <a href="insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
+                        <a href="../services/mutual.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> Mutual Fund</a>
+                        <a href="../services/equity.html" class="dropdown-link"><i class="fa-solid fa-percent"></i> Equity & Commodity Broking</a>
+                        <a href="../services/advance.html" class="dropdown-link"><i class="fa-solid fa-chart-line"></i> Advanced Investment Products</a>
+                        <a href="../services/Fixed deposit.html" class="dropdown-link"><i class="fa-solid fa-wallet"></i> Fixed Deposit</a>
+                        <a href="../services/Bonds-debt.html" class="dropdown-link"><i class="fa-solid fa-money-bill-wave"></i> Bonds & Debt Instruments</a>
+                        <a href="../services/loans-realty.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> Loans And Realty</a>
+                        <a href="../services/insurance.html" class="dropdown-link"><i class="fa-solid fa-shield-halved"></i> Insurance Solutions</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a href="calculators.html" class="nav-link active">Calculators</a>
+                    <a href="../calculators.html" class="nav-link active">Calculators</a>
                 </div>
                 <div class="nav-item">
-                    <a href="blogs.html" class="nav-link">Blogs</a>
+                    <a href="../blogs.html" class="nav-link">Blogs</a>
                 </div>
                 <div class="nav-item">
-                    <a href="contactus.html" class="nav-link">Contact Us</a>
+                    <a href="../contactus.html" class="nav-link">Contact Us</a>
                 </div>
-                <a href="apply.html" class="nav-cta-btn">Start Now</a>
+                <a href="../apply.html" class="nav-cta-btn">Start Now</a>
             </nav>
 
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
@@ -1190,13 +1157,13 @@
         <div class="hero-banner-glow"></div>
         <section class="hero-banner">
             <div class="container hero-content">
-                <h1 class="hero-title">SWP <span>Calculator</span></h1>
+                <h1 class="hero-title">SIP Delay <span>Calculator</span></h1>
                 <div class="breadcrumbs">
-                    <a href="homepage.html" class="breadcrumb-link">Home</a>
+                    <a href="../homepage.html" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <a href="calculators.html" class="breadcrumb-link">Calculators</a>
+                    <a href="../calculators.html" class="breadcrumb-link">Calculators</a>
                     <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                    <span class="breadcrumb-current">SWP Calculator</span>
+                    <span class="breadcrumb-current">SIP Delay Calculator</span>
                 </div>
             </div>
         </section>
@@ -1210,40 +1177,29 @@
                 <div class="card-box inputs-card reveal">
                     
                     <div class="input-row">
-                        <label for="initialInvestmentNum" class="input-label">Initial Investment</label>
+                        <label for="sipAmountNum" class="input-label">Monthly SIP Amount</label>
                         <div class="input-field-group">
-                            <input type="number" id="initialInvestmentNum" class="number-input" value="1000000">
+                            <input type="number" id="sipAmountNum" class="number-input" value="25000">
                             <span class="input-suffix">₹</span>
                         </div>
                     </div>
                     <div class="slider-row">
-                        <input type="range" id="initialInvestmentSlider" class="range-slider" min="10000" max="100000000" step="10000" value="1000000">
-                    </div>
-
-                    <div class="input-row">
-                        <label for="withdrawalNum" class="input-label">Monthly Withdrawal</label>
-                        <div class="input-field-group">
-                            <input type="number" id="withdrawalNum" class="number-input" value="10000">
-                            <span class="input-suffix">₹</span>
-                        </div>
-                    </div>
-                    <div class="slider-row">
-                        <input type="range" id="withdrawalSlider" class="range-slider" min="500" max="1000000" step="500" value="10000">
+                        <input type="range" id="sipAmountSlider" class="range-slider" min="500" max="1000000" step="500" value="25000">
                     </div>
 
                     <div class="input-row">
                         <label for="interestRateNum" class="input-label">Expected Return (p.a.)</label>
                         <div class="input-field-group">
-                            <input type="number" id="interestRateNum" class="number-input" step="0.1" value="8">
+                            <input type="number" id="interestRateNum" class="number-input" step="0.1" value="12">
                             <span class="input-suffix">%</span>
                         </div>
                     </div>
                     <div class="slider-row">
-                        <input type="range" id="interestRateSlider" class="range-slider" min="0" max="30" step="0.1" value="8">
+                        <input type="range" id="interestRateSlider" class="range-slider" min="0" max="30" step="0.1" value="12">
                     </div>
 
                     <div class="input-row">
-                        <label for="loanTenureNum" class="input-label">Withdrawal Duration</label>
+                        <label for="loanTenureNum" class="input-label">Investment Duration</label>
                         <div class="input-field-group">
                             <input type="number" id="loanTenureNum" class="number-input" value="10">
                             <span class="input-suffix">Yrs</span>
@@ -1253,57 +1209,62 @@
                         <input type="range" id="loanTenureSlider" class="range-slider" min="1" max="40" step="1" value="10">
                     </div>
 
+                    <div class="input-row">
+                        <label for="delayNum" class="input-label">Delay Period</label>
+                        <div class="input-field-group">
+                            <input type="number" id="delayNum" class="number-input" value="6">
+                            <span class="input-suffix">Months</span>
+                        </div>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="delaySlider" class="range-slider" min="0" max="120" step="1" value="6">
+                    </div>
+
                 </div>
 
                 <div class="card-box outputs-card reveal" style="transition-delay: 0.1s;">
-                    <div class="outputs-grid">
+                    <div class="outputs-column">
                         
-                        <div class="results-column">
-                            <div class="result-block">
-                                <span class="result-label">Initial Investment</span>
-                                <span class="result-value" id="resInvestment">10,00,000 INR</span>
-                            </div>
-                            <div class="dotted-divider"></div>
-                            <div class="result-block">
-                                <span class="result-label">Total Withdrawal</span>
-                                <span class="result-value" id="resWithdrawal">12,00,000 INR</span>
-                            </div>
-                            <div class="dotted-divider"></div>
-                            <div class="result-block">
-                                <span class="result-label">Final Corpus</span>
-                                <span class="result-value font-large" id="resTotal">6,57,489 INR</span>
-                            </div>
+                        <div class="result-block">
+                            <span class="result-label">Value if Started Today</span>
+                            <span class="result-value highlight-green" id="resToday">58,09,104 INR</span>
+                        </div>
+                        <div class="dotted-divider"></div>
+                        <div class="result-block">
+                            <span class="result-label">Value if Started Later</span>
+                            <span class="result-value highlight-blue" id="resDelayed">53,49,150 INR</span>
+                        </div>
+                        <div class="dotted-divider"></div>
+                        <div class="result-block">
+                            <span class="result-label">Opportunity Loss</span>
+                            <span class="result-value highlight-red" id="resLoss">4,59,954 INR</span>
                         </div>
 
-                        <div class="chart-column">
-                            <div class="chart-wrapper">
-                                <div class="pie-chart" id="swpPieChart"></div>
-                            </div>
-                            <div class="chart-legend">
-                                <div class="legend-item">
-                                    <div class="legend-label-group">
-                                        <span class="legend-color withdrawn"></span>
-                                        <span>Total Withdrawn</span>
-                                    </div>
-                                    <span class="legend-percent" id="withdrawnLegendPercent">65%</span>
+                        <div class="visual-bars">
+                            <div class="bar-group">
+                                <div class="bar-label-row">
+                                    <span>Started Today (100%)</span>
+                                    <span id="valTodayPct">₹ 58,09,104</span>
                                 </div>
-                                <div class="legend-item">
-                                    <div class="legend-label-group">
-                                        <span class="legend-color remaining"></span>
-                                        <span>Remaining Corpus</span>
-                                    </div>
-                                    <span class="legend-percent" id="remainingLegendPercent">35%</span>
+                                <div class="bar-track">
+                                    <div class="bar-fill start-today" style="width: 100%"></div>
                                 </div>
                             </div>
+
+                            <div class="bar-group">
+                                <div class="bar-label-row">
+                                    <span>Started Later</span>
+                                    <div style="display: flex; gap: 8px; align-items: center;">
+                                        <span id="valDelayedPct">₹ 53,49,150</span>
+                                        <span class="loss-badge" id="lossPercent">-8%</span>
+                                    </div>
+                                </div>
+                                <div class="bar-track">
+                                    <div class="bar-fill start-later" id="barDelayed" style="width: 92%"></div>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-
-                    <div id="warningBanner" class="warning-banner">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <div>
-                            <strong>Warning!</strong> Your investment runs out early at <span id="warningTime">5 years, 3 months</span>. Try increasing your initial investment, decreasing your monthly withdrawal, or earning a higher return.
-                        </div>
                     </div>
                 </div>
 
@@ -1349,9 +1310,9 @@
                 <div>
                     <h4 class="footer-title">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="homepage.html" class="footer-link">Home</a>
-                        <a href="aboutus.html" class="footer-link">About Us</a>
-                        <a href="contactus.html" class="footer-link">Contact Us</a>
+                        <a href="../homepage.html" class="footer-link">Home</a>
+                        <a href="../aboutus.html" class="footer-link">About Us</a>
+                        <a href="../contactus.html" class="footer-link">Contact Us</a>
                     </div>
                 </div>
 
@@ -1435,40 +1396,48 @@
         }
 
         // Elements
-        const initialInvestmentNum = document.getElementById('initialInvestmentNum');
-        const initialInvestmentSlider = document.getElementById('initialInvestmentSlider');
-        const withdrawalNum = document.getElementById('withdrawalNum');
-        const withdrawalSlider = document.getElementById('withdrawalSlider');
+        const amountNum = document.getElementById('sipAmountNum');
+        const amountSlider = document.getElementById('sipAmountSlider');
         const rateNum = document.getElementById('interestRateNum');
         const rateSlider = document.getElementById('interestRateSlider');
         const tenureNum = document.getElementById('loanTenureNum');
         const tenureSlider = document.getElementById('loanTenureSlider');
+        const delayNum = document.getElementById('delayNum');
+        const delaySlider = document.getElementById('delaySlider');
         const validationAlert = document.getElementById('validationAlert');
-        const warningBanner = document.getElementById('warningBanner');
 
-        function validateInputs(C0, W, R, Y) {
-            if (isNaN(C0) || C0 <= 0) {
-                return "Initial Investment must be greater than 0";
-            }
-            if (isNaN(W) || W <= 0) {
-                return "Monthly Withdrawal must be greater than 0";
+        function validateInputs(P, R, Y, D) {
+            if (isNaN(P) || P <= 0) {
+                return "SIP Amount must be greater than 0";
             }
             if (isNaN(Y) || Y <= 0) {
-                return "Withdrawal Duration must be greater than 0";
+                return "Investment Duration must be greater than 0";
             }
             if (isNaN(R) || R < 0) {
                 return "Expected Return must be greater than or equal to 0";
             }
+            if (isNaN(D) || D < 0) {
+                return "Delay must be greater than or equal to 0";
+            }
+            if (D >= Y * 12) {
+                return "Delay must be less than the total investment period (" + (Y * 12) + " months)";
+            }
             return "";
         }
 
-        function calculateSWP() {
-            const C0 = parseFloat(initialInvestmentNum.value);
-            const W = parseFloat(withdrawalNum.value);
+        function calculateDelaySIP() {
+            const P = parseFloat(amountNum.value);
             const R = parseFloat(rateNum.value);
             const Y = parseFloat(tenureNum.value);
+            const D = parseFloat(delayNum.value);
 
-            const err = validateInputs(C0, W, R, Y);
+            // Dynamic cap for delay slider
+            delaySlider.max = Y * 12 - 1;
+            if (parseFloat(delayNum.value) > delaySlider.max) {
+                delayNum.value = delaySlider.max;
+            }
+
+            const err = validateInputs(P, R, Y, D);
             if (err !== "") {
                 validationAlert.style.display = "block";
                 validationAlert.innerText = err;
@@ -1478,93 +1447,63 @@
 
             const i = R / (12 * 100);
             const n = Y * 12;
+            const n1 = n - D;
 
-            let corpus = C0;
-            let totalWithdrawn = 0;
-            let runOutMonth = -1;
+            let FV1 = 0;
+            let FV2 = 0;
 
-            for (let m = 1; m <= n; m++) {
-                if (corpus <= 0) {
-                    runOutMonth = m - 1;
-                    break;
-                }
-                let interest = corpus * i;
-                let updatedCorpus = corpus + interest;
-                let withdrawal = Math.min(W, updatedCorpus);
-                corpus = updatedCorpus - withdrawal;
-                totalWithdrawn += withdrawal;
-
-                if (corpus <= 0 && withdrawal < W) {
-                    runOutMonth = m;
-                    break;
-                }
-            }
-
-            const finalCorpus = corpus > 0 ? corpus : 0;
-
-            document.getElementById('resInvestment').innerText = formatINR(C0) + " INR";
-            document.getElementById('resWithdrawal').innerText = formatINR(totalWithdrawn) + " INR";
-            document.getElementById('resTotal').innerText = formatINR(finalCorpus) + " INR";
-
-            // Warning Banner
-            if (runOutMonth !== -1) {
-                warningBanner.style.display = "flex";
-                const yrs = Math.floor(runOutMonth / 12);
-                const mos = runOutMonth % 12;
-                let timeStr = "";
-                if (yrs > 0) {
-                    timeStr += yrs + " year" + (yrs > 1 ? "s" : "");
-                }
-                if (mos > 0) {
-                    if (timeStr !== "") timeStr += ", ";
-                    timeStr += mos + " month" + (mos > 1 ? "s" : "");
-                }
-                if (timeStr === "") timeStr = "0 months";
-                document.getElementById('warningTime').innerText = timeStr;
+            if (R > 0) {
+                FV1 = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+                FV2 = P * ((Math.pow(1 + i, n1) - 1) / i) * (1 + i);
             } else {
-                warningBanner.style.display = "none";
+                FV1 = P * n;
+                FV2 = P * n1;
             }
 
-            // Chart update
-            const totalSWPValue = totalWithdrawn + finalCorpus;
-            let withdrawnPercent = 0;
-            let remainingPercent = 0;
-            if (totalSWPValue > 0) {
-                withdrawnPercent = Math.round((totalWithdrawn / totalSWPValue) * 100);
-                remainingPercent = 100 - withdrawnPercent;
+            const loss = FV1 - FV2;
+
+            document.getElementById('resToday').innerText = formatINR(FV1) + " INR";
+            document.getElementById('resDelayed').innerText = formatINR(FV2) + " INR";
+            document.getElementById('resLoss').innerText = formatINR(loss) + " INR";
+
+            document.getElementById('valTodayPct').innerText = "₹ " + formatINR(FV1);
+            document.getElementById('valDelayedPct').innerText = "₹ " + formatINR(FV2);
+
+            let delayedBarWidth = 0;
+            let lossPercent = 0;
+            if (FV1 > 0) {
+                delayedBarWidth = (FV2 / FV1) * 100;
+                lossPercent = Math.round(((FV1 - FV2) / FV1) * 100);
             }
 
-            document.getElementById('withdrawnLegendPercent').innerText = withdrawnPercent + "%";
-            document.getElementById('remainingLegendPercent').innerText = remainingPercent + "%";
-
-            const pieChart = document.getElementById('swpPieChart');
-            pieChart.style.background = `conic-gradient(var(--accent-blue) 0% ${withdrawnPercent}%, var(--accent-green) ${withdrawnPercent}% 100%)`;
+            document.getElementById('barDelayed').style.width = delayedBarWidth + "%";
+            document.getElementById('lossPercent').innerText = "-" + lossPercent + "%";
         }
 
         // Link inputs
-        function setupSync(numInput, sliderInput) {
+        function setupSync(numInput, sliderInput, isDelay = false) {
             numInput.addEventListener('input', () => {
                 let val = parseFloat(numInput.value);
                 if (!isNaN(val)) {
                     if (val > parseFloat(sliderInput.max)) sliderInput.max = val;
                     sliderInput.value = val;
                 }
-                calculateSWP();
+                calculateDelaySIP();
             });
 
             sliderInput.addEventListener('input', () => {
                 numInput.value = sliderInput.value;
-                calculateSWP();
+                calculateDelaySIP();
             });
         }
 
-        setupSync(initialInvestmentNum, initialInvestmentSlider);
-        setupSync(withdrawalNum, withdrawalSlider);
+        setupSync(amountNum, amountSlider);
         setupSync(rateNum, rateSlider);
         setupSync(tenureNum, tenureSlider);
+        setupSync(delayNum, delaySlider, true);
 
         // Initial run
-        calculateSWP();
+        calculateDelaySIP();
 
         const revealElements = document.querySelectorAll('.reveal');
         const revealCallback = (entries, observer) => {
